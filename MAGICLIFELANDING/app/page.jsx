@@ -186,7 +186,7 @@ export default function Page() {
               </defs>
               
               {/* Line from header to one box - TEST */}
-              <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
             {/* One box for testing */}
