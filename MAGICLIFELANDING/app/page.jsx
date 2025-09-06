@@ -172,51 +172,61 @@ export default function Page() {
                 </linearGradient>
               </defs>
               
-              {/* Main root trunk */}
-              <path className="tree-root" d="M400 50 Q400 200 400 300" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              {/* Main vertical trunk */}
+              <line className="tree-root" x1="400" y1="50" x2="400" y2="300" stroke="url(#rootGradient)" strokeWidth="3" />
               
-              {/* Root branches to statistics */}
-              <path className="root-branch" d="M400 150 Q250 180 150 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M400 200 Q400 220 400 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M400 200 Q550 220 650 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              {/* Branch to 38% (left top) */}
+              <line className="root-branch" x1="400" y1="150" x2="200" y2="150" stroke="url(#rootGradient)" strokeWidth="2" />
+              <line className="root-branch" x1="200" y1="150" x2="200" y2="180" stroke="url(#rootGradient)" strokeWidth="2" />
               
-              {/* Secondary branches */}
-              <path className="root-branch" d="M400 300 Q200 350 100 400" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M400 300 Q600 350 700 400" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              {/* Branch to 72% (center) */}
+              <line className="root-branch" x1="400" y1="200" x2="400" y2="280" stroke="url(#rootGradient)" strokeWidth="2" />
+              
+              {/* Branch to 93% (right top) */}
+              <line className="root-branch" x1="400" y1="150" x2="600" y2="150" stroke="url(#rootGradient)" strokeWidth="2" />
+              <line className="root-branch" x1="600" y1="150" x2="600" y2="180" stroke="url(#rootGradient)" strokeWidth="2" />
+              
+              {/* Branch to "To nie magia" (left bottom) */}
+              <line className="root-branch" x1="400" y1="300" x2="200" y2="300" stroke="url(#rootGradient)" strokeWidth="2" />
+              <line className="root-branch" x1="200" y1="300" x2="200" y2="420" stroke="url(#rootGradient)" strokeWidth="2" />
+              
+              {/* Branch to "Jak to działa" (right bottom) */}
+              <line className="root-branch" x1="400" y1="300" x2="600" y2="300" stroke="url(#rootGradient)" strokeWidth="2" />
+              <line className="root-branch" x1="600" y1="300" x2="600" y2="420" stroke="url(#rootGradient)" strokeWidth="2" />
             </svg>
 
-            {/* Statistics positioned along the root branches */}
-            <div className="absolute top-[200px] left-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            {/* Statistics positioned exactly where lines end */}
+            <div className="absolute top-[150px] left-[100px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[200px]">
                 <div className="text-4xl font-extrabold text-accent">38%</div>
                 <div className="mt-2 text-sm text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
               </div>
             </div>
 
-            <div className="absolute top-[250px] left-[350px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <div className="absolute top-[250px] left-[300px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[200px]">
                 <div className="text-4xl font-extrabold text-accent">72%</div>
                 <div className="mt-2 text-sm text-neutral-300">Klasyczna terapia<br/>(22 sesje)</div>
               </div>
             </div>
 
-            <div className="absolute top-[200px] right-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <div className="absolute top-[150px] right-[100px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[200px]">
                 <div className="text-4xl font-extrabold text-accent">93%</div>
                 <div className="mt-2 text-sm text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
               </div>
             </div>
 
-            {/* Bottom information cards */}
-            <div className="absolute bottom-[50px] left-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm max-w-[300px]">
+            {/* Bottom information cards positioned at line endpoints */}
+            <div className="absolute bottom-[100px] left-[100px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[200px]">
                 <h3 className="font-semibold text-accent">To nie magia</h3>
                 <p className="mt-2 text-sm text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
               </div>
             </div>
 
-            <div className="absolute bottom-[50px] right-[50px] stat-reveal">
-              <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-6 hover:bg-white/5 transition backdrop-blur-sm max-w-[300px]">
+            <div className="absolute bottom-[100px] right-[100px] stat-reveal">
+              <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-6 hover:bg-white/5 transition backdrop-blur-sm w-[200px]">
                 <h3 className="font-semibold text-accent">Jak to działa?</h3>
                 <p className="mt-2 text-sm text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
               </a>
