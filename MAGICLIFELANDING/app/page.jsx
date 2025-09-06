@@ -188,7 +188,7 @@ export default function Page() {
               {/* Central red dot */}
               <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#forGradient)" />
               
-              {/* Lines from central dot to each card */}
+              {/* Lines from central dot to each text element - precise positioning */}
               <path className="line-draw" d="M600 80 Q300 150 200 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
               <path className="line-draw" d="M600 80 Q450 150 400 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
               <path className="line-draw" d="M600 80 Q600 150 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
@@ -196,7 +196,7 @@ export default function Page() {
               <path className="line-draw" d="M600 80 Q900 150 1000 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
-            {/* Cards arranged in grid */}
+            {/* Text elements arranged in grid - no boxes */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-16">
               {[
                 ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
@@ -205,10 +205,10 @@ export default function Page() {
                 ["Przełamywanie schematów","Nowa energia i jasność."],
                 ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
               ].map(([t,d])=> (
-                <article key={t} className="slow-reveal group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.3)]">
-                  <h3 className="text-lg font-semibold">{t}</h3>
+                <div key={t} className="slow-reveal text-center">
+                  <h3 className="text-lg font-semibold text-white">{t}</h3>
                   <p className="mt-2 text-sm text-neutral-300">{d}</p>
-                </article>
+                </div>
               ))}
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function Page() {
               {/* Central red dot */}
               <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#whyGradient)" />
               
-              {/* Lines from central dot to each box */}
+              {/* Lines from central dot to each box - precise positioning */}
               <path className="line-draw" d="M600 80 Q300 150 150 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
               <path className="line-draw" d="M600 80 Q450 150 330 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
               <path className="line-draw" d="M600 80 Q600 150 510 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
