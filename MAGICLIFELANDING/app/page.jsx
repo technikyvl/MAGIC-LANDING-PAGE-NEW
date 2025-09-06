@@ -175,9 +175,9 @@ export default function Page() {
             <p className="slow-reveal mt-3 max-w-2xl mx-auto text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
-          <div className="relative min-h-[600px]">
-            {/* Central dot and lines SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+          <div className="relative min-h-[400px]">
+            {/* Line animation SVG */}
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="forGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#FF5A3D" />
@@ -185,18 +185,18 @@ export default function Page() {
                 </linearGradient>
               </defs>
               
-              {/* Line from header to one box - TEST */}
-              <path d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              {/* Animated line from header to box */}
+              <path className="line-draw" d="M600 50 Q600 150 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
-            {/* One box for testing */}
-            <div className="flex justify-center items-center mt-16">
+            {/* Box positioned much lower */}
+            <div className="flex justify-center items-center mt-32">
               <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+              </div>
             </div>
           </div>
-        </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
