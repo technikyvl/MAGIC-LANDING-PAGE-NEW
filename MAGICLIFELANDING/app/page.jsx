@@ -186,7 +186,7 @@ export default function Page() {
               </defs>
               
               {/* Line from header to one box - TEST */}
-              <path className="line-draw" d="M600 50 Q600 200 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
             {/* One box for testing */}
@@ -194,7 +194,7 @@ export default function Page() {
               <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
-              </div>
+            </div>
           </div>
         </div>
 
