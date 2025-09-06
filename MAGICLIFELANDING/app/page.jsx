@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
-const SPACING = "py-20 sm:py-24 lg:py-28";
+const SPACING = "py-32 sm:py-40 lg:py-48";
 
 export default function Page() {
   useEffect(() => {
@@ -12,6 +12,7 @@ export default function Page() {
 
     // reveal
     const revealEls = Array.from(document.querySelectorAll(".reveal"));
+    const heroRevealEls = Array.from(document.querySelectorAll(".hero-reveal"));
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -21,6 +22,7 @@ export default function Page() {
       });
     }, { threshold: 0.6 });
     revealEls.forEach((el) => io.observe(el));
+    heroRevealEls.forEach((el) => io.observe(el));
 
     // shrink island
     const island = document.getElementById("islandNav");
@@ -88,18 +90,18 @@ export default function Page() {
       {/* 1) HERO */}
       <section className={"relative bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER + " text-center"}>
-          <span className="reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
+          <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
             <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
             Metoda SET (Simple Effective Therapy)
           </span>
-          <h1 className="reveal mt-5 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)]">
+          <h1 className="hero-reveal mt-5 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)]">
             Hipnoterapia dla ludzi, którzy chcą więcej od życia.
           </h1>
-          <p className="reveal mx-auto mt-4 max-w-3xl text-lg text-neutral-600">
+          <p className="hero-reveal mx-auto mt-4 max-w-3xl text-lg text-neutral-600">
             Pomagam osobom świadomym – liderom, sportowcom, przedsiębiorcom – uwolnić się od blokad,
             odkryć pełnię swojego potencjału i świadomie tworzyć życie, które kochają.
           </p>
-          <div className="reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-6 py-3 font-semibold hover:bg-neutral-800">Umów konsultację</a>
             <a href="https://wa.me/0000000000" className="rounded-xl border border-neutral-300 px-6 py-3 font-semibold text-neutral-900 hover:bg-neutral-50">Napisz na WhatsApp</a>
           </div>
