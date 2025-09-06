@@ -175,9 +175,9 @@ export default function Page() {
             <p className="slow-reveal mt-3 max-w-2xl mx-auto text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
-          <div className="relative min-h-[500px]">
+          <div className="relative min-h-[600px]">
             {/* Central dot and lines SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="forGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#FF5A3D" />
@@ -188,28 +188,45 @@ export default function Page() {
               {/* Central red dot */}
               <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#forGradient)" />
               
-              {/* Lines from central dot to each text element - precise positioning */}
-              <path className="line-draw" d="M600 80 Q300 150 200 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q450 150 400 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q600 150 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q750 150 800 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q900 150 1000 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              {/* Lines from central dot to each box - arc layout */}
+              <path className="line-draw" d="M600 80 Q300 150 150 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q450 150 350 380" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q600 150 600 400" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q750 150 850 380" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q900 150 1050 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
-            {/* Text elements arranged in grid - no boxes */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-16">
-              {[
-                ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
-                ["Sportowcy","Pewność siebie, koncentracja, rekordy."],
-                ["Związki","Komunikacja, zaufanie, bliskość."],
-                ["Przełamywanie schematów","Nowa energia i jasność."],
-                ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
-              ].map(([t,d])=> (
-                <div key={t} className="slow-reveal text-center">
-                  <h3 className="text-lg font-semibold text-white">{t}</h3>
-                  <p className="mt-2 text-sm text-neutral-300">{d}</p>
-                </div>
-              ))}
+            {/* Boxes arranged in arc layout */}
+            <div className="relative mt-16 h-80">
+              {/* Box 1 - Left */}
+              <div className="slow-reveal absolute left-0 top-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
+                <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+              </div>
+              
+              {/* Box 2 - Second from left */}
+              <div className="slow-reveal absolute left-32 top-12 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
+                <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
+              </div>
+              
+              {/* Box 3 - Center bottom */}
+              <div className="slow-reveal absolute left-1/2 top-24 transform -translate-x-1/2 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
+                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+              </div>
+              
+              {/* Box 4 - Second from right */}
+              <div className="slow-reveal absolute right-32 top-12 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
+                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+              </div>
+              
+              {/* Box 5 - Right */}
+              <div className="slow-reveal absolute right-0 top-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Związki</h3>
+                <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
+              </div>
             </div>
           </div>
           
