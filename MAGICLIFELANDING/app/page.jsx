@@ -70,17 +70,25 @@ export default function Page() {
           // Animate main root first
           setTimeout(() => {
             treeRoots.forEach(root => root.classList.add("drawn"));
-          }, 200);
+          }, 100);
           
-          // Then animate branches
+          // Then animate branches sequentially
           setTimeout(() => {
-            rootBranches.forEach(branch => branch.classList.add("drawn"));
-          }, 800);
+            rootBranches.forEach((branch, index) => {
+              setTimeout(() => {
+                branch.classList.add("drawn");
+              }, index * 150); // Stagger each branch by 150ms
+            });
+          }, 600);
           
           // Finally animate statistics
           setTimeout(() => {
-            statReveals.forEach(stat => stat.classList.add("visible"));
-          }, 1400);
+            statReveals.forEach((stat, index) => {
+              setTimeout(() => {
+                stat.classList.add("visible");
+              }, index * 100); // Stagger each stat by 100ms
+            });
+          }, 1200);
           
           rootObs.unobserve(e.target);
         }
@@ -162,9 +170,9 @@ export default function Page() {
             </p>
           </div>
 
-          <div id="rootContainer" className="relative min-h-[700px]">
+          <div id="rootContainer" className="relative min-h-[500px]">
             {/* Tree Root SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="rootGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#FF5A3D" />
@@ -173,62 +181,63 @@ export default function Page() {
               </defs>
               
               {/* Main vertical trunk */}
-              <line className="tree-root" x1="500" y1="50" x2="500" y2="350" stroke="url(#rootGradient)" strokeWidth="4" />
+              <line className="tree-root" x1="600" y1="50" x2="600" y2="250" stroke="url(#rootGradient)" strokeWidth="4" />
               
-              {/* Branch to 38% (left top) */}
-              <line className="root-branch" x1="500" y1="150" x2="200" y2="150" stroke="url(#rootGradient)" strokeWidth="3" />
-              <line className="root-branch" x1="200" y1="150" x2="200" y2="200" stroke="url(#rootGradient)" strokeWidth="3" />
+              {/* Branch to 38% (left) */}
+              <line className="root-branch" x1="600" y1="100" x2="200" y2="100" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="200" y1="100" x2="200" y2="150" stroke="url(#rootGradient)" strokeWidth="3" />
               
-              {/* Branch to 72% (center) */}
-              <line className="root-branch" x1="500" y1="200" x2="500" y2="300" stroke="url(#rootGradient)" strokeWidth="3" />
+              {/* Branch to 72% (center left) */}
+              <line className="root-branch" x1="600" y1="100" x2="400" y2="100" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="400" y1="100" x2="400" y2="150" stroke="url(#rootGradient)" strokeWidth="3" />
               
-              {/* Branch to 93% (right top) */}
-              <line className="root-branch" x1="500" y1="150" x2="800" y2="150" stroke="url(#rootGradient)" strokeWidth="3" />
-              <line className="root-branch" x1="800" y1="150" x2="800" y2="200" stroke="url(#rootGradient)" strokeWidth="3" />
+              {/* Branch to 93% (center right) */}
+              <line className="root-branch" x1="600" y1="100" x2="800" y2="100" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="800" y1="100" x2="800" y2="150" stroke="url(#rootGradient)" strokeWidth="3" />
               
               {/* Branch to "To nie magia" (left bottom) */}
-              <line className="root-branch" x1="500" y1="350" x2="200" y2="350" stroke="url(#rootGradient)" strokeWidth="3" />
-              <line className="root-branch" x1="200" y1="350" x2="200" y2="500" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="600" y1="250" x2="200" y2="250" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="200" y1="250" x2="200" y2="350" stroke="url(#rootGradient)" strokeWidth="3" />
               
               {/* Branch to "Jak to działa" (right bottom) */}
-              <line className="root-branch" x1="500" y1="350" x2="800" y2="350" stroke="url(#rootGradient)" strokeWidth="3" />
-              <line className="root-branch" x1="800" y1="350" x2="800" y2="500" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="600" y1="250" x2="1000" y2="250" stroke="url(#rootGradient)" strokeWidth="3" />
+              <line className="root-branch" x1="1000" y1="250" x2="1000" y2="350" stroke="url(#rootGradient)" strokeWidth="3" />
             </svg>
 
-            {/* Statistics positioned with proper spacing */}
-            <div className="absolute top-[200px] left-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[250px]">
-                <div className="text-4xl font-extrabold text-accent">38%</div>
-                <div className="mt-2 text-sm text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
+            {/* Statistics arranged evenly in a row */}
+            <div className="absolute top-[150px] left-[50px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[200px]">
+                <div className="text-3xl font-extrabold text-accent">38%</div>
+                <div className="mt-1 text-xs text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
               </div>
             </div>
 
-            <div className="absolute top-[300px] left-[375px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[250px]">
-                <div className="text-4xl font-extrabold text-accent">72%</div>
-                <div className="mt-2 text-sm text-neutral-300">Klasyczna terapia<br/>(22 sesje)</div>
+            <div className="absolute top-[150px] left-[250px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[200px]">
+                <div className="text-3xl font-extrabold text-accent">72%</div>
+                <div className="mt-1 text-xs text-neutral-300">Klasyczna terapia<br/>(22 sesje)</div>
               </div>
             </div>
 
-            <div className="absolute top-[200px] right-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[250px]">
-                <div className="text-4xl font-extrabold text-accent">93%</div>
-                <div className="mt-2 text-sm text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
+            <div className="absolute top-[150px] left-[450px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[200px]">
+                <div className="text-3xl font-extrabold text-accent">93%</div>
+                <div className="mt-1 text-xs text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
               </div>
             </div>
 
-            {/* Bottom information cards with proper spacing */}
-            <div className="absolute bottom-[100px] left-[50px] stat-reveal">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-[250px]">
-                <h3 className="font-semibold text-accent">To nie magia</h3>
-                <p className="mt-2 text-sm text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
+            {/* Bottom information cards arranged evenly */}
+            <div className="absolute bottom-[50px] left-[50px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[200px]">
+                <h3 className="font-semibold text-accent text-sm">To nie magia</h3>
+                <p className="mt-1 text-xs text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
               </div>
             </div>
 
-            <div className="absolute bottom-[100px] right-[50px] stat-reveal">
-              <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-6 hover:bg-white/5 transition backdrop-blur-sm w-[250px]">
-                <h3 className="font-semibold text-accent">Jak to działa?</h3>
-                <p className="mt-2 text-sm text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
+            <div className="absolute bottom-[50px] right-[50px] stat-reveal">
+              <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-4 hover:bg-white/5 transition backdrop-blur-sm w-[200px]">
+                <h3 className="font-semibold text-accent text-sm">Jak to działa?</h3>
+                <p className="mt-1 text-xs text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
               </a>
             </div>
           </div>
