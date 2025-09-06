@@ -13,6 +13,10 @@ export default function Page() {
     // reveal
     const revealEls = Array.from(document.querySelectorAll(".reveal"));
     const heroRevealEls = Array.from(document.querySelectorAll(".hero-reveal"));
+    const slowRevealEls = Array.from(document.querySelectorAll(".slow-reveal"));
+    const centralDots = Array.from(document.querySelectorAll(".central-dot"));
+    const lineDraws = Array.from(document.querySelectorAll(".line-draw"));
+    
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -21,8 +25,12 @@ export default function Page() {
         }
       });
     }, { threshold: 0.6 });
+    
     revealEls.forEach((el) => io.observe(el));
     heroRevealEls.forEach((el) => io.observe(el));
+    slowRevealEls.forEach((el) => io.observe(el));
+    centralDots.forEach((el) => io.observe(el));
+    lineDraws.forEach((el) => io.observe(el));
 
     // shrink island
     const island = document.getElementById("islandNav");
@@ -162,36 +170,50 @@ export default function Page() {
       {/* 3) For whom (dark) */}
       <section id="for" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dla kogo jest ta praca</h2>
-          <p className="reveal mt-3 max-w-2xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
-              ["Sportowcy","Pewność siebie, koncentracja, rekordy."],
-              ["Związki","Komunikacja, zaufanie, bliskość."],
-              ["Przełamywanie schematów","Nowa energia i jasność."],
-              ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
-            ].map(([t,d])=> (
-              <article key={t} className="reveal group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.3)]">
-                <h3 className="text-lg font-semibold">{t}</h3>
-                <p className="mt-2 text-sm text-neutral-300">{d}</p>
-              </article>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo jest ta praca</h2>
+            <p className="slow-reveal mt-3 max-w-2xl mx-auto text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
-          <p className="reveal mt-8 text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
-        </div>
 
-        <div aria-hidden className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(transparent,black_60%)]">
-          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="grid" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#ff5a3d33" />
-                <stop offset="100%" stopColor="#ff5a3d11" />
-              </linearGradient>
-            </defs>
-            {[...Array(7)].map((_,i)=>(<line key={'v'+i} x1={(i+1)*12.5} y1="0" x2={(i+1)*12.5} y2="100" stroke="url(#grid)" strokeWidth="0.15" />))}
-            {[...Array(5)].map((_,i)=>(<line key={'h'+i} x1="0" y1={(i+1)*16.6} x2="100" y2={(i+1)*16.6} stroke="url(#grid)" strokeWidth="0.15" />))}
-          </svg>
+          <div className="relative min-h-[500px]">
+            {/* Central dot and lines SVG */}
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="forGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A3D" />
+                  <stop offset="100%" stopColor="#ff2d20" />
+                </linearGradient>
+              </defs>
+              
+              {/* Central red dot */}
+              <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#forGradient)" />
+              
+              {/* Lines from central dot to each card */}
+              <path className="line-draw" d="M600 80 Q300 150 200 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q450 150 400 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q600 150 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q750 150 800 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q900 150 1000 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+            </svg>
+
+            {/* Cards arranged in grid */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-16">
+              {[
+                ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
+                ["Sportowcy","Pewność siebie, koncentracja, rekordy."],
+                ["Związki","Komunikacja, zaufanie, bliskość."],
+                ["Przełamywanie schematów","Nowa energia i jasność."],
+                ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
+              ].map(([t,d])=> (
+                <article key={t} className="slow-reveal group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.3)]">
+                  <h3 className="text-lg font-semibold">{t}</h3>
+                  <p className="mt-2 text-sm text-neutral-300">{d}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          
+          <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
       </section>
 
@@ -199,46 +221,65 @@ export default function Page() {
       <section id="why" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-16">
-            <h2 className="reveal text-5xl sm:text-6xl font-extrabold">Dlaczego hipnoterapia?</h2>
-            <p className="reveal mt-6 max-w-3xl mx-auto text-lg text-neutral-600">
+            <h2 className="slow-reveal text-5xl sm:text-6xl font-extrabold">Dlaczego hipnoterapia?</h2>
+            <p className="slow-reveal mt-6 max-w-3xl mx-auto text-lg text-neutral-600">
               Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
               podświadomości (ok. 95% umysłu).
             </p>
           </div>
 
-          <div id="rootContainer" className="relative min-h-[300px]">
+          <div className="relative min-h-[400px]">
+            {/* Central dot and lines SVG */}
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="whyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A3D" />
+                  <stop offset="100%" stopColor="#ff2d20" />
+                </linearGradient>
+              </defs>
+              
+              {/* Central red dot */}
+              <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#whyGradient)" />
+              
+              {/* Lines from central dot to each box */}
+              <path className="line-draw" d="M600 80 Q300 150 150 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q450 150 330 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q600 150 510 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q750 150 690 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 80 Q900 150 870 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
+            </svg>
 
             {/* All boxes in one perfectly aligned horizontal row */}
             <div className="flex justify-center items-center gap-4 mt-16">
-              <div className="stat-reveal">
+              <div className="slow-reveal">
                 <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
                   <div className="text-2xl font-extrabold text-accent">38%</div>
                   <div className="mt-1 text-xs text-neutral-600">Psychoanaliza<br/>(600 sesji)</div>
                 </div>
               </div>
 
-              <div className="stat-reveal">
+              <div className="slow-reveal">
                 <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
                   <div className="text-2xl font-extrabold text-accent">72%</div>
                   <div className="mt-1 text-xs text-neutral-600">Klasyczna terapia<br/>(22 sesji)</div>
                 </div>
               </div>
 
-              <div className="stat-reveal">
+              <div className="slow-reveal">
                 <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
                   <div className="text-2xl font-extrabold text-accent">93%</div>
                   <div className="mt-1 text-xs text-neutral-600">Hipnoterapia<br/>(6 sesji)</div>
                 </div>
               </div>
 
-              <div className="stat-reveal">
+              <div className="slow-reveal">
                 <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
                   <h3 className="font-semibold text-accent text-xs">To nie magia</h3>
                   <p className="mt-1 text-xs text-neutral-600">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
                 </div>
               </div>
 
-              <div className="stat-reveal">
+              <div className="slow-reveal">
                 <a href="#process" className="block rounded-xl border border-neutral-200 bg-white p-3 hover:bg-neutral-50 transition backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
                   <h3 className="font-semibold text-accent text-xs">Jak to działa?</h3>
                   <p className="mt-1 text-xs text-neutral-600">Poznaj proces SET <span aria-hidden>→</span></p>
@@ -252,8 +293,8 @@ export default function Page() {
       {/* 5) Process – timeline */}
       <section id="process" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Jak wygląda proces – metoda SET</h2>
-          <ul className="reveal mt-4 grid gap-2 text-neutral-300 sm:grid-cols-2">
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Jak wygląda proces – metoda SET</h2>
+          <ul className="slow-reveal mt-4 grid gap-2 text-neutral-300 sm:grid-cols-2">
             {[
               "szybka i skuteczna (często efekt po 1. sesji)",
               "bez rozdrapywania przeszłości",
@@ -279,7 +320,7 @@ export default function Page() {
               ["Reprogramowanie podświadomości","Wgrywamy nowe wspierające schematy."],
               ["Implementacja","Świadomie kreujesz codzienność."],
             ].map(([t,d],i)=>(
-              <div key={i} className="reveal relative rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div key={i} className="slow-reveal relative rounded-2xl border border-white/10 bg-white/5 p-6">
                 <div className="text-sm text-neutral-300">0{i+1}</div>
                 <h3 className="mt-1 text-lg font-semibold">{t}</h3>
                 <p className="mt-1 text-neutral-300">{d}</p>
@@ -292,7 +333,7 @@ export default function Page() {
       {/* 6) Support */}
       <section className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Zakres wsparcia</h2>
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Zakres wsparcia</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               "Odblokowanie potencjału (biznes / życie)",
@@ -303,7 +344,7 @@ export default function Page() {
               "Nałogi / fobie / lęki / prokrastynacja",
               "Spokój / klarowność / równowaga"
             ].map(t => (
-              <article key={t} className="reveal group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.06)]">
+              <article key={t} className="slow-reveal group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.06)]">
                 <h3 className="text-lg font-semibold">{t}</h3>
               </article>
             ))}
@@ -314,11 +355,11 @@ export default function Page() {
       {/* 7) Reviews */}
       <section id="reviews" className={"bg-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Opinie klientów</h2>
-          <p className="reveal mt-2 text-sm text-neutral-600">Średnia ocen w Google: <strong>5.0/5</strong> (ponad 89 opinii)</p>
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Opinie klientów</h2>
+          <p className="slow-reveal mt-2 text-sm text-neutral-600">Średnia ocen w Google: <strong>5.0/5</strong> (ponad 89 opinii)</p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[["Andrzej W.","„…jak nowonarodzony…”"],["Sysia S.","„…po trzech sesjach realna zmiana…”"],["Sebastian B.","„…rozwiązałem problem od lat…”"]].map(([a,t],i)=>(
-              <figure key={i} className="reveal rounded-2xl border border-neutral-200 bg-white p-6">
+              <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white font-semibold">{a[0]}</div>
                   <figcaption className="font-medium">{a}</figcaption>
@@ -334,10 +375,10 @@ export default function Page() {
       {/* 8) Why works short */}
       <section className={"bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dlaczego to działa</h2>
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dlaczego to działa</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[["Podświadomość 95%","Tam rodzą się reakcje i schematy."],["Przyspieszenie zmiany","Krótsza droga niż w większości terapii."],["Sprawczość","Odzyskujesz decyzyjność i kierunek."]].map(([t,d],i)=>(
-              <div key={i} className="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div key={i} className="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-6">
                 <h3 className="font-semibold">{t}</h3>
                 <p className="mt-2 text-neutral-300">{d}</p>
               </div>
@@ -349,9 +390,9 @@ export default function Page() {
       {/* 9) Big CTA */}
       <section className={"bg-white " + SPACING}>
         <div className={CONTAINER + " text-center"}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Twoje życie może wyglądać inaczej.</h2>
-          <p className="reveal mx-auto mt-3 max-w-2xl text-neutral-600">Zrób pierwszy krok – umów rozmowę wstępną i zobacz, jak szybko możemy wprowadzić trwałą zmianę.</p>
-          <div className="reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Twoje życie może wyglądać inaczej.</h2>
+          <p className="slow-reveal mx-auto mt-3 max-w-2xl text-neutral-600">Zrób pierwszy krok – umów rozmowę wstępną i zobacz, jak szybko możemy wprowadzić trwałą zmianę.</p>
+          <div className="slow-reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-6 py-3 font-semibold hover:bg-neutral-800">Umów konsultację</a>
             <a href="https://wa.me/0000000000" className="rounded-xl border border-neutral-300 px-6 py-3 font-semibold hover:bg-neutral-50">Napisz na WhatsApp</a>
           </div>
@@ -361,7 +402,7 @@ export default function Page() {
       {/* 10) FAQ */}
       <section id="faq" className={"bg-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
+          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
           <div className="mt-8 divide-y divide-neutral-200 rounded-2xl border border-neutral-200">
             {[
               ["Na czym polega hipnoterapia i SET?","Pracujemy w lekkim transie nad emocjami/obrazami, wprowadzając trwałe zmiany na poziomie podświadomości."],
@@ -387,15 +428,15 @@ export default function Page() {
       <section id="contact" className={"bg-white " + SPACING}>
         <div className={CONTAINER + " grid gap-8 sm:grid-cols-2"}>
           <div>
-            <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Skontaktuj się</h2>
-            <p className="reveal mt-2 text-neutral-600">Masz pytanie? Napisz, chętnie odpowiem.</p>
-            <ul className="reveal mt-6 space-y-2 text-neutral-800">
+            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Skontaktuj się</h2>
+            <p className="slow-reveal mt-2 text-neutral-600">Masz pytanie? Napisz, chętnie odpowiem.</p>
+            <ul className="slow-reveal mt-6 space-y-2 text-neutral-800">
               <li><a className="underline underline-offset-4 hover:no-underline" href="mailto:hello@magiclife.pl">hello@magiclife.pl</a></li>
               <li><a className="underline underline-offset-4 hover:no-underline" href="https://wa.me/0000000000">WhatsApp</a></li>
               <li><a className="underline underline-offset-4 hover:no-underline" href="#">Kalendarz (wkrótce)</a></li>
             </ul>
           </div>
-          <form className="reveal rounded-2xl border border-neutral-200 p-6 bg-white shadow-[0_8px_30px_rgba(0,0,0,.03)]" onSubmit={(e)=>{e.preventDefault(); alert('Dziękuję! Skontaktuję się niebawem.')}}>
+          <form className="slow-reveal rounded-2xl border border-neutral-200 p-6 bg-white shadow-[0_8px_30px_rgba(0,0,0,.03)]" onSubmit={(e)=>{e.preventDefault(); alert('Dziękuję! Skontaktuję się niebawem.')}}>
             <label className="block text-sm font-medium">Imię</label>
             <input className="mt-1 w-full rounded-lg border border-neutral-300 px-3 py-2 outline-none focus:ring-2 focus:ring-accent" />
             <label className="mt-4 block text-sm font-medium">E-mail</label>
