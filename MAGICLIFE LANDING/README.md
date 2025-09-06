@@ -1,11 +1,14 @@
-# Magic Life — Static Landing
+# Magic Life — Next.js + Tailwind (Vercel-ready)
 
-## Deploy to Vercel (no build)
-1. Create a new project and connect this repo.
-2. Framework Preset: **Other**
-3. Build Command: **leave empty**
-4. Output Directory: **public**
-5. Root Directory: leave empty (project root)
-6. Deploy.
+## Deploy
+1. Push this folder to a new GitHub repo.
+2. In Vercel: **New Project → Import** the repo.
+3. Framework preset: **Next.js** (auto-detected).
+4. No changes to Build Command / Output (Vercel will build Next automatically).
+5. Deploy.
 
-Files live in `/public` so Vercel will serve them directly.
+## Dev
+```bash
+npm i
+npm run dev
+```

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* reveal-from-shadow */
+.reveal { opacity: 0; transform: translateY(12px); filter: blur(6px);
+  transition: opacity .6s cubic-bezier(.22,1,.36,1),
+             transform .6s cubic-bezier(.22,1,.36,1),
+             filter .6s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+/* nav dot */
+.navlink::after { content: ""; position: absolute; left: 50%; bottom: -4px; width: 0; height: 2px;
+  background: theme('colors.accent'); border-radius: 999px; transform: translateX(-50%);
+  transition: width .25s ease, opacity .25s ease; opacity: 0;
+}
+.navlink.active::after { width: 18px; opacity: 1; }
+
+/* shrink island */
+.island--shrink { max-width: 48rem !important; padding: .5rem .75rem !important; }
+
+/* timeline draw */
+#timelinePath { stroke-dasharray: 800; stroke-dashoffset: 800; opacity: .6;
+  transition: stroke-dashoffset 1.4s ease-in-out, opacity .6s ease;
+}
+#timelinePath.drawn { stroke-dashoffset: 0; opacity: .9; }
