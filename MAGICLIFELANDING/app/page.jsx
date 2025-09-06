@@ -170,26 +170,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div id="rootContainer" className="relative min-h-[500px]">
-            {/* Central dot and lines SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="rootGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FF5A3D" />
-                  <stop offset="100%" stopColor="#ff2d20" />
-                </linearGradient>
-              </defs>
-              
-              {/* Central red dot */}
-              <circle className="tree-root" cx="600" cy="100" r="4" fill="url(#rootGradient)" />
-              
-              {/* Lines from central dot to each box - evenly spaced */}
-              <path className="root-branch" d="M600 100 Q300 150 150 350" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M600 100 Q450 150 330 350" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M600 100 Q600 150 510 350" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M600 100 Q750 150 690 350" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-              <path className="root-branch" d="M600 100 Q900 150 870 350" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
-            </svg>
+          <div id="rootContainer" className="relative min-h-[400px]">
 
             {/* All boxes in one perfectly aligned horizontal row */}
             <div className="flex justify-center items-center gap-6 mt-48">
