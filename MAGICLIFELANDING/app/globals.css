@@ -116,8 +116,8 @@
 
 /* Line drawing animation */
 .line-draw {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
   opacity: 0;
   transition: stroke-dashoffset 2s ease-in-out, opacity 1s ease;
 }

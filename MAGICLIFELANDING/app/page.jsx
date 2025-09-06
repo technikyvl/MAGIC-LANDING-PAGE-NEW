@@ -186,7 +186,7 @@ export default function Page() {
               </defs>
               
               {/* Animated line from header to box */}
-              <path className="line-draw" d="M600 50 Q600 150 600 300" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              <path className="line-draw" d="M600 50 Q600 200 600 350" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
             </svg>
 
             {/* Box positioned much lower */}
