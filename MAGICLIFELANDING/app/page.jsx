@@ -180,48 +180,21 @@ export default function Page() {
             <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="forGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#10B981" />
-                  <stop offset="100%" stopColor="#059669" />
+                  <stop offset="0%" stopColor="#FF5A3D" />
+                  <stop offset="100%" stopColor="#ff2d20" />
                 </linearGradient>
               </defs>
               
-              {/* Central red dot */}
-              <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#forGradient)" />
-              
-              {/* Lines from central dot to each box - horizontal layout */}
-              <path className="line-draw" d="M600 80 Q300 150 150 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q450 150 350 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q600 150 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q750 150 850 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q900 150 1050 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
+              {/* Line from header to one box - TEST */}
+              <path className="line-draw" d="M600 50 Q600 200 600 350" stroke="url(#forGradient)" strokeWidth="2" fill="none" />
             </svg>
 
-            {/* Boxes arranged in horizontal row */}
-            <div className="flex justify-center items-center gap-6 mt-16">
+            {/* One box for testing */}
+            <div className="flex justify-center items-center mt-16">
               <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
-              
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
-                <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
-              </div>
-              
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
-                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
-              </div>
-              
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
-                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-          </div>
-
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                <h3 className="text-lg font-semibold text-white">Związki</h3>
-                <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
-            </div>
           </div>
         </div>
 
