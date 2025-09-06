@@ -59,6 +59,37 @@ export default function Page() {
       lineObs.observe(timeline);
     }
 
+    // tree root animation
+    const treeRoots = Array.from(document.querySelectorAll(".tree-root"));
+    const rootBranches = Array.from(document.querySelectorAll(".root-branch"));
+    const statReveals = Array.from(document.querySelectorAll(".stat-reveal"));
+    
+    const rootObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          // Animate main root first
+          setTimeout(() => {
+            treeRoots.forEach(root => root.classList.add("drawn"));
+          }, 200);
+          
+          // Then animate branches
+          setTimeout(() => {
+            rootBranches.forEach(branch => branch.classList.add("drawn"));
+          }, 800);
+          
+          // Finally animate statistics
+          setTimeout(() => {
+            statReveals.forEach(stat => stat.classList.add("visible"));
+          }, 1400);
+          
+          rootObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    const rootContainer = document.getElementById("rootContainer");
+    if (rootContainer) rootObs.observe(rootContainer);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
@@ -123,29 +154,73 @@ export default function Page() {
       {/* 3) Why (dark) */}
       <section id="why" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dlaczego hipnoterapia?</h2>
-          <p className="reveal mt-4 max-w-2xl text-neutral-300">
-            Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
-            podświadomości (ok. 95% umysłu).
-          </p>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {[["38%","Psychoanaliza (600 sesji)"],["72%","Klasyczna terapia (22 sesje)"],["93%","Hipnoterapia (6 sesji)"]].map(([v,l],i)=>(
-              <div key={i} className="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div className="text-4xl font-extrabold">{v}</div>
-                <div className="mt-2 text-sm text-neutral-300">{l}</div>
-              </div>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dlaczego hipnoterapia?</h2>
+            <p className="reveal mt-4 max-w-2xl mx-auto text-neutral-300">
+              Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
+              podświadomości (ok. 95% umysłu).
+            </p>
           </div>
 
-          <div className="reveal mt-10 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="font-semibold">To nie magia</h3>
-              <p className="mt-2 text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
+          <div id="rootContainer" className="relative min-h-[600px]">
+            {/* Tree Root SVG */}
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="rootGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A3D" />
+                  <stop offset="100%" stopColor="#ff2d20" />
+                </linearGradient>
+              </defs>
+              
+              {/* Main root trunk */}
+              <path className="tree-root" d="M400 50 Q400 200 400 300" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              
+              {/* Root branches to statistics */}
+              <path className="root-branch" d="M400 150 Q250 180 150 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              <path className="root-branch" d="M400 200 Q400 220 400 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              <path className="root-branch" d="M400 200 Q550 220 650 250" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              
+              {/* Secondary branches */}
+              <path className="root-branch" d="M400 300 Q200 350 100 400" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+              <path className="root-branch" d="M400 300 Q600 350 700 400" stroke="url(#rootGradient)" strokeWidth="2" fill="none" />
+            </svg>
+
+            {/* Statistics positioned along the root branches */}
+            <div className="absolute top-[200px] left-[50px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="text-4xl font-extrabold text-accent">38%</div>
+                <div className="mt-2 text-sm text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
+              </div>
             </div>
-            <a href="#process" className="rounded-2xl border border-white/10 bg-white/0 p-6 hover:bg-white/5 transition">
-              Jak to działa? <span aria-hidden>→</span>
-            </a>
+
+            <div className="absolute top-[250px] left-[350px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="text-4xl font-extrabold text-accent">72%</div>
+                <div className="mt-2 text-sm text-neutral-300">Klasyczna terapia<br/>(22 sesje)</div>
+              </div>
+            </div>
+
+            <div className="absolute top-[200px] right-[50px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="text-4xl font-extrabold text-accent">93%</div>
+                <div className="mt-2 text-sm text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
+              </div>
+            </div>
+
+            {/* Bottom information cards */}
+            <div className="absolute bottom-[50px] left-[50px] stat-reveal">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm max-w-[300px]">
+                <h3 className="font-semibold text-accent">To nie magia</h3>
+                <p className="mt-2 text-sm text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
+              </div>
+            </div>
+
+            <div className="absolute bottom-[50px] right-[50px] stat-reveal">
+              <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-6 hover:bg-white/5 transition backdrop-blur-sm max-w-[300px]">
+                <h3 className="font-semibold text-accent">Jak to działa?</h3>
+                <p className="mt-2 text-sm text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
+              </a>
+            </div>
           </div>
         </div>
 

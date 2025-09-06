@@ -53,3 +53,38 @@
   transition: stroke-dashoffset 1.4s ease-in-out, opacity .6s ease;
 }
 #timelinePath.drawn { stroke-dashoffset: 0; opacity: .9; }
+
+/* Tree root animation */
+.tree-root { 
+  stroke-dasharray: 1000; 
+  stroke-dashoffset: 1000; 
+  opacity: 0;
+  transition: stroke-dashoffset 2s ease-in-out, opacity 1s ease;
+}
+.tree-root.drawn { 
+  stroke-dashoffset: 0; 
+  opacity: 1; 
+}
+
+/* Root branch animation */
+.root-branch { 
+  stroke-dasharray: 500; 
+  stroke-dashoffset: 500; 
+  opacity: 0;
+  transition: stroke-dashoffset 1.5s ease-in-out, opacity 0.8s ease;
+}
+.root-branch.drawn { 
+  stroke-dashoffset: 0; 
+  opacity: 0.8; 
+}
+
+/* Statistics reveal animation */
+.stat-reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.stat-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
