@@ -159,57 +159,26 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 3) Why (dark) */}
-      <section id="why" className={"relative bg-neutral-950 text-white " + SPACING}>
+      {/* 3) For whom (dark) */}
+      <section id="for" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <div className="text-center mb-16">
-            <h2 className="reveal text-5xl sm:text-6xl font-extrabold">Dlaczego hipnoterapia?</h2>
-            <p className="reveal mt-6 max-w-3xl mx-auto text-lg text-neutral-300">
-              Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
-              podświadomości (ok. 95% umysłu).
-            </p>
+          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dla kogo jest ta praca</h2>
+          <p className="reveal mt-3 max-w-2xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
+              ["Sportowcy","Pewność siebie, koncentracja, rekordy."],
+              ["Związki","Komunikacja, zaufanie, bliskość."],
+              ["Przełamywanie schematów","Nowa energia i jasność."],
+              ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
+            ].map(([t,d])=> (
+              <article key={t} className="reveal group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.3)]">
+                <h3 className="text-lg font-semibold">{t}</h3>
+                <p className="mt-2 text-sm text-neutral-300">{d}</p>
+              </article>
+            ))}
           </div>
-
-          <div id="rootContainer" className="relative min-h-[300px]">
-
-            {/* All boxes in one perfectly aligned horizontal row */}
-            <div className="flex justify-center items-center gap-4 mt-16">
-              <div className="stat-reveal">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
-                  <div className="text-2xl font-extrabold text-accent">38%</div>
-                  <div className="mt-1 text-xs text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
-                </div>
-              </div>
-
-              <div className="stat-reveal">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
-                  <div className="text-2xl font-extrabold text-accent">72%</div>
-                  <div className="mt-1 text-xs text-neutral-300">Klasyczna terapia<br/>(22 sesji)</div>
-                </div>
-              </div>
-
-              <div className="stat-reveal">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
-                  <div className="text-2xl font-extrabold text-accent">93%</div>
-                  <div className="mt-1 text-xs text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
-                </div>
-              </div>
-
-              <div className="stat-reveal">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
-                  <h3 className="font-semibold text-accent text-xs">To nie magia</h3>
-                  <p className="mt-1 text-xs text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
-                </div>
-              </div>
-
-              <div className="stat-reveal">
-                <a href="#process" className="block rounded-xl border border-white/10 bg-white/0 p-3 hover:bg-white/5 transition backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
-                  <h3 className="font-semibold text-accent text-xs">Jak to działa?</h3>
-                  <p className="mt-1 text-xs text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
-                </a>
-              </div>
-            </div>
-          </div>
+          <p className="reveal mt-8 text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
 
         <div aria-hidden className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(transparent,black_60%)]">
@@ -226,26 +195,57 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4) For whom */}
-      <section id="for" className={"bg-white text-neutral-900 " + SPACING}>
+      {/* 4) Why (white) */}
+      <section id="why" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="reveal text-3xl sm:text-4xl font-extrabold">Dla kogo jest ta praca</h2>
-          <p className="reveal mt-3 max-w-2xl text-neutral-600">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              ["Przedsiębiorcy","Decyzje, lekkość w rozwoju firmy."],
-              ["Sportowcy","Pewność siebie, koncentracja, rekordy."],
-              ["Związki","Komunikacja, zaufanie, bliskość."],
-              ["Przełamywanie schematów","Nowa energia i jasność."],
-              ["Odpowiedzialność","Wybierasz rozwój, nie ucieczkę."],
-            ].map(([t,d])=> (
-              <article key={t} className="reveal group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.06)]">
-                <h3 className="text-lg font-semibold">{t}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{d}</p>
-              </article>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="reveal text-5xl sm:text-6xl font-extrabold">Dlaczego hipnoterapia?</h2>
+            <p className="reveal mt-6 max-w-3xl mx-auto text-lg text-neutral-600">
+              Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
+              podświadomości (ok. 95% umysłu).
+            </p>
           </div>
-          <p className="reveal mt-8 text-sm text-neutral-600">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
+
+          <div id="rootContainer" className="relative min-h-[300px]">
+
+            {/* All boxes in one perfectly aligned horizontal row */}
+            <div className="flex justify-center items-center gap-4 mt-16">
+              <div className="stat-reveal">
+                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <div className="text-2xl font-extrabold text-accent">38%</div>
+                  <div className="mt-1 text-xs text-neutral-600">Psychoanaliza<br/>(600 sesji)</div>
+                </div>
+              </div>
+
+              <div className="stat-reveal">
+                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <div className="text-2xl font-extrabold text-accent">72%</div>
+                  <div className="mt-1 text-xs text-neutral-600">Klasyczna terapia<br/>(22 sesji)</div>
+                </div>
+              </div>
+
+              <div className="stat-reveal">
+                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <div className="text-2xl font-extrabold text-accent">93%</div>
+                  <div className="mt-1 text-xs text-neutral-600">Hipnoterapia<br/>(6 sesji)</div>
+                </div>
+              </div>
+
+              <div className="stat-reveal">
+                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <h3 className="font-semibold text-accent text-xs">To nie magia</h3>
+                  <p className="mt-1 text-xs text-neutral-600">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
+                </div>
+              </div>
+
+              <div className="stat-reveal">
+                <a href="#process" className="block rounded-xl border border-neutral-200 bg-white p-3 hover:bg-neutral-50 transition backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <h3 className="font-semibold text-accent text-xs">Jak to działa?</h3>
+                  <p className="mt-1 text-xs text-neutral-600">Poznaj proces SET <span aria-hidden>→</span></p>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
