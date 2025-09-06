@@ -192,7 +192,7 @@ export default function Page() {
             </svg>
 
             {/* All boxes in one perfectly aligned horizontal row */}
-            <div className="flex justify-center items-center gap-6 mt-32">
+            <div className="flex justify-center items-center gap-6 mt-48">
               <div className="stat-reveal">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <div className="text-3xl font-extrabold text-accent">38%</div>
