@@ -69,7 +69,7 @@ export default function Page() {
       {/* 0) Header */}
       <div className="sticky top-4 z-50">
         <nav id="islandNav" aria-label="Główna nawigacja"
-          className={"mx-auto flex items-center gap-3 rounded-2xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-4xl px-4 py-3"}>
+          className={"mx-auto flex items-center gap-3 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-4xl px-6 py-4"}>
           <a href="#" className="font-extrabold tracking-tight text-neutral-900">
             Magic<span className="text-accent">Life</span>
           </a>
@@ -89,21 +89,21 @@ export default function Page() {
 
       {/* 1) HERO */}
       <section className={"relative bg-white text-neutral-900 " + SPACING}>
-        <div className={CONTAINER + " text-center"}>
+        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[60vh]"}>
           <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
             <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
             Metoda SET (Simple Effective Therapy)
           </span>
-          <h1 className="hero-reveal mt-5 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)]">
+          <h1 className="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)] max-w-5xl">
             Hipnoterapia dla ludzi, którzy chcą więcej od życia.
           </h1>
-          <p className="hero-reveal mx-auto mt-4 max-w-3xl text-lg text-neutral-600">
+          <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
             Pomagam osobom świadomym – liderom, sportowcom, przedsiębiorcom – uwolnić się od blokad,
             odkryć pełnię swojego potencjału i świadomie tworzyć życie, które kochają.
           </p>
-          <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-6 py-3 font-semibold hover:bg-neutral-800">Umów konsultację</a>
-            <a href="https://wa.me/0000000000" className="rounded-xl border border-neutral-300 px-6 py-3 font-semibold text-neutral-900 hover:bg-neutral-50">Napisz na WhatsApp</a>
+          <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-8 py-4 font-semibold hover:bg-neutral-800 text-lg">Umów konsultację</a>
+            <a href="https://wa.me/0000000000" className="rounded-xl border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:bg-neutral-50 text-lg">Napisz na WhatsApp</a>
           </div>
         </div>
       </section>
