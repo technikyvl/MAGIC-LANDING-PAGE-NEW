@@ -170,41 +170,41 @@ export default function Page() {
             </p>
           </div>
 
-          <div id="rootContainer" className="relative min-h-[400px]">
+          <div id="rootContainer" className="relative min-h-[300px]">
 
             {/* All boxes in one perfectly aligned horizontal row */}
-            <div className="flex justify-center items-center gap-6 mt-48">
+            <div className="flex justify-center items-center gap-4 mt-16">
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl font-extrabold text-accent">38%</div>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
+                  <div className="text-2xl font-extrabold text-accent">38%</div>
                   <div className="mt-1 text-xs text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl font-extrabold text-accent">72%</div>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
+                  <div className="text-2xl font-extrabold text-accent">72%</div>
                   <div className="mt-1 text-xs text-neutral-300">Klasyczna terapia<br/>(22 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl font-extrabold text-accent">93%</div>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
+                  <div className="text-2xl font-extrabold text-accent">93%</div>
                   <div className="mt-1 text-xs text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
-                  <h3 className="font-semibold text-accent text-sm">To nie magia</h3>
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
+                  <h3 className="font-semibold text-accent text-xs">To nie magia</h3>
                   <p className="mt-1 text-xs text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-4 hover:bg-white/5 transition backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
-                  <h3 className="font-semibold text-accent text-sm">Jak to działa?</h3>
+                <a href="#process" className="block rounded-xl border border-white/10 bg-white/0 p-3 hover:bg-white/5 transition backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center">
+                  <h3 className="font-semibold text-accent text-xs">Jak to działa?</h3>
                   <p className="mt-1 text-xs text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
                 </a>
               </div>
