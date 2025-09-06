@@ -170,9 +170,9 @@ export default function Page() {
             </p>
           </div>
 
-          <div id="rootContainer" className="relative min-h-[400px]">
+          <div id="rootContainer" className="relative min-h-[500px]">
             {/* Organic Lines SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="rootGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#FF5A3D" />
@@ -181,45 +181,45 @@ export default function Page() {
               </defs>
               
               {/* Organic lines from header to each box */}
-              <path className="root-branch" d="M600 50 Q400 120 200 250" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
-              <path className="root-branch" d="M600 50 Q500 120 380 250" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
-              <path className="root-branch" d="M600 50 Q700 120 560 250" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
-              <path className="root-branch" d="M600 50 Q500 140 740 250" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
-              <path className="root-branch" d="M600 50 Q800 140 920 250" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              <path className="root-branch" d="M600 50 Q400 150 200 350" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              <path className="root-branch" d="M600 50 Q500 150 380 350" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              <path className="root-branch" d="M600 50 Q700 150 560 350" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              <path className="root-branch" d="M600 50 Q500 180 740 350" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
+              <path className="root-branch" d="M600 50 Q800 180 920 350" stroke="url(#rootGradient)" strokeWidth="3" fill="none" />
             </svg>
 
             {/* All boxes in one horizontal row with equal spacing */}
-            <div className="flex justify-center items-center gap-8 mt-16">
+            <div className="flex justify-center items-center gap-8 mt-32">
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px]">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <div className="text-3xl font-extrabold text-accent">38%</div>
                   <div className="mt-1 text-xs text-neutral-300">Psychoanaliza<br/>(600 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px]">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <div className="text-3xl font-extrabold text-accent">72%</div>
-                  <div className="mt-1 text-xs text-neutral-300">Klasyczna terapia<br/>(22 sesje)</div>
+                  <div className="mt-1 text-xs text-neutral-300">Klasyczna terapia<br/>(22 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px]">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <div className="text-3xl font-extrabold text-accent">93%</div>
                   <div className="mt-1 text-xs text-neutral-300">Hipnoterapia<br/>(6 sesji)</div>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px]">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <h3 className="font-semibold text-accent text-sm">To nie magia</h3>
                   <p className="mt-1 text-xs text-neutral-300">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
                 </div>
               </div>
 
               <div className="stat-reveal">
-                <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-4 hover:bg-white/5 transition backdrop-blur-sm w-[180px]">
+                <a href="#process" className="block rounded-2xl border border-white/10 bg-white/0 p-4 hover:bg-white/5 transition backdrop-blur-sm w-[180px] h-[120px] flex flex-col justify-center">
                   <h3 className="font-semibold text-accent text-sm">Jak to działa?</h3>
                   <p className="mt-1 text-xs text-neutral-300">Poznaj proces SET <span aria-hidden>→</span></p>
                 </a>
