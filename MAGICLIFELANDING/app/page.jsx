@@ -38,112 +38,6 @@ export default function Page() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Audience section static lines
-    const initAudienceLines = () => {
-      const audienceSection = document.getElementById("audience");
-      if (!audienceSection) return;
-
-      const header = audienceSection.querySelector("h1");
-      const cards = audienceSection.querySelectorAll(".audience-card");
-      const lines = audienceSection.querySelectorAll(".audience-line");
-      
-      if (!header || cards.length !== 5 || lines.length !== 5) return;
-
-      // Get anchor points
-      const getAnchorPoints = () => {
-        const headerRect = header.getBoundingClientRect();
-        const sectionRect = audienceSection.getBoundingClientRect();
-        
-        // Start point: bottom center of H1
-        const rootPoint = {
-          x: headerRect.left + headerRect.width / 2 - sectionRect.left,
-          y: headerRect.bottom - sectionRect.top + 10
-        };
-
-        // End points: center of each card
-        const cardPoints = Array.from(cards).map(card => {
-          const cardRect = card.getBoundingClientRect();
-          return {
-            x: cardRect.left + cardRect.width / 2 - sectionRect.left,
-            y: cardRect.top + cardRect.height / 2 - sectionRect.top
-          };
-        });
-
-        return { rootPoint, cardPoints };
-      };
-
-      // Generate precise bezier path for accurate connections
-      const bezierPath = (start, end) => {
-        const dx = end.x - start.x;
-        const dy = end.y - start.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        // More precise control points based on distance and direction
-        const cp1x = start.x + dx * 0.3;
-        const cp1y = start.y + dy * 0.1;
-        const cp2x = start.x + dx * 0.7;
-        const cp2y = start.y + dy * 0.9;
-        
-        return `M ${start.x} ${start.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${end.x} ${end.y}`;
-      };
-
-      // Update lines
-      const updateLines = () => {
-        const { rootPoint, cardPoints } = getAnchorPoints();
-        
-        // Debug: log points to console
-        console.log('Root point:', rootPoint);
-        console.log('Card points:', cardPoints);
-        
-        lines.forEach((line, index) => {
-          if (cardPoints[index]) {
-            const path = bezierPath(rootPoint, cardPoints[index]);
-            line.setAttribute("d", path);
-            console.log(`Line ${index + 1} path:`, path);
-          }
-        });
-      };
-
-      // Initialize lines with delay to ensure elements are rendered
-      setTimeout(() => {
-        updateLines();
-      }, 100);
-      
-      // Resize handler - recalculate lines on window resize
-      let resizeTimeout;
-      const handleResize = () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          updateLines();
-        }, 150);
-      };
-
-      window.addEventListener("resize", handleResize);
-      
-      // Also update on load to ensure proper positioning
-      window.addEventListener("load", () => {
-        setTimeout(updateLines, 200);
-      });
-
-      // Hover effects
-      cards.forEach((card, index) => {
-        const line = lines[index];
-        if (line) {
-          card.addEventListener("mouseenter", () => {
-            line.style.strokeWidth = "4px";
-            line.style.filter = "brightness(1.1)";
-          });
-          
-          card.addEventListener("mouseleave", () => {
-            line.style.strokeWidth = "2.5px";
-            line.style.filter = "url(#lineGlow)";
-          });
-        }
-      });
-    };
-
-    // Initialize audience lines
-    initAudienceLines();
     // active nav
     const ids = ["why", "for", "process", "reviews", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
@@ -286,25 +180,6 @@ export default function Page() {
           </div>
 
           <div className="relative min-h-[500px]">
-
-            {/* SVG Overlay for static lines - positioned behind boxes */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
-              <defs>
-                <filter id="lineGlow">
-                  <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                  <feMerge> 
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-              <path id="line-1" className="audience-line" d="" filter="url(#lineGlow)" />
-              <path id="line-2" className="audience-line" d="" filter="url(#lineGlow)" />
-              <path id="line-3" className="audience-line" d="" filter="url(#lineGlow)" />
-              <path id="line-4" className="audience-line" d="" filter="url(#lineGlow)" />
-              <path id="line-5" className="audience-line" d="" filter="url(#lineGlow)" />
-            </svg>
-
             {/* Boxes arranged in elliptical layout */}
             <div className="relative mt-20 h-[500px] audience-container">
               {/* Box 1 - Przedsiębiorcy */}

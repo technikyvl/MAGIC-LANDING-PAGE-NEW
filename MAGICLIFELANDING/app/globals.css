@@ -126,21 +126,6 @@
   opacity: 1;
 }
 
-/* Audience section static lines */
-.audience-line {
-  opacity: 1;
-  transition: stroke-width 0.2s ease;
-  stroke: #a40000;
-  stroke-width: 2.5px;
-  stroke-linecap: round;
-  fill: none;
-}
-
-.audience-card:hover ~ svg .audience-line,
-.audience-card:focus ~ svg .audience-line {
-  stroke-width: 4px;
-  filter: brightness(1.1);
-}
 
 /* Responsive elliptical layout */
 @media (min-width: 1024px) {
