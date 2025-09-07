@@ -218,74 +218,69 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4) Why (white) */}
+      {/* 4) Why (white) - Moodboard Style */}
       <section id="why" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <div className="text-center mb-16">
-            <h2 className="slow-reveal text-5xl sm:text-6xl font-extrabold">Dlaczego hipnoterapia?</h2>
-            <p className="slow-reveal mt-6 max-w-3xl mx-auto text-lg text-neutral-600">
+          {/* Header with accent line */}
+          <div className="mb-16">
+            <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+              Dlaczego hipnoterapia?
+            </h2>
+            <p className="slow-reveal mt-6 max-w-2xl text-lg text-neutral-600 leading-relaxed">
               Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
               podświadomości (ok. 95% umysłu).
             </p>
           </div>
 
-          <div className="relative min-h-[400px]">
-            {/* Central dot and lines SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="whyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FF5A3D" />
-                  <stop offset="100%" stopColor="#ff2d20" />
-                </linearGradient>
-              </defs>
-              
-              {/* Central red dot */}
-              <circle className="central-dot" cx="600" cy="80" r="4" fill="url(#whyGradient)" />
-              
-              {/* Lines from central dot to each box - precise positioning */}
-              <path className="line-draw" d="M600 80 Q300 150 150 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q450 150 330 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q600 150 510 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q750 150 690 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
-              <path className="line-draw" d="M600 80 Q900 150 870 300" stroke="url(#whyGradient)" strokeWidth="2" fill="none" />
-            </svg>
+          {/* Clean grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Effectiveness comparison cards */}
+            <div className="slow-reveal">
+              <div className="bg-white border border-neutral-200 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <div className="text-4xl font-extrabold text-accent mb-2">38%</div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Psychoanaliza</h3>
+                <p className="text-sm text-neutral-600">600 sesji</p>
+              </div>
+            </div>
 
-            {/* All boxes in one perfectly aligned horizontal row */}
-            <div className="flex justify-center items-center gap-4 mt-16">
-              <div className="slow-reveal">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                  <div className="text-2xl font-extrabold text-accent">38%</div>
-                  <div className="mt-1 text-xs text-neutral-600">Psychoanaliza<br/>(600 sesji)</div>
+            <div className="slow-reveal">
+              <div className="bg-white border border-neutral-200 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <div className="text-4xl font-extrabold text-accent mb-2">72%</div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Klasyczna terapia</h3>
+                <p className="text-sm text-neutral-600">22 sesje</p>
+              </div>
+            </div>
+
+            <div className="slow-reveal">
+              <div className="bg-accent text-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(164,0,0,.2)] hover:shadow-[0_12px_40px_rgba(164,0,0,.3)] transition-all duration-300">
+                <div className="text-4xl font-extrabold mb-2">93%</div>
+                <h3 className="text-lg font-semibold mb-2">Hipnoterapia</h3>
+                <p className="text-sm text-white/80">6 sesji</p>
+              </div>
+            </div>
+
+            {/* Science card */}
+            <div className="slow-reveal md:col-span-2">
+              <div className="bg-white border border-neutral-200 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300 h-full">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4">To nie magia</h3>
+                <p className="text-neutral-600 leading-relaxed">
+                  Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia się i neuroplastyczność.
+                </p>
+              </div>
+            </div>
+
+            {/* Process card */}
+            <div className="slow-reveal">
+              <a href="#process" className="block bg-white border border-neutral-200 rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] hover:border-accent transition-all duration-300 h-full group">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-accent transition-colors">Jak to działa?</h3>
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span className="text-white text-sm">→</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="slow-reveal">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                  <div className="text-2xl font-extrabold text-accent">72%</div>
-                  <div className="mt-1 text-xs text-neutral-600">Klasyczna terapia<br/>(22 sesji)</div>
-                </div>
-              </div>
-
-              <div className="slow-reveal">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                  <div className="text-2xl font-extrabold text-accent">93%</div>
-                  <div className="mt-1 text-xs text-neutral-600">Hipnoterapia<br/>(6 sesji)</div>
-                </div>
-              </div>
-
-              <div className="slow-reveal">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                  <h3 className="font-semibold text-accent text-xs">To nie magia</h3>
-                  <p className="mt-1 text-xs text-neutral-600">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia.</p>
-                </div>
-              </div>
-
-              <div className="slow-reveal">
-                <a href="#process" className="block rounded-xl border border-neutral-200 bg-white p-3 hover:bg-neutral-50 transition backdrop-blur-sm w-[140px] h-[100px] flex flex-col justify-center shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                  <h3 className="font-semibold text-accent text-xs">Jak to działa?</h3>
-                  <p className="mt-1 text-xs text-neutral-600">Poznaj proces SET <span aria-hidden>→</span></p>
-                </a>
-              </div>
+                <p className="text-neutral-600">Poznaj proces SET</p>
+              </a>
             </div>
           </div>
         </div>
