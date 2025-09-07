@@ -190,39 +190,39 @@ export default function Page() {
           </div>
 
           <div className="relative min-h-[600px]">
-            {/* Boxes arranged in perfect circle */}
-            <div className="relative mt-20 h-[600px] flex items-center justify-center">
-              {/* Box 1 - Przedsiębiorcy (top) */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1" style={{zIndex: 2, top: '5%', left: '50%', transform: 'translateX(-50%)'}}>
+            {/* Cards wrapper - arc layout on desktop, grid on mobile */}
+            <div className="audience-cards-wrapper relative mt-20 h-[600px] flex items-center justify-center">
+              {/* Box 1 - Przedsiębiorcy */}
+              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
               
-              {/* Box 2 - Przełamywanie schematów (top-right) */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2" style={{zIndex: 2, top: '20%', right: '10%'}}>
+              {/* Box 2 - Przełamywanie schematów */}
+              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2">
                 <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              {/* Box 3 - Sportowcy (bottom-right) */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2, bottom: '20%', right: '10%'}}>
+              {/* Box 3 - Sportowcy */}
+              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3">
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
               </div>
 
-              {/* Box 4 - Odpowiedzialność (bottom) */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2, bottom: '5%', left: '50%', transform: 'translateX(-50%)'}}>
+              {/* Box 4 - Odpowiedzialność */}
+              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4">
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                 <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
-              </div>
+          </div>
 
-              {/* Box 5 - Związki (bottom-left) */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2, bottom: '20%', left: '10%'}}>
+              {/* Box 5 - Związki */}
+              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5">
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
               </div>
-            </div>
           </div>
+        </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
