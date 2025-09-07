@@ -378,7 +378,7 @@ export default function Page() {
             ].map((item, index) => (
               <article 
                 key={index} 
-                className={`slow-reveal group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-center ${
+                className={`slow-reveal group rounded-2xl border p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-center ${
                   item.featured 
                     ? 'border-neutral-800 bg-neutral-900 text-white' 
                     : 'border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300'
