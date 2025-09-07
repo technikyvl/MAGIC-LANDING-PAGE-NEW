@@ -190,36 +190,46 @@ export default function Page() {
           </div>
 
           <div className="relative min-h-[600px]">
-            {/* Cards wrapper - equal arc layout */}
-            <div className="audience-arc relative mt-20 h-[600px] flex items-center justify-center">
-              {/* Box 1 - Przedsiębiorcy */}
-              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-card="1">
-                <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
-                <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+            {/* Cards wrapper - final equal arc layout */}
+            <div className="audience-ring relative mt-20 h-[600px] flex items-center justify-center">
+              {/* Box 1 - Przedsiębiorcy (left-top) */}
+              <div className="orbit" style={{'--i': '1'}}>
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
+                  <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+                </div>
               </div>
               
-              {/* Box 2 - Przełamywanie schematów */}
-              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-card="2">
-                <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
-                <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
+              {/* Box 2 - Przełamywanie schematów (right-top) */}
+              <div className="orbit" style={{'--i': '2'}}>
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
+                  <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
+                </div>
               </div>
               
-              {/* Box 3 - Sportowcy */}
-              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-card="3">
-                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
-                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+              {/* Box 3 - Związki (left-bottom) */}
+              <div className="orbit" style={{'--i': '3'}}>
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-white">Związki</h3>
+                  <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
+                </div>
               </div>
 
-              {/* Box 4 - Odpowiedzialność */}
-              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-card="4">
-                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
-                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+              {/* Box 4 - Odpowiedzialność (center-bottom) */}
+              <div className="orbit" style={{'--i': '4'}}>
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
+                  <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+                </div>
               </div>
 
-              {/* Box 5 - Związki */}
-              <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-card="5">
-                <h3 className="text-lg font-semibold text-white">Związki</h3>
-                <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
+              {/* Box 5 - Sportowcy (right-bottom) */}
+              <div className="orbit" style={{'--i': '5'}}>
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
+                  <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+                </div>
               </div>
             </div>
           </div>

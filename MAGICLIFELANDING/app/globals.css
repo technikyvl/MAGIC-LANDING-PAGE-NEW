@@ -127,9 +127,9 @@ html {
 }
 
 
-/* Equal arc layout - no collisions */
+/* Final equal arc layout - no collisions */
 @media (min-width: 1024px) {
-  .audience-arc {
+  .audience-ring {
     position: relative;
     width: 100%;
     height: 500px;
@@ -138,43 +138,48 @@ html {
     justify-content: center;
   }
   
-  .audience-card {
+  .orbit {
     position: absolute;
+    width: 200px;
+    height: 200px;
+    transform-origin: center;
+  }
+  
+  .audience-card {
     width: 12rem; /* 192px - fixed width */
   }
   
-  /* Equal spacing on semicircle - 5 cards from 0° to 180° */
-  .audience-card[data-card="1"] {
+  /* Equal arc positioning using --i index */
+  .orbit[style*="--i: 1"] {
     top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20%;
   }
   
-  .audience-card[data-card="2"] {
-    top: 20%;
-    right: 12%;
+  .orbit[style*="--i: 2"] {
+    top: 5%;
+    right: 20%;
   }
   
-  .audience-card[data-card="3"] {
+  .orbit[style*="--i: 3"] {
     bottom: 20%;
-    right: 12%;
+    left: 15%;
   }
   
-  .audience-card[data-card="4"] {
+  .orbit[style*="--i: 4"] {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
   
-  .audience-card[data-card="5"] {
+  .orbit[style*="--i: 5"] {
     bottom: 20%;
-    left: 12%;
+    right: 15%;
   }
 }
 
 /* Grid layout for tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .audience-arc {
+  .audience-ring {
     position: relative;
     width: 100%;
     height: auto;
@@ -184,21 +189,28 @@ html {
     padding: 2rem 0;
   }
   
+  .orbit {
+    position: relative !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+  
   .audience-card {
     position: relative !important;
     width: 12rem;
   }
   
-  .audience-card[data-card="1"] { grid-column: 2; }
-  .audience-card[data-card="2"] { grid-column: 1; }
-  .audience-card[data-card="3"] { grid-column: 3; }
-  .audience-card[data-card="4"] { grid-column: 1; }
-  .audience-card[data-card="5"] { grid-column: 3; }
+  .orbit[style*="--i: 1"] { grid-column: 2; }
+  .orbit[style*="--i: 2"] { grid-column: 1; }
+  .orbit[style*="--i: 3"] { grid-column: 1; }
+  .orbit[style*="--i: 4"] { grid-column: 2; }
+  .orbit[style*="--i: 5"] { grid-column: 3; }
 }
 
 /* Grid layout for mobile */
 @media (max-width: 767px) {
-  .audience-arc {
+  .audience-ring {
     position: relative;
     width: 100%;
     height: auto;
@@ -206,6 +218,13 @@ html {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 2rem 0;
+  }
+  
+  .orbit {
+    position: relative !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
   }
   
   .audience-card {
