@@ -433,11 +433,14 @@ export default function Page() {
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Client photo */}
               <div className="relative h-96 lg:h-auto">
-                <img 
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop&crop=face" 
-                  alt="Klientka - sportowiec" 
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold">A</span>
+                    </div>
+                    <p className="text-sm text-neutral-300">Adrianna J.</p>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
               </div>
               
