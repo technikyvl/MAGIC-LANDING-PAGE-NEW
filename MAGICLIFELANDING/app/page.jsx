@@ -38,6 +38,29 @@ export default function Page() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
+    // Smooth scroll for anchor links
+    const handleSmoothScroll = (e) => {
+      const href = e.target.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    // Add smooth scroll to all anchor links
+    document.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+        handleSmoothScroll(e);
+      }
+    });
+
     // active nav
     const ids = ["why", "for", "process", "reviews", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
@@ -276,7 +299,9 @@ export default function Page() {
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-accent transition-colors">Jak to działa?</h3>
                   <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <span className="text-white text-sm">→</span>
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
                 <p className="text-neutral-600">Poznaj proces SET</p>
