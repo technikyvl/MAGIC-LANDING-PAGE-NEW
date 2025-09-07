@@ -37,6 +37,123 @@ export default function Page() {
     const onScroll = () => island?.classList.toggle("island--shrink", window.scrollY > 6);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Audience section animations
+    const initAudienceAnimations = () => {
+      const audienceSection = document.getElementById("audience");
+      if (!audienceSection) return;
+
+      const header = audienceSection.querySelector("h1");
+      const cards = audienceSection.querySelectorAll(".audience-card");
+      const lines = audienceSection.querySelectorAll(".audience-line");
+      
+      if (!header || cards.length !== 5 || lines.length !== 5) return;
+
+      // Get anchor points
+      const getAnchorPoints = () => {
+        const headerRect = header.getBoundingClientRect();
+        const sectionRect = audienceSection.getBoundingClientRect();
+        
+        const rootPoint = {
+          x: headerRect.left + headerRect.width / 2 - sectionRect.left,
+          y: headerRect.bottom - sectionRect.top + 20
+        };
+
+        const cardPoints = Array.from(cards).map(card => {
+          const cardRect = card.getBoundingClientRect();
+          return {
+            x: cardRect.left + cardRect.width / 2 - sectionRect.left,
+            y: cardRect.top + cardRect.height / 2 - sectionRect.top
+          };
+        });
+
+        return { rootPoint, cardPoints };
+      };
+
+      // Generate bezier path
+      const bezierPath = (start, end) => {
+        const dx = end.x - start.x;
+        const dy = end.y - start.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Control points for organic curves
+        const cp1x = start.x + dx * 0.3;
+        const cp1y = start.y + dy * 0.1;
+        const cp2x = start.x + dx * 0.7;
+        const cp2y = start.y + dy * 0.9;
+        
+        return `M ${start.x} ${start.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${end.x} ${end.y}`;
+      };
+
+      // Update lines
+      const updateLines = () => {
+        const { rootPoint, cardPoints } = getAnchorPoints();
+        
+        lines.forEach((line, index) => {
+          if (cardPoints[index]) {
+            const path = bezierPath(rootPoint, cardPoints[index]);
+            line.setAttribute("d", path);
+          }
+        });
+      };
+
+      // Draw lines with animation
+      const drawLines = () => {
+        lines.forEach((line, index) => {
+          setTimeout(() => {
+            line.classList.add("visible");
+            setTimeout(() => {
+              line.classList.add("flowing");
+            }, 1500);
+          }, index * 120);
+        });
+      };
+
+      // Initialize
+      updateLines();
+      
+      // Intersection Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+            drawLines();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      observer.observe(audienceSection);
+
+      // Resize handler
+      let resizeTimeout;
+      const handleResize = () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          updateLines();
+        }, 150);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      // Hover effects
+      cards.forEach((card, index) => {
+        const line = lines[index];
+        if (line) {
+          card.addEventListener("mouseenter", () => {
+            line.style.strokeWidth = "4px";
+            line.style.filter = "brightness(1.1)";
+          });
+          
+          card.addEventListener("mouseleave", () => {
+            line.style.strokeWidth = "2.5px";
+            line.style.filter = "url(#lineGlow)";
+          });
+        }
+      });
+    };
+
+    // Initialize audience animations
+    initAudienceAnimations();
     // active nav
     const ids = ["why", "for", "process", "reviews", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
@@ -171,59 +288,65 @@ export default function Page() {
       </section>
 
       {/* 3) For whom (dark) */}
-      <section id="for" className={"relative bg-neutral-950 text-white " + SPACING}>
+      <section id="audience" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-16">
-            <h2 className="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Dla kogo jest ta praca</h2>
+            <h1 className="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Dla kogo jest ta praca</h1>
             <p className="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
-          <div className="relative min-h-[400px]">
-            {/* Line animation SVG */}
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
+          <div className="relative min-h-[500px]">
+
+            {/* SVG Overlay for animated lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
               <defs>
-                <linearGradient id="forGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FF5A3D" />
-                  <stop offset="100%" stopColor="#ff2d20" />
-                </linearGradient>
+                <filter id="lineGlow">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
               </defs>
-              
-              {/* Animated line from header to center box */}
-              <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
+              <path id="line-1" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
+              <path id="line-2" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
+              <path id="line-3" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
+              <path id="line-4" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
+              <path id="line-5" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
             </svg>
 
-            {/* Boxes distributed with closer spacing */}
-            <div className="relative mt-20 h-80">
-              {/* Box 1 - Top Left */}
-              <div className="slow-reveal absolute top-4 left-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+            {/* Boxes arranged in elliptical layout */}
+            <div className="relative mt-20 h-96 audience-container">
+              {/* Box 1 - Przedsiębiorcy */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
               
-              {/* Box 2 - Top Right */}
-              <div className="slow-reveal absolute top-4 right-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 2 - Przełamywanie schematów */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              {/* Box 3 - Bottom Center */}
-              <div className="slow-reveal absolute bottom-4 left-1/2 transform -translate-x-1/2 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 3 - Odpowiedzialność */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                 <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
               </div>
               
-              {/* Box 4 - Bottom Left */}
-              <div className="slow-reveal absolute bottom-4 left-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 4 - Sportowcy */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-          </div>
-
-              {/* Box 5 - Bottom Right */}
-              <div className="slow-reveal absolute bottom-4 right-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              </div>
+              
+              {/* Box 5 - Związki */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
               </div>
-          </div>
+            </div>
         </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
