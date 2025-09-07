@@ -130,10 +130,14 @@
 .audience-line {
   opacity: 1;
   transition: stroke-width 0.2s ease;
+  stroke: #a40000;
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  fill: none;
 }
 
-.audience-card:hover + svg .audience-line,
-.audience-card:focus + svg .audience-line {
+.audience-card:hover ~ svg .audience-line,
+.audience-card:focus ~ svg .audience-line {
   stroke-width: 4px;
   filter: brightness(1.1);
 }

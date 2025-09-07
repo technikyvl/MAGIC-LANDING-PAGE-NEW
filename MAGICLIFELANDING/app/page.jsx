@@ -54,11 +54,13 @@ export default function Page() {
         const headerRect = header.getBoundingClientRect();
         const sectionRect = audienceSection.getBoundingClientRect();
         
+        // Start point: bottom center of H1
         const rootPoint = {
           x: headerRect.left + headerRect.width / 2 - sectionRect.left,
-          y: headerRect.bottom - sectionRect.top + 20
+          y: headerRect.bottom - sectionRect.top
         };
 
+        // End points: center of each card
         const cardPoints = Array.from(cards).map(card => {
           const cardRect = card.getBoundingClientRect();
           return {
@@ -99,7 +101,7 @@ export default function Page() {
       // Initialize lines immediately
       updateLines();
       
-      // Resize handler
+      // Resize handler - recalculate lines on window resize
       let resizeTimeout;
       const handleResize = () => {
         clearTimeout(resizeTimeout);
@@ -109,6 +111,9 @@ export default function Page() {
       };
 
       window.addEventListener("resize", handleResize);
+      
+      // Also update on load to ensure proper positioning
+      window.addEventListener("load", updateLines);
 
       // Hover effects
       cards.forEach((card, index) => {
@@ -272,8 +277,8 @@ export default function Page() {
 
           <div className="relative min-h-[500px]">
 
-            {/* SVG Overlay for static lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: -1}}>
+            {/* SVG Overlay for static lines - positioned behind boxes */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
               <defs>
                 <filter id="lineGlow">
                   <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
@@ -283,11 +288,11 @@ export default function Page() {
                   </feMerge>
                 </filter>
               </defs>
-              <path id="line-1" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
-              <path id="line-2" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
-              <path id="line-3" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
-              <path id="line-4" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
-              <path id="line-5" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
+              <path id="line-1" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-2" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-3" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-4" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-5" className="audience-line" d="" filter="url(#lineGlow)" />
             </svg>
 
             {/* Boxes arranged in elliptical layout */}
@@ -304,23 +309,23 @@ export default function Page() {
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              {/* Box 3 - Odpowiedzialność */}
+              {/* Box 3 - Sportowcy */}
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2}}>
+                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
+                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+              </div>
+              
+              {/* Box 4 - Odpowiedzialność */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                 <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
               </div>
-              
-              {/* Box 4 - Sportowcy */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
-                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
-                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-          </div>
 
               {/* Box 5 - Związki */}
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
-            </div>
+              </div>
           </div>
         </div>
 
