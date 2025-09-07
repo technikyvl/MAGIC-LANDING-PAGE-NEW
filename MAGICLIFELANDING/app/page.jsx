@@ -427,8 +427,47 @@ export default function Page() {
         <div className={CONTAINER}>
           <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Opinie klientów</h2>
           <p className="slow-reveal mt-2 text-sm text-neutral-600">Średnia ocen w Google: <strong>5.0/5</strong> (ponad 89 opinii)</p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {[["Andrzej W.","„…jak nowonarodzony…”"],["Sysia S.","„…po trzech sesjach realna zmiana…”"],["Sebastian B.","„…rozwiązałem problem od lat…”"]].map(([a,t],i)=>(
+          
+          {/* Featured client review */}
+          <div className="slow-reveal mt-12 rounded-3xl bg-neutral-950 text-white overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Client photo */}
+              <div className="relative h-96 lg:h-auto">
+                <img 
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop&crop=face" 
+                  alt="Klientka - sportowiec" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
+              </div>
+              
+              {/* Client review */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-white font-bold text-xl">
+                    A
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">Adrianna J.</h3>
+                    <p className="text-neutral-400 text-sm">Sportowiec</p>
+                  </div>
+                </div>
+                
+                <blockquote className="text-lg leading-relaxed text-neutral-200 mb-6">
+                  „Z Rafałem współpracuje od stosunkowo niedawna. Spotykamy się regularnie na sesję cotygodniowe gdzie mam szansę wyciszyć się, porozmawiać o moich wątpliwościach, celach oraz o tym jak nie zbaczać z wytyczonej ścieżki. Dostaje również plany technik nad którymi muszę się skupić. Jestem bardzo zadowolona z przebiegu tego „treningu mentalnego" ponieważ już zaczęłam zauważać diametralne różnice. Skupienie, uwaga, koncentracja to jest to czego nie brakuje na moich treningach. Jestem wdzięczna i wiem że wspólnymi siłami współpracując z takim profesjonalistą wniosę się na najwyższy poziom moich możliwości."
+                </blockquote>
+                
+                <div className="flex items-center gap-2">
+                  <div className="text-yellow-400 text-lg">★★★★★</div>
+                  <span className="text-neutral-400 text-sm">5.0/5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Other reviews */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {[["Andrzej W.","„…jak nowonarodzony…""],["Sysia S.","„…po trzech sesjach realna zmiana…""],["Sebastian B.","„…rozwiązałem problem od lat…""]].map(([a,t],i)=>(
               <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white font-semibold">{a[0]}</div>
