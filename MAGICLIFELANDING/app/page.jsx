@@ -116,7 +116,7 @@ export default function Page() {
       {/* 0) Header */}
       <div className="sticky top-4 z-50">
         <nav id="islandNav" aria-label="Główna nawigacja"
-          className={"mx-auto flex items-center gap-3 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-4xl px-6 py-4"}>
+          className={"mx-auto flex items-center justify-center gap-6 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-4xl px-6 py-4"}>
           <a href="#" className="font-extrabold tracking-tight text-neutral-900">
             Magic<span className="text-accent">Life</span>
           </a>
@@ -128,7 +128,7 @@ export default function Page() {
             <li><a href="#faq" className="navlink relative px-2 py-1">FAQ</a></li>
             <li><a href="#contact" className="navlink relative px-2 py-1">Kontakt</a></li>
           </ul>
-          <a href="#contact" className="ml-auto inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-3 py-2 hover:bg-neutral-800">
+          <a href="#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-3 py-2 hover:bg-neutral-800">
             Umów konsultację
           </a>
         </nav>
@@ -156,31 +156,17 @@ export default function Page() {
       </section>
 
       {/* 2) Cytat */}
-      <section className={"relative bg-neutral-950 text-white " + SPACING}>
+      <section className={"relative bg-neutral-950 text-white py-16"}>
         <div className={CONTAINER}>
           <div className="slow-reveal text-center">
-            <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
-            <blockquote className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-light text-white max-w-4xl mx-auto">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+            <blockquote className="text-2xl sm:text-3xl leading-tight font-light text-white max-w-3xl mx-auto">
               „Nasze życie jest owocem naszych myśli.”
             </blockquote>
-            <div className="mt-8 text-lg text-neutral-300 font-medium">
+            <div className="mt-6 text-base text-neutral-300 font-medium">
               — Marek Aureliusz
             </div>
           </div>
-        </div>
-        
-        {/* Subtle background pattern */}
-        <div aria-hidden className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(transparent,black_70%)]">
-          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="quoteGrid" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#ff5a3d11" />
-                <stop offset="100%" stopColor="#ff5a3d05" />
-              </linearGradient>
-            </defs>
-            {[...Array(10)].map((_,i)=>(<line key={'v'+i} x1={(i+1)*9} y1="0" x2={(i+1)*9} y2="100" stroke="url(#quoteGrid)" strokeWidth="0.1" />))}
-            {[...Array(6)].map((_,i)=>(<line key={'h'+i} x1="0" y1={(i+1)*14.3} x2="100" y2={(i+1)*14.3} stroke="url(#quoteGrid)" strokeWidth="0.1" />))}
-          </svg>
         </div>
       </section>
 
@@ -202,15 +188,35 @@ export default function Page() {
                 </linearGradient>
               </defs>
               
-              {/* Animated line from header to box */}
-              <path className="line-draw" d="M600 50 Q600 200 600 350" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
+              {/* Animated line from header to center box */}
+              <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
             </svg>
 
             {/* Box positioned much lower */}
-            <div className="flex justify-center items-center mt-32">
+            <div className="flex justify-center items-center gap-6 mt-16">
               <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+              </div>
+              
+              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
+                <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
+              </div>
+              
+              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
+                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+              </div>
+              
+              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
+                <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+              </div>
+              
+              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <h3 className="text-lg font-semibold text-white">Związki</h3>
+                <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
               </div>
             </div>
           </div>
