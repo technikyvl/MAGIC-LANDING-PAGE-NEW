@@ -53,11 +53,6 @@ html {
 /* shrink island */
 .island--shrink { max-width: 48rem !important; padding: .5rem .75rem !important; }
 
-/* timeline draw */
-#timelinePath { stroke-dasharray: 800; stroke-dashoffset: 800; opacity: .6;
-  transition: stroke-dashoffset 1.4s ease-in-out, opacity .6s ease;
-}
-#timelinePath.drawn { stroke-dashoffset: 0; opacity: .9; }
 
 /* Tree root animation */
 .tree-root { 

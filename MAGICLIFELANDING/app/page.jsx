@@ -77,19 +77,6 @@ export default function Page() {
       if (el) secObs.observe(el);
     });
 
-    // timeline draw
-    const timeline = document.getElementById("timelinePath");
-    if (timeline) {
-      const lineObs = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            timeline.classList.add("drawn");
-            lineObs.unobserve(timeline);
-          }
-        });
-      }, { threshold: 0.4 });
-      lineObs.observe(timeline);
-    }
 
     // tree root animation
     const treeRoots = Array.from(document.querySelectorAll(".tree-root"));
@@ -325,15 +312,6 @@ export default function Page() {
           </ul>
 
           <div className="relative mt-10 grid gap-8 sm:grid-cols-2">
-            <svg className="absolute left-0 top-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-              <defs>
-                <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#FF5A3D" />
-                  <stop offset="100%" stopColor="#ff2d20" />
-                </linearGradient>
-              </defs>
-              <path id="timelinePath" d="M10 10 C 35 25, 65 25, 90 10 S 65 75, 10 90" fill="none" stroke="url(#line)" strokeWidth="0.8" />
-            </svg>
 
             {[
               ["Diagnoza źródła problemu","Odkrywamy, co zatrzymuje."],
