@@ -84,8 +84,8 @@ export default function Page() {
     const statReveals = Array.from(document.querySelectorAll(".stat-reveal"));
     
     const rootObs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
           // Animate main root first
           setTimeout(() => {
             treeRoots.forEach(root => root.classList.add("drawn"));
@@ -329,22 +329,82 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 6) Support */}
-      <section className={"bg-white text-neutral-900 " + SPACING}>
-        <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Zakres wsparcia</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* 6) Support - Editorial Style */}
+      <section className="bg-white text-neutral-900 py-24 lg:py-24 md:py-16 sm:py-12">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Two-column header */}
+          <div className="mb-18 lg:mb-18 md:mb-14 sm:mb-10">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+              {/* Left column - Title with accent line */}
+              <div>
+                <div className="mb-6 inline-block h-[1px] w-12 bg-accent"></div>
+                <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl xl:text-6xl">
+                  Zakres wsparcia
+                </h2>
+              </div>
+              
+              {/* Right column - Description */}
+              <div className="flex items-center">
+                <p className="text-lg leading-relaxed text-neutral-600 lg:text-xl" style={{maxWidth: '60ch'}}>
+                  Kompleksowe wsparcie w różnych obszarach życia — od rozwoju osobistego po przełamywanie ograniczeń i budowanie zdrowych relacji.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Numbered cards grid */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              "Odblokowanie potencjału (biznes / życie)",
-              "Wyższe wyniki w sporcie / karierze",
-              "Przełamywanie przekonań",
-              "Zdrowe relacje i komunikacja",
-              "Praca z traumami",
-              "Nałogi / fobie / lęki / prokrastynacja",
-              "Spokój / klarowność / równowaga"
-            ].map(t => (
-              <article key={t} className="slow-reveal group rounded-2xl border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(0,0,0,.06)]">
-                <h3 className="text-lg font-semibold">{t}</h3>
+              {
+                title: "Odblokowanie potencjału",
+                description: "Rozwój biznesowy i osobisty, odkrywanie ukrytych możliwości i budowanie pewności siebie.",
+                featured: false
+              },
+              {
+                title: "Wyniki w sporcie i karierze",
+                description: "Poprawa koncentracji, motywacji i osiąganie lepszych rezultatów w zawodach i pracy.",
+                featured: true
+              },
+              {
+                title: "Przełamywanie przekonań",
+                description: "Uwalnianie się od ograniczających myśli i schematów, które blokują rozwój.",
+                featured: false
+              },
+              {
+                title: "Relacje i komunikacja",
+                description: "Budowanie zdrowych związków, poprawa komunikacji i rozwiązywanie konfliktów.",
+                featured: false
+              }
+            ].map((item, index) => (
+              <article 
+                key={index} 
+                className={`slow-reveal group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  item.featured 
+                    ? 'border-neutral-800 bg-neutral-900 text-white' 
+                    : 'border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300'
+                }`}
+              >
+                {/* Number with accent dot */}
+                <div className="mb-4 flex items-center gap-3">
+                  <div className={`h-2 w-2 rounded-full ${item.featured ? 'bg-accent' : 'bg-accent'}`}></div>
+                  <span className={`text-sm font-medium ${item.featured ? 'text-neutral-400' : 'text-neutral-500'}`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className={`mb-3 text-xl font-semibold leading-tight ${
+                  item.featured ? 'text-white' : 'text-neutral-900'
+                }`}>
+                  {item.title}
+                </h3>
+                
+                {/* Description */}
+                <p className={`text-base leading-relaxed ${
+                  item.featured ? 'text-neutral-300' : 'text-neutral-600'
+                }`}>
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
