@@ -10,6 +10,88 @@ export default function Page() {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+    // Static lines from H1 to cards
+    const initStaticLines = () => {
+      const audienceSection = document.getElementById("audience");
+      if (!audienceSection) return;
+
+      const header = audienceSection.querySelector("h1");
+      const cards = audienceSection.querySelectorAll(".audience-card");
+      const lines = audienceSection.querySelectorAll(".audience-line");
+      
+      if (!header || cards.length !== 5 || lines.length !== 5) return;
+
+      // Get anchor points
+      const getAnchorPoints = () => {
+        const headerRect = header.getBoundingClientRect();
+        const sectionRect = audienceSection.getBoundingClientRect();
+        
+        // Start point: bottom center of H1
+        const rootPoint = {
+          x: headerRect.left + headerRect.width / 2 - sectionRect.left,
+          y: headerRect.bottom - sectionRect.top + 10
+        };
+
+        // End points: center of each card
+        const cardPoints = Array.from(cards).map(card => {
+          const cardRect = card.getBoundingClientRect();
+          return {
+            x: cardRect.left + cardRect.width / 2 - sectionRect.left,
+            y: cardRect.top + cardRect.height / 2 - sectionRect.top
+          };
+        });
+
+        return { rootPoint, cardPoints };
+      };
+
+      // Generate bezier path for organic curves
+      const bezierPath = (start, end) => {
+        const dx = end.x - start.x;
+        const dy = end.y - start.y;
+        
+        const cp1x = start.x + dx * 0.3;
+        const cp1y = start.y + dy * 0.1;
+        const cp2x = start.x + dx * 0.7;
+        const cp2y = start.y + dy * 0.9;
+        
+        return `M ${start.x} ${start.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${end.x} ${end.y}`;
+      };
+
+      // Update lines
+      const updateLines = () => {
+        const { rootPoint, cardPoints } = getAnchorPoints();
+        
+        lines.forEach((line, index) => {
+          if (cardPoints[index]) {
+            const path = bezierPath(rootPoint, cardPoints[index]);
+            line.setAttribute("d", path);
+          }
+        });
+      };
+
+      // Initialize lines
+      setTimeout(() => {
+        updateLines();
+      }, 100);
+      
+      // Resize handler
+      let resizeTimeout;
+      const handleResize = () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          updateLines();
+        }, 150);
+      };
+
+      window.addEventListener("resize", handleResize);
+      window.addEventListener("load", () => {
+        setTimeout(updateLines, 200);
+      });
+    };
+
+    // Initialize static lines
+    initStaticLines();
+
     // reveal
     const revealEls = Array.from(document.querySelectorAll(".reveal"));
     const heroRevealEls = Array.from(document.querySelectorAll(".hero-reveal"));
@@ -190,11 +272,29 @@ export default function Page() {
           </div>
 
           <div className="relative min-h-[300px]">
+            {/* SVG Overlay for static lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
+              <defs>
+                <filter id="lineGlow">
+                  <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path id="line-1" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-2" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-3" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-4" className="audience-line" d="" filter="url(#lineGlow)" />
+              <path id="line-5" className="audience-line" d="" filter="url(#lineGlow)" />
+            </svg>
+
             {/* Cards wrapper - horizontal line layout */}
             <div className="audience-ring relative mt-8 h-[300px] flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1">
                   <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
                 </div>
@@ -202,7 +302,7 @@ export default function Page() {
               
               {/* Box 2 - Przełamywanie schematów (right-top) */}
               <div className="orbit" style={{'--i': '2'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2">
                   <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                   <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
                 </div>
@@ -210,7 +310,7 @@ export default function Page() {
               
               {/* Box 3 - Związki (left-bottom) */}
               <div className="orbit" style={{'--i': '3'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3">
                   <h3 className="text-lg font-semibold text-white">Związki</h3>
                   <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
                 </div>
@@ -218,21 +318,21 @@ export default function Page() {
 
               {/* Box 4 - Odpowiedzialność (center-bottom) */}
               <div className="orbit" style={{'--i': '4'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4">
                   <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                   <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
                 </div>
-              </div>
+          </div>
 
               {/* Box 5 - Sportowcy (right-bottom) */}
               <div className="orbit" style={{'--i': '5'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5">
                   <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
                 </div>
-              </div>
             </div>
           </div>
+        </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
