@@ -29,15 +29,15 @@ export default function Page() {
         // Start point: bottom center of H1
         const rootPoint = {
           x: headerRect.left + headerRect.width / 2 - sectionRect.left,
-          y: headerRect.bottom - sectionRect.top + 10
+          y: headerRect.bottom - sectionRect.top
         };
 
-        // End points: center of each card
+        // End points: top-center of each card
         const cardPoints = Array.from(cards).map(card => {
           const cardRect = card.getBoundingClientRect();
           return {
             x: cardRect.left + cardRect.width / 2 - sectionRect.left,
-            y: cardRect.top + cardRect.height / 2 - sectionRect.top
+            y: cardRect.top - sectionRect.top
           };
         });
 
@@ -273,7 +273,7 @@ export default function Page() {
 
           <div className="relative min-h-[300px]">
             {/* SVG Overlay for static lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 0}}>
               <defs>
                 <filter id="lineGlow">
                   <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
@@ -291,7 +291,7 @@ export default function Page() {
             </svg>
 
             {/* Cards wrapper - horizontal line layout */}
-            <div className="audience-ring relative mt-8 h-[300px] flex items-center justify-center">
+            <div className="audience-cards audience-ring relative mt-20 h-[300px] flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1">

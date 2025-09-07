@@ -148,6 +148,8 @@ html {
   
   .audience-card {
     width: 12rem; /* 192px - fixed width */
+    position: relative;
+    z-index: 1;
   }
 }
 
