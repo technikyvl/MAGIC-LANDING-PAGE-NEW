@@ -334,9 +334,9 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Two-column header */}
           <div className="mb-18 lg:mb-18 md:mb-14 sm:mb-10">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               {/* Left column - Title with accent line */}
-              <div>
+              <div className="flex flex-col justify-center">
                 <div className="mb-6 inline-block h-[1px] w-12 bg-accent"></div>
                 <h2 className="text-4xl font-bold leading-tight tracking-tight lg:text-5xl xl:text-6xl">
                   Zakres wsparcia
@@ -344,8 +344,8 @@ export default function Page() {
               </div>
               
               {/* Right column - Description */}
-              <div className="flex items-center">
-                <p className="text-lg leading-relaxed text-neutral-600 lg:text-xl" style={{maxWidth: '60ch'}}>
+              <div className="flex items-center justify-center lg:justify-start">
+                <p className="text-lg leading-relaxed text-neutral-600 lg:text-xl text-center lg:text-left" style={{maxWidth: '60ch'}}>
                   Kompleksowe wsparcie w różnych obszarach życia — od rozwoju osobistego po przełamywanie ograniczeń i budowanie zdrowych relacji.
                 </p>
               </div>
@@ -353,7 +353,7 @@ export default function Page() {
           </div>
 
           {/* Numbered cards grid */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
             {[
               {
                 title: "Odblokowanie potencjału",
@@ -378,7 +378,7 @@ export default function Page() {
             ].map((item, index) => (
               <article 
                 key={index} 
-                className={`slow-reveal group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                className={`slow-reveal group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-center ${
                   item.featured 
                     ? 'border-neutral-800 bg-neutral-900 text-white' 
                     : 'border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300'
