@@ -193,7 +193,7 @@ export default function Page() {
             {/* Cards wrapper - semicircle layout using CSS */}
             <div className="audience-ring relative mt-20 h-[600px] flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy */}
-              <div className="orbit" style={{'--deg': '0deg'}}>
+              <div className="orbit" style={{'--deg': '0deg', '--pad': '200px'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1">
                   <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
@@ -201,7 +201,7 @@ export default function Page() {
               </div>
               
               {/* Box 2 - Przełamywanie schematów */}
-              <div className="orbit" style={{'--deg': '45deg'}}>
+              <div className="orbit" style={{'--deg': '45deg', '--pad': '200px'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2">
                   <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                   <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
@@ -209,7 +209,7 @@ export default function Page() {
               </div>
               
               {/* Box 3 - Sportowcy */}
-              <div className="orbit" style={{'--deg': '90deg'}}>
+              <div className="orbit" style={{'--deg': '90deg', '--pad': '200px'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3">
                   <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
@@ -217,7 +217,7 @@ export default function Page() {
               </div>
 
               {/* Box 4 - Odpowiedzialność */}
-              <div className="orbit" style={{'--deg': '135deg'}}>
+              <div className="orbit" style={{'--deg': '135deg', '--pad': '200px'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4">
                   <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                   <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
@@ -225,7 +225,7 @@ export default function Page() {
               </div>
 
               {/* Box 5 - Związki */}
-              <div className="orbit" style={{'--deg': '180deg'}}>
+              <div className="orbit" style={{'--deg': '180deg', '--pad': '200px'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5">
                   <h3 className="text-lg font-semibold text-white">Związki</h3>
                   <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>

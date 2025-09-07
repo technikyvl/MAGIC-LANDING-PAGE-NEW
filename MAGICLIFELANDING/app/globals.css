@@ -127,7 +127,7 @@ html {
 }
 
 
-/* Semicircle layout using CSS transforms */
+/* Semicircle layout using CSS transforms - no overlapping */
 @media (min-width: 1024px) {
   .audience-ring {
     position: relative;
@@ -143,11 +143,13 @@ html {
     width: 200px;
     height: 200px;
     transform-origin: center;
-    transform: rotate(var(--deg)) translateY(-150px) rotate(calc(-1 * var(--deg)));
+    transform: rotate(var(--deg)) translateY(calc(-1 * var(--pad, 200px))) rotate(calc(-1 * var(--deg)));
   }
   
   .audience-card {
     width: 12rem; /* 192px - fixed width */
+    position: relative;
+    z-index: 1;
   }
 }
 
