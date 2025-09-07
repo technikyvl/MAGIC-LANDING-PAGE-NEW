@@ -192,34 +192,34 @@ export default function Page() {
               <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
             </svg>
 
-            {/* Boxes distributed with equal spacing */}
-            <div className="relative mt-20 h-96">
+            {/* Boxes distributed with closer spacing */}
+            <div className="relative mt-20 h-80">
               {/* Box 1 - Top Left */}
-              <div className="slow-reveal absolute top-0 left-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              <div className="slow-reveal absolute top-4 left-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
               
               {/* Box 2 - Top Right */}
-              <div className="slow-reveal absolute top-0 right-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              <div className="slow-reveal absolute top-4 right-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              {/* Box 3 - Center */}
-              <div className="slow-reveal absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 3 - Bottom Center */}
+              <div className="slow-reveal absolute bottom-4 left-1/2 transform -translate-x-1/2 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                 <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
               </div>
               
               {/* Box 4 - Bottom Left */}
-              <div className="slow-reveal absolute bottom-0 left-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              <div className="slow-reveal absolute bottom-4 left-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
           </div>
 
               {/* Box 5 - Bottom Right */}
-              <div className="slow-reveal absolute bottom-0 right-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              <div className="slow-reveal absolute bottom-4 right-4 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
               </div>
