@@ -174,8 +174,8 @@ export default function Page() {
       <section id="for" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-16">
-            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo jest ta praca</h2>
-            <p className="slow-reveal mt-3 max-w-2xl mx-auto text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
+            <h2 className="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Dla kogo jest ta praca</h2>
+            <p className="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
           <div className="relative min-h-[400px]">
@@ -192,34 +192,39 @@ export default function Page() {
               <path className="line-draw" d="M600 50 Q600 200 600 300" stroke="url(#forGradient)" strokeWidth="3" fill="none" />
             </svg>
 
-            {/* Box positioned much lower */}
-            <div className="flex justify-center items-center gap-6 mt-16">
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+            {/* Boxes distributed with equal spacing */}
+            <div className="relative mt-20 h-96">
+              {/* Box 1 - Top Left */}
+              <div className="slow-reveal absolute top-0 left-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
               
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 2 - Top Right */}
+              <div className="slow-reveal absolute top-0 right-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 3 - Center */}
+              <div className="slow-reveal absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                 <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
               </div>
               
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+              {/* Box 4 - Bottom Left */}
+              <div className="slow-reveal absolute bottom-0 left-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-              </div>
-              
-              <div className="slow-reveal w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+          </div>
+
+              {/* Box 5 - Bottom Right */}
+              <div className="slow-reveal absolute bottom-0 right-0 w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
               </div>
-            </div>
           </div>
+        </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
         </div>
