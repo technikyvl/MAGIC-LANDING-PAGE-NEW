@@ -127,7 +127,7 @@ html {
 }
 
 
-/* Arc layout for desktop */
+/* Arc layout for desktop - evenly distributed semicircle */
 @media (min-width: 1024px) {
   .audience-cards-wrapper {
     position: relative;
@@ -140,33 +140,35 @@ html {
   
   .audience-card {
     position: absolute;
+    width: 12rem; /* 192px - fixed width */
   }
   
+  /* Calculate positions for even semicircle distribution */
   .audience-card[data-audience-card="1"] {
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
   
   .audience-card[data-audience-card="2"] {
-    top: 25%;
-    right: 15%;
+    top: 20%;
+    right: 8%;
   }
   
   .audience-card[data-audience-card="3"] {
-    bottom: 25%;
-    right: 15%;
+    bottom: 20%;
+    right: 8%;
   }
   
   .audience-card[data-audience-card="4"] {
-    bottom: 10%;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
   
   .audience-card[data-audience-card="5"] {
-    bottom: 25%;
-    left: 15%;
+    bottom: 20%;
+    left: 8%;
   }
 }
 
