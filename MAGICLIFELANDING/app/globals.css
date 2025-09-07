@@ -127,53 +127,27 @@ html {
 }
 
 
-/* Final equal arc layout - no collisions */
+/* Horizontal line layout - boxes side by side */
 @media (min-width: 1024px) {
   .audience-ring {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
   }
   
   .orbit {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    transform-origin: center;
+    position: relative;
+    width: auto;
+    height: auto;
+    transform: none;
   }
   
   .audience-card {
     width: 12rem; /* 192px - fixed width */
-  }
-  
-  /* Equal arc positioning using --i index */
-  .orbit[style*="--i: 1"] {
-    top: 5%;
-    left: 20%;
-  }
-  
-  .orbit[style*="--i: 2"] {
-    top: 5%;
-    right: 20%;
-  }
-  
-  .orbit[style*="--i: 3"] {
-    bottom: 20%;
-    left: 15%;
-  }
-  
-  .orbit[style*="--i: 4"] {
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .orbit[style*="--i: 5"] {
-    bottom: 20%;
-    right: 15%;
   }
 }
 
@@ -185,8 +159,8 @@ html {
     height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 2rem 0;
+    gap: 1rem;
+    padding: 1rem 0;
   }
   
   .orbit {
@@ -216,8 +190,8 @@ html {
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 2rem 0;
+    gap: 0.75rem;
+    padding: 1rem 0;
   }
   
   .orbit {

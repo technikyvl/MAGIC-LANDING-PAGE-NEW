@@ -189,9 +189,9 @@ export default function Page() {
             <p className="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
-          <div className="relative min-h-[600px]">
-            {/* Cards wrapper - final equal arc layout */}
-            <div className="audience-ring relative mt-20 h-[600px] flex items-center justify-center">
+          <div className="relative min-h-[300px]">
+            {/* Cards wrapper - horizontal line layout */}
+            <div className="audience-ring relative mt-8 h-[300px] flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
