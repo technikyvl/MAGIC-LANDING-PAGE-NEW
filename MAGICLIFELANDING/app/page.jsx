@@ -167,12 +167,12 @@ export default function Page() {
       </section>
 
       {/* 2) Cytat */}
-      <section className={"relative bg-neutral-950 text-white py-16"}>
+      <section className={"relative bg-neutral-950 text-white py-24"}>
         <div className={CONTAINER}>
-          <div className="slow-reveal text-center">
+          <div className="slow-reveal text-center flex flex-col justify-center min-h-[40vh]">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
             <blockquote className="text-2xl sm:text-3xl leading-tight font-light text-white max-w-3xl mx-auto">
-              „Nasze życie jest owocem naszych myśli.”
+              „Nasze życie jest owocem naszych myśli."
             </blockquote>
             <div className="mt-6 text-base text-neutral-300 font-medium">
               — Marek Aureliusz
@@ -189,38 +189,38 @@ export default function Page() {
             <p className="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
           </div>
 
-          <div className="relative min-h-[500px]">
-            {/* Boxes arranged in elliptical layout */}
-            <div className="relative mt-20 h-[500px] audience-container">
-              {/* Box 1 - Przedsiębiorcy */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1" style={{zIndex: 2}}>
+          <div className="relative min-h-[600px]">
+            {/* Boxes arranged in circular layout */}
+            <div className="relative mt-20 h-[600px] flex items-center justify-center">
+              {/* Box 1 - Przedsiębiorcy (top) */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1" style={{zIndex: 2, top: '10%', left: '50%', transform: 'translateX(-50%)'}}>
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
               </div>
               
-              {/* Box 2 - Przełamywanie schematów */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2" style={{zIndex: 2}}>
+              {/* Box 2 - Przełamywanie schematów (top-right) */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2" style={{zIndex: 2, top: '25%', right: '15%'}}>
                 <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                 <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
               </div>
               
-              {/* Box 3 - Sportowcy */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2}}>
+              {/* Box 3 - Sportowcy (bottom-right) */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2, bottom: '25%', right: '15%'}}>
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-          </div>
-
-              {/* Box 4 - Odpowiedzialność */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
-                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
-                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
               </div>
 
-              {/* Box 5 - Związki */}
-              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2}}>
+              {/* Box 4 - Odpowiedzialność (bottom) */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2, bottom: '10%', left: '50%', transform: 'translateX(-50%)'}}>
+                <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
+                <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+          </div>
+
+              {/* Box 5 - Związki (bottom-left) */}
+              <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2, bottom: '25%', left: '15%'}}>
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
-            </div>
+              </div>
           </div>
         </div>
 
