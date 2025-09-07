@@ -156,14 +156,31 @@ export default function Page() {
       </section>
 
       {/* 2) Cytat */}
-      <section className={"bg-white " + SPACING}>
+      <section className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <div className="reveal">
-            <div className="h-[1px] w-16 bg-accent"></div>
-            <blockquote className="mt-6 text-2xl sm:text-3xl leading-snug text-neutral-800 max-w-3xl">
-              „Nasze życie jest owocem naszych myśli.” — Marek Aureliusz
+          <div className="slow-reveal text-center">
+            <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
+            <blockquote className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-light text-white max-w-4xl mx-auto">
+              „Nasze życie jest owocem naszych myśli.”
             </blockquote>
+            <div className="mt-8 text-lg text-neutral-300 font-medium">
+              — Marek Aureliusz
+            </div>
           </div>
+        </div>
+        
+        {/* Subtle background pattern */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(transparent,black_70%)]">
+          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="quoteGrid" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#ff5a3d11" />
+                <stop offset="100%" stopColor="#ff5a3d05" />
+              </linearGradient>
+            </defs>
+            {[...Array(10)].map((_,i)=>(<line key={'v'+i} x1={(i+1)*9} y1="0" x2={(i+1)*9} y2="100" stroke="url(#quoteGrid)" strokeWidth="0.1" />))}
+            {[...Array(6)].map((_,i)=>(<line key={'h'+i} x1="0" y1={(i+1)*14.3} x2="100" y2={(i+1)*14.3} stroke="url(#quoteGrid)" strokeWidth="0.1" />))}
+          </svg>
         </div>
       </section>
 
