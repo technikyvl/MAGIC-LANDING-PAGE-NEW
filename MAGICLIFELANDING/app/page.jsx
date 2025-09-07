@@ -467,7 +467,7 @@ export default function Page() {
           
           {/* Other reviews */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {[["Andrzej W.","„…jak nowonarodzony…""],["Sysia S.","„…po trzech sesjach realna zmiana…""],["Sebastian B.","„…rozwiązałem problem od lat…""]].map(([a,t],i)=>(>
+            {[["Andrzej W.","„…jak nowonarodzony…""],["Sysia S.","„…po trzech sesjach realna zmiana…""],["Sebastian B.","„…rozwiązałem problem od lat…""]].map(([a,t],i)=>(
               <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white font-semibold">{a[0]}</div>
