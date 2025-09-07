@@ -209,25 +209,4 @@ html {
   }
 }
 
-/* Audience section static lines */
-.audience-line {
-  opacity: 1;
-  transition: stroke-width 0.2s ease;
-  stroke: var(--accent, #FF5A3D); /* Accent color with fallback */
-  stroke-width: 2.5px;
-  stroke-linecap: round;
-  fill: none;
-}
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .audience-line {
-    stroke-dashoffset: 0;
-    opacity: 1;
-    transition: none;
-  }
-  
-  .audience-line.flowing {
-    animation: none;
-  }
-}
