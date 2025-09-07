@@ -57,7 +57,7 @@ export default function Page() {
         // Start point: bottom center of H1
         const rootPoint = {
           x: headerRect.left + headerRect.width / 2 - sectionRect.left,
-          y: headerRect.bottom - sectionRect.top
+          y: headerRect.bottom - sectionRect.top + 10
         };
 
         // End points: center of each card
@@ -72,16 +72,17 @@ export default function Page() {
         return { rootPoint, cardPoints };
       };
 
-      // Generate simple bezier path for clean curves
+      // Generate precise bezier path for accurate connections
       const bezierPath = (start, end) => {
         const dx = end.x - start.x;
         const dy = end.y - start.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
         
-        // Simple control points for consistent curves
-        const cp1x = start.x + dx * 0.5;
-        const cp1y = start.y + dy * 0.2;
-        const cp2x = start.x + dx * 0.5;
-        const cp2y = start.y + dy * 0.8;
+        // More precise control points based on distance and direction
+        const cp1x = start.x + dx * 0.3;
+        const cp1y = start.y + dy * 0.1;
+        const cp2x = start.x + dx * 0.7;
+        const cp2y = start.y + dy * 0.9;
         
         return `M ${start.x} ${start.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${end.x} ${end.y}`;
       };
@@ -90,16 +91,23 @@ export default function Page() {
       const updateLines = () => {
         const { rootPoint, cardPoints } = getAnchorPoints();
         
+        // Debug: log points to console
+        console.log('Root point:', rootPoint);
+        console.log('Card points:', cardPoints);
+        
         lines.forEach((line, index) => {
           if (cardPoints[index]) {
             const path = bezierPath(rootPoint, cardPoints[index]);
             line.setAttribute("d", path);
+            console.log(`Line ${index + 1} path:`, path);
           }
         });
       };
 
-      // Initialize lines immediately
-      updateLines();
+      // Initialize lines with delay to ensure elements are rendered
+      setTimeout(() => {
+        updateLines();
+      }, 100);
       
       // Resize handler - recalculate lines on window resize
       let resizeTimeout;
@@ -113,7 +121,9 @@ export default function Page() {
       window.addEventListener("resize", handleResize);
       
       // Also update on load to ensure proper positioning
-      window.addEventListener("load", updateLines);
+      window.addEventListener("load", () => {
+        setTimeout(updateLines, 200);
+      });
 
       // Hover effects
       cards.forEach((card, index) => {
@@ -313,8 +323,8 @@ export default function Page() {
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-              </div>
-              
+          </div>
+
               {/* Box 4 - Odpowiedzialność */}
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
@@ -325,7 +335,7 @@ export default function Page() {
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
-              </div>
+            </div>
           </div>
         </div>
 
