@@ -38,8 +38,8 @@ export default function Page() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Audience section animations
-    const initAudienceAnimations = () => {
+    // Audience section static lines
+    const initAudienceLines = () => {
       const audienceSection = document.getElementById("audience");
       if (!audienceSection) return;
 
@@ -70,17 +70,16 @@ export default function Page() {
         return { rootPoint, cardPoints };
       };
 
-      // Generate bezier path
+      // Generate simple bezier path for clean curves
       const bezierPath = (start, end) => {
         const dx = end.x - start.x;
         const dy = end.y - start.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
         
-        // Control points for organic curves
-        const cp1x = start.x + dx * 0.3;
-        const cp1y = start.y + dy * 0.1;
-        const cp2x = start.x + dx * 0.7;
-        const cp2y = start.y + dy * 0.9;
+        // Simple control points for consistent curves
+        const cp1x = start.x + dx * 0.5;
+        const cp1y = start.y + dy * 0.2;
+        const cp2x = start.x + dx * 0.5;
+        const cp2y = start.y + dy * 0.8;
         
         return `M ${start.x} ${start.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${end.x} ${end.y}`;
       };
@@ -97,33 +96,9 @@ export default function Page() {
         });
       };
 
-      // Draw lines with animation
-      const drawLines = () => {
-        lines.forEach((line, index) => {
-          setTimeout(() => {
-            line.classList.add("visible");
-            setTimeout(() => {
-              line.classList.add("flowing");
-            }, 1500);
-          }, index * 120);
-        });
-      };
-
-      // Initialize
+      // Initialize lines immediately
       updateLines();
       
-      // Intersection Observer
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
-            drawLines();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.4 });
-
-      observer.observe(audienceSection);
-
       // Resize handler
       let resizeTimeout;
       const handleResize = () => {
@@ -152,8 +127,8 @@ export default function Page() {
       });
     };
 
-    // Initialize audience animations
-    initAudienceAnimations();
+    // Initialize audience lines
+    initAudienceLines();
     // active nav
     const ids = ["why", "for", "process", "reviews", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
@@ -297,26 +272,26 @@ export default function Page() {
 
           <div className="relative min-h-[500px]">
 
-            {/* SVG Overlay for animated lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: 1}}>
+            {/* SVG Overlay for static lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" style={{zIndex: -1}}>
               <defs>
                 <filter id="lineGlow">
-                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
                   <feMerge> 
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
                   </feMerge>
                 </filter>
               </defs>
-              <path id="line-1" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
-              <path id="line-2" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
-              <path id="line-3" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
-              <path id="line-4" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
-              <path id="line-5" className="audience-line" d="" stroke="#FF5A3D" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" style={{zIndex: 1}} />
+              <path id="line-1" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
+              <path id="line-2" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
+              <path id="line-3" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
+              <path id="line-4" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
+              <path id="line-5" className="audience-line" d="" stroke="#a40000" strokeWidth="2.5" strokeLinecap="round" fill="none" filter="url(#lineGlow)" />
             </svg>
 
             {/* Boxes arranged in elliptical layout */}
-            <div className="relative mt-20 h-96 audience-container">
+            <div className="relative mt-20 h-[500px] audience-container">
               {/* Box 1 - Przedsiębiorcy */}
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
@@ -339,14 +314,14 @@ export default function Page() {
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                 <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
-              </div>
-              
+          </div>
+
               {/* Box 5 - Związki */}
               <div className="slow-reveal audience-card absolute w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5" style={{zIndex: 2}}>
                 <h3 className="text-lg font-semibold text-white">Związki</h3>
                 <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
-              </div>
             </div>
+          </div>
         </div>
 
           <p className="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>

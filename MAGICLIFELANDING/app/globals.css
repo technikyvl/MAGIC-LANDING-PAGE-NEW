@@ -126,23 +126,10 @@
   opacity: 1;
 }
 
-/* Audience section animations */
+/* Audience section static lines */
 .audience-line {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  opacity: 0;
-  transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              opacity 0.8s ease,
-              stroke-width 0.2s ease;
-}
-
-.audience-line.visible {
-  stroke-dashoffset: 0;
   opacity: 1;
-}
-
-.audience-line.flowing {
-  animation: flowingLines 8s linear infinite;
+  transition: stroke-width 0.2s ease;
 }
 
 .audience-card:hover + svg .audience-line,
@@ -151,45 +138,48 @@
   filter: brightness(1.1);
 }
 
-@keyframes flowingLines {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -1000; }
-}
-
 /* Responsive elliptical layout */
 @media (min-width: 1024px) {
   .audience-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .audience-card[data-audience-card="1"] {
-    top: 20%;
-    left: 15%;
+    position: absolute;
+    top: 15%;
+    left: 20%;
     transform: translate(-50%, -50%);
   }
   
   .audience-card[data-audience-card="2"] {
-    top: 20%;
-    right: 15%;
+    position: absolute;
+    top: 15%;
+    right: 20%;
     transform: translate(50%, -50%);
   }
   
   .audience-card[data-audience-card="3"] {
-    bottom: 10%;
+    position: absolute;
+    bottom: 15%;
     left: 50%;
     transform: translate(-50%, 50%);
   }
   
   .audience-card[data-audience-card="4"] {
-    bottom: 20%;
+    position: absolute;
+    bottom: 15%;
     left: 20%;
     transform: translate(-50%, 50%);
   }
   
   .audience-card[data-audience-card="5"] {
-    bottom: 20%;
+    position: absolute;
+    bottom: 15%;
     right: 20%;
     transform: translate(50%, 50%);
   }
