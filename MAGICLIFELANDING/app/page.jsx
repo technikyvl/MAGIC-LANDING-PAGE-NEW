@@ -492,39 +492,37 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8) Why works - TREE style */}
-      <section id="why-works" className="tree-section">
-        <div className="tree-container">
-          <h2 className="tree-title">Dlaczego to działa</h2>
+      {/* 8) Why works - TIMELINE style */}
+      <section id="why-works" className="timeline-section">
+        <div className="timeline-container">
+          <h2 className="timeline-title">Dlaczego to działa</h2>
           
-          {/* Tree structure */}
-          <div className="tree-structure">
-            {/* Central root */}
-            <div className="tree-root">
-              <div className="root-dot"></div>
-            </div>
+          {/* Timeline structure */}
+          <div className="timeline-structure">
+            {/* Timeline line */}
+            <div className="timeline-line"></div>
             
-            {/* Branches and leaves */}
-            <div className="tree-branches">
-              <div className="branch branch-1">
-                <div className="branch-line"></div>
-                <div className="branch-content">
+            {/* Timeline items */}
+            <div className="timeline-items">
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
                   <h3>Podświadomość 95%</h3>
                   <p>Tam rodzą się reakcje i schematy.</p>
                 </div>
               </div>
               
-              <div className="branch branch-2">
-                <div className="branch-line"></div>
-                <div className="branch-content">
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
                   <h3>Przyspieszenie zmiany</h3>
                   <p>Krótsza droga niż w większości terapii.</p>
                 </div>
               </div>
               
-              <div className="branch branch-3">
-                <div className="branch-line"></div>
-                <div className="branch-content">
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-content">
                   <h3>Sprawczość</h3>
                   <p>Odzyskujesz decyzyjność i kierunek.</p>
                 </div>
@@ -618,14 +616,14 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* JavaScript for TREE animations */}
+      {/* JavaScript for TIMELINE animations */}
       <script dangerouslySetInnerHTML={{
         __html: `
           (() => {
             const sec = document.querySelector('#why-works');
             if(!sec) return;
             
-            // Add reveal animation to branches
+            // Add reveal animation to timeline items
             const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -634,19 +632,18 @@ export default function Page() {
               });
             }, { threshold: 0.3 });
             
-            const branches = sec.querySelectorAll('.branch');
-            branches.forEach((branch, index) => {
-              branch.style.opacity = '0';
-              branch.style.transform = 'translateY(20px)';
-              branch.style.transition = \`opacity 0.6s ease \${index * 0.2}s, transform 0.6s ease \${index * 0.2}s\`;
-              observer.observe(branch);
+            const timelineItems = sec.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              item.style.transition = \`opacity 0.6s ease \${index * 0.2}s, transform 0.6s ease \${index * 0.2}s\`;
+              observer.observe(item);
             });
             
             // Add revealed class when visible
-            const revealedClass = 'revealed';
             const style = document.createElement('style');
             style.textContent = \`
-              .branch.revealed {
+              .timeline-item.revealed {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
               }
