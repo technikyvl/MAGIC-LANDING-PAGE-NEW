@@ -432,14 +432,14 @@ export default function Page() {
           
           {/* Featured client review */}
           <div className="slow-reveal mt-12 rounded-3xl bg-neutral-950 text-white overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {/* Client photo */}
-              <div className="relative h-full overflow-hidden rounded-3xl">
+              <div className="relative h-64 md:h-full overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
                 <Image
                   src="/testimonials/ada-jedrzejczyk.webp"
                   alt="Adrianna Jędrzejczyk — wejście na galę Babilon Boxing"
                   fill
-                  sizes="(min-width:1280px) 720px, 100vw"
+                  sizes="(min-width:768px) 50vw, 100vw"
                   className="object-cover object-center"
                   style={{ objectPosition: 'center 30%' }}
                   priority
@@ -448,7 +448,7 @@ export default function Page() {
               </div>
               
               {/* Client review */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
+              <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-white font-bold text-xl">
                     A
@@ -459,7 +459,7 @@ export default function Page() {
                   </div>
                 </div>
                 
-                <blockquote className="text-lg leading-relaxed text-neutral-200 mb-6">
+                <blockquote className="text-base md:text-lg leading-relaxed text-neutral-200 mb-6">
                   „Z Rafałem współpracuje od stosunkowo niedawna. Spotykamy się regularnie na sesję cotygodniowe gdzie mam szansę wyciszyć się, porozmawiać o moich wątpliwościach, celach oraz o tym jak nie zbaczać z wytyczonej ścieżki. Dostaje również plany technik nad którymi muszę się skupić. Jestem bardzo zadowolona z przebiegu tego „treningu mentalnego" ponieważ już zaczęłam zauważać diametralne różnice. Skupienie, uwaga, koncentracja to jest to czego nie brakuje na moich treningach. Jestem wdzięczna i wiem że wspólnymi siłami współpracując z takim profesjonalistą wniosę się na najwyższy poziom moich możliwości."
                 </blockquote>
                 
