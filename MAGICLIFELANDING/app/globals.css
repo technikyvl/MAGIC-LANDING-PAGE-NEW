@@ -209,204 +209,148 @@ html {
   }
 }
 
-/* HEXAGONAL style for "Dlaczego to działa" section */
+/* TREE style for "Dlaczego to działa" section */
 :root{
-  --hex-bg:#0C0C0C; --hex-card:#121212; --hex-line:#1E1E1E;
-  --hex-text:#EDEDED; --hex-muted:#9CA3AF; --hex-accent:#FF5A3D;
+  --tree-bg:#0C0C0C; --tree-card:#121212; --tree-line:#1E1E1E;
+  --tree-text:#EDEDED; --tree-muted:#9CA3AF; --tree-accent:#FF5A3D;
 }
 
-.hexagonal-section{
+.tree-section{
   position:relative; 
-  background:var(--hex-bg); 
+  background:var(--tree-bg); 
   padding:clamp(60px,10vw,120px) 0;
   min-height:80vh;
   display:flex;
   align-items:center;
 }
 
-.hexagonal-container{
+.tree-container{
   max-width:min(1200px,95vw); 
   margin:0 auto; 
   position:relative;
   text-align:center;
 }
 
-.hexagonal-title{
-  color:var(--hex-text); 
+.tree-title{
+  color:var(--tree-text); 
   font-weight:800; 
   line-height:1.1; 
   font-size:clamp(32px,5vw,64px);
   margin-bottom:clamp(40px,6vw,80px);
 }
 
-.hexagonal-center{
+.tree-structure{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:clamp(40px,6vw,80px);
+}
+
+.tree-root{
   position:relative;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin:clamp(40px,6vw,80px) 0;
+  margin-bottom:clamp(20px,3vw,40px);
 }
 
-.hexagon-main{
-  width:clamp(160px,20vw,280px);
-  height:clamp(120px,15vw,200px);
-  background:var(--hex-accent);
+.root-dot{
+  width:clamp(12px,1.5vw,20px);
+  height:clamp(12px,1.5vw,20px);
+  background:var(--tree-accent);
+  border-radius:50%;
+  box-shadow:0 0 20px rgba(255,90,61,0.6);
   position:relative;
-  transform:rotate(30deg);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 30px rgba(255,90,61,0.3);
+  z-index:2;
 }
 
-.hexagon-main:before,
-.hexagon-main:after{
-  content:'';
-  position:absolute;
-  width:0;
-  height:0;
-  border-left:clamp(80px,10vw,140px) solid transparent;
-  border-right:clamp(80px,10vw,140px) solid transparent;
-}
-
-.hexagon-main:before{
-  bottom:100%;
-  border-bottom:clamp(35px,4.3vw,58px) solid var(--hex-accent);
-}
-
-.hexagon-main:after{
-  top:100%;
-  border-top:clamp(35px,4.3vw,58px) solid var(--hex-accent);
-}
-
-.hexagon-text{
-  color:white;
-  font-weight:900;
-  font-size:clamp(14px,1.8vw,20px);
-  transform:rotate(-30deg);
-  letter-spacing:1px;
-  text-align:center;
-  line-height:1.1;
-}
-
-.hexagonal-grid{
+.tree-branches{
   position:relative;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:clamp(40px,6vw,80px);
   max-width:900px;
   margin:0 auto;
-  align-items:center;
-  justify-items:center;
+  align-items:start;
 }
 
-.hexagon-item{
+.branch{
   position:relative;
   display:flex;
-  justify-content:center;
+  flex-direction:column;
   align-items:center;
-  width:100%;
-  height:100%;
-}
-
-.hexagon{
-  width:clamp(100px,12vw,160px);
-  height:clamp(100px,12vw,160px);
-  background:var(--hex-card);
-  border:2px solid var(--hex-accent);
-  position:relative;
-  transform:rotate(30deg);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:all 0.3s ease;
-}
-
-.hexagon:hover{
-  transform:rotate(30deg) scale(1.05);
-  box-shadow:0 0 20px rgba(255,90,61,0.4);
-}
-
-.hexagon:before,
-.hexagon:after{
-  content:'';
-  position:absolute;
-  width:0;
-  height:0;
-  border-left:clamp(50px,6vw,80px) solid transparent;
-  border-right:clamp(50px,6vw,80px) solid transparent;
-}
-
-.hexagon:before{
-  bottom:100%;
-  border-bottom:clamp(29px,3.5vw,46px) solid var(--hex-card);
-  border-left:clamp(50px,6vw,80px) solid transparent;
-  border-right:clamp(50px,6vw,80px) solid transparent;
-}
-
-.hexagon:after{
-  top:100%;
-  border-top:clamp(29px,3.5vw,46px) solid var(--hex-card);
-  border-left:clamp(50px,6vw,80px) solid transparent;
-  border-right:clamp(50px,6vw,80px) solid transparent;
-}
-
-.hexagon-content{
-  transform:rotate(-30deg);
   text-align:center;
-  padding:10px;
 }
 
-.hexagon-content h3{
-  color:var(--hex-text);
-  font-weight:700;
-  font-size:clamp(14px,1.4vw,18px);
-  margin:0 0 8px;
-  line-height:1.2;
-}
-
-.hexagon-content p{
-  color:var(--hex-muted);
-  font-size:clamp(12px,1.1vw,14px);
-  margin:0;
-  line-height:1.3;
-}
-
-.hexagonal-lines{
+.branch-line{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
+  top:clamp(-40px,-6vw,-80px);
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:clamp(40px,6vw,80px);
+  background:linear-gradient(to bottom, var(--tree-accent), transparent);
   z-index:1;
 }
 
-/* Connection lines will be drawn by JavaScript */
+.branch-line::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:clamp(60px,8vw,120px);
+  height:2px;
+  background:linear-gradient(to right, var(--tree-accent), transparent);
+}
+
+.branch-content{
+  background:var(--tree-card);
+  border:1px solid var(--tree-line);
+  border-radius:16px;
+  padding:clamp(20px,2.5vw,32px);
+  position:relative;
+  z-index:2;
+  transition:all 0.3s ease;
+  max-width:280px;
+}
+
+.branch-content:hover{
+  border-color:var(--tree-accent);
+  box-shadow:0 0 20px rgba(255,90,61,0.2);
+  transform:translateY(-2px);
+}
+
+.branch-content h3{
+  color:var(--tree-text);
+  font-weight:700;
+  font-size:clamp(16px,1.6vw,20px);
+  margin:0 0 12px;
+  line-height:1.2;
+}
+
+.branch-content p{
+  color:var(--tree-muted);
+  font-size:clamp(14px,1.2vw,16px);
+  margin:0;
+  line-height:1.4;
+}
+
+/* Responsive design */
 @media (max-width:768px){
-  .hexagonal-grid{
+  .tree-branches{
     grid-template-columns:1fr;
     gap:clamp(30px,5vw,50px);
     max-width:400px;
   }
   
-  .hexagonal-lines{
+  .branch-line{
     display:none;
   }
   
-  .hexagon-main{
-    width:clamp(140px,18vw,200px);
-    height:clamp(100px,12vw,160px);
-  }
-  
-  .hexagon-main:before,
-  .hexagon-main:after{
-    border-left:clamp(70px,9vw,100px) solid transparent;
-    border-right:clamp(70px,9vw,100px) solid transparent;
-  }
-  
-  .hexagon-text{
-    font-size:clamp(12px,1.5vw,16px);
+  .branch-content{
+    max-width:100%;
   }
 }
 

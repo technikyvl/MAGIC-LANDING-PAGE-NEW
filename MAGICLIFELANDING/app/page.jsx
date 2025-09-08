@@ -492,57 +492,45 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8) Why works - HEXAGONAL style */}
-      <section id="why-works" className="hexagonal-section">
-        <div className="hexagonal-container">
-          <h2 className="hexagonal-title">Dlaczego to działa</h2>
+      {/* 8) Why works - TREE style */}
+      <section id="why-works" className="tree-section">
+        <div className="tree-container">
+          <h2 className="tree-title">Dlaczego to działa</h2>
           
-          {/* Central hexagon */}
-          <div className="hexagonal-center">
-            <div className="hexagon-main">
-              <span className="hexagon-text">HIPNOTERAPIA</span>
+          {/* Tree structure */}
+          <div className="tree-structure">
+            {/* Central root */}
+            <div className="tree-root">
+              <div className="root-dot"></div>
             </div>
-          </div>
-          
-          {/* Surrounding hexagons */}
-          <div className="hexagonal-grid">
-            <div className="hexagon-item hexagon-1">
-              <div className="hexagon">
-                <div className="hexagon-content">
+            
+            {/* Branches and leaves */}
+            <div className="tree-branches">
+              <div className="branch branch-1">
+                <div className="branch-line"></div>
+                <div className="branch-content">
                   <h3>Podświadomość 95%</h3>
                   <p>Tam rodzą się reakcje i schematy.</p>
                 </div>
               </div>
-            </div>
-            
-            <div className="hexagon-item hexagon-2">
-              <div className="hexagon">
-                <div className="hexagon-content">
+              
+              <div className="branch branch-2">
+                <div className="branch-line"></div>
+                <div className="branch-content">
                   <h3>Przyspieszenie zmiany</h3>
                   <p>Krótsza droga niż w większości terapii.</p>
                 </div>
               </div>
-            </div>
-            
-            <div className="hexagon-item hexagon-3">
-              <div className="hexagon">
-                <div className="hexagon-content">
+              
+              <div className="branch branch-3">
+                <div className="branch-line"></div>
+                <div className="branch-content">
                   <h3>Sprawczość</h3>
                   <p>Odzyskujesz decyzyjność i kierunek.</p>
                 </div>
               </div>
             </div>
           </div>
-          
-          {/* Connection lines */}
-          <svg className="hexagonal-lines" aria-hidden="true">
-            <defs>
-              <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#FF5A3D" stopOpacity="0.8"/>
-                <stop offset="100%" stopColor="#FF5A3D" stopOpacity="0.4"/>
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </section>
 
@@ -630,74 +618,40 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* JavaScript for HEXAGONAL connections */}
+      {/* JavaScript for TREE animations */}
       <script dangerouslySetInnerHTML={{
         __html: `
           (() => {
             const sec = document.querySelector('#why-works');
             if(!sec) return;
-            const svg = sec.querySelector('.hexagonal-lines');
-            const centerHex = sec.querySelector('.hexagon-main');
-            const hexagons = Array.from(sec.querySelectorAll('.hexagon'));
-
-            // pomocnicze
-            const toSvg = (x,y) => {
-              const pt = svg.createSVGPoint(); pt.x=x; pt.y=y;
-              const m = svg.getScreenCTM(); return m ? pt.matrixTransform(m.inverse()) : pt;
-            };
             
-            const drawLine = (start, end) => {
-              const dx = end.x - start.x;
-              const dy = end.y - start.y;
-              const distance = Math.hypot(dx, dy);
-              const controlOffset = distance * 0.3;
-              
-              const cp1x = start.x + dx * 0.3;
-              const cp1y = start.y + controlOffset;
-              const cp2x = start.x + dx * 0.7;
-              const cp2y = start.y + controlOffset;
-              
-              return \`M \${start.x} \${start.y} C \${cp1x} \${cp1y} \${cp2x} \${cp2y} \${end.x} \${end.y}\`;
-            };
-
-            const ensure = (n) => {
-              const cur = svg.querySelectorAll('path');
-              for(let i=cur.length;i<n;i++){
-                const p = document.createElementNS('http://www.w3.org/2000/svg','path');
-                p.setAttribute('stroke','url(#hexGradient)');
-                p.setAttribute('stroke-width','2');
-                p.setAttribute('fill','none');
-                p.setAttribute('opacity','0.8');
-                svg.appendChild(p);
+            // Add reveal animation to branches
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('revealed');
+                }
+              });
+            }, { threshold: 0.3 });
+            
+            const branches = sec.querySelectorAll('.branch');
+            branches.forEach((branch, index) => {
+              branch.style.opacity = '0';
+              branch.style.transform = 'translateY(20px)';
+              branch.style.transition = \`opacity 0.6s ease \${index * 0.2}s, transform 0.6s ease \${index * 0.2}s\`;
+              observer.observe(branch);
+            });
+            
+            // Add revealed class when visible
+            const revealedClass = 'revealed';
+            const style = document.createElement('style');
+            style.textContent = \`
+              .branch.revealed {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
               }
-              Array.from(svg.querySelectorAll('path')).slice(n).forEach(p=>p.remove());
-            };
-
-            const draw = () => {
-              const sb = sec.getBoundingClientRect();
-              svg.setAttribute('width', sb.width);
-              svg.setAttribute('height', sb.height);
-              
-              const centerRect = centerHex.getBoundingClientRect();
-              const center = toSvg((centerRect.left+centerRect.right)/2, (centerRect.top+centerRect.bottom)/2);
-              
-              const ends = hexagons.map(hex => {
-                const rect = hex.getBoundingClientRect();
-                return toSvg((rect.left+rect.right)/2, (rect.top+rect.bottom)/2);
-              });
-              
-              ensure(ends.length);
-              Array.from(svg.querySelectorAll('path')).forEach((p,i)=> {
-                p.setAttribute('d', drawLine(center, ends[i]));
-              });
-            };
-
-            const init = () => { 
-              if(document.readyState!=='loading') draw(); 
-              else document.addEventListener('DOMContentLoaded', draw, {once:true}); 
-            };
-            init();
-            let t; window.addEventListener('resize', ()=>{ clearTimeout(t); t = setTimeout(draw, 120); });
+            \`;
+            document.head.appendChild(style);
           })();
         `
       }} />
