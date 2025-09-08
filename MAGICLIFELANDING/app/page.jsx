@@ -328,7 +328,7 @@ export default function Page() {
             <div className="audience-cards audience-ring relative mt-20 flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="1">
+                <div className="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="1">
                   <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                   <p className="mt-3 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
                 </div>
@@ -336,7 +336,7 @@ export default function Page() {
               
               {/* Box 2 - Przełamywanie schematów (right-top) */}
               <div className="orbit" style={{'--i': '2'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="2">
+                <div className="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="2">
                   <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                   <p className="mt-3 text-sm text-neutral-300">Nowa energia i jasność.</p>
                 </div>
@@ -344,7 +344,7 @@ export default function Page() {
               
               {/* Box 3 - Związki (left-bottom) */}
               <div className="orbit" style={{'--i': '3'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="3">
+                <div className="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="3">
                   <h3 className="text-lg font-semibold text-white">Związki</h3>
                   <p className="mt-3 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
                 </div>
@@ -352,7 +352,7 @@ export default function Page() {
 
               {/* Box 4 - Odpowiedzialność (center-bottom) */}
               <div className="orbit" style={{'--i': '4'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="4">
+                <div className="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="4">
                   <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                   <p className="mt-3 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
                 </div>
@@ -360,7 +360,7 @@ export default function Page() {
 
               {/* Box 5 - Sportowcy (right-bottom) */}
               <div className="orbit" style={{'--i': '5'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="5">
+                <div className="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="5">
                   <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                   <p className="mt-3 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
                 </div>
