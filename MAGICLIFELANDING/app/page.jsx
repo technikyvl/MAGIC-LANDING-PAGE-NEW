@@ -199,7 +199,7 @@ export default function Page() {
               <div className="orbit" style={{'--i': '1'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="1">
                   <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
-                  <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+                  <p className="mt-3 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
                 </div>
               </div>
               
