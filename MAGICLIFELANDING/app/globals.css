@@ -210,24 +210,31 @@ html {
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 1rem 0;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
     justify-items: center;
+    align-items: stretch;
   }
   
   .orbit {
     position: relative !important;
-    width: auto !important;
+    width: 100% !important;
     height: auto !important;
     transform: none !important;
     display: flex;
     justify-content: center;
+    align-items: stretch;
   }
   
   .audience-card {
     position: relative !important;
-    width: 12rem;
+    width: 100%;
+    max-width: 16rem;
+    min-height: 90px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
