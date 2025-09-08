@@ -346,4 +346,30 @@ html {
   }
 }
 
+/* FAQ Accordion animations */
+details {
+  transition: all 0.4s ease-in-out;
+}
+
+details[open] {
+  transition: all 0.4s ease-in-out;
+}
+
+details summary {
+  transition: all 0.3s ease-in-out;
+}
+
+details[open] summary {
+  transition: all 0.3s ease-in-out;
+}
+
+details p {
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+details[open] p {
+  transition: all 0.4s ease-in-out;
+}
+
 
