@@ -7,134 +7,357 @@ import Image from "next/image";
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
 
-// Komponent formularza kontaktowego
+// Komponent formularza kontaktowego MailerLite
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitStatus('error');
-        console.error('Błąd:', data.error);
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-      console.error('Błąd:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <form 
-      className="slow-reveal rounded-3xl border border-neutral-200 p-8 bg-white shadow-[0_8px_30px_rgba(0,0,0,.05)]" 
-      onSubmit={handleSubmit}
-    >
-      {/* Status messages */}
-      {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-          <p className="text-green-800 font-medium">✓ Dziękuję! Skontaktuję się z Tobą niebawem.</p>
-        </div>
-      )}
-      
-      {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-          <p className="text-red-800 font-medium">✗ Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.</p>
-        </div>
-      )}
+    <div className="mailerlite-form-container">
+      <style jsx>{`
+        @import url("https://assets.mlcdn.com/fonts.css?version=1757316");
+        
+        /* LOADER */
+        .ml-form-embedSubmitLoad {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+        }
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-semibold text-neutral-900 mb-2">Imię *</label>
-          <input 
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
-            placeholder="Twoje imię"
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-semibold text-neutral-900 mb-2">E-mail *</label>
-          <input 
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
-            placeholder="twoj@email.pl"
-          />
+        .g-recaptcha {
+          transform: scale(1);
+          -webkit-transform: scale(1);
+          transform-origin: 0 0;
+          -webkit-transform-origin: 0 0;
+          height: ;
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0,0,0,0);
+          border: 0;
+        }
+
+        .ml-form-embedSubmitLoad:after {
+          content: " ";
+          display: block;
+          width: 11px;
+          height: 11px;
+          margin: 1px;
+          border-radius: 50%;
+          border: 4px solid #fff;
+          border-color: #ffffff #ffffff #ffffff transparent;
+          animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+        }
+        
+        @keyframes ml-form-embedSubmitLoad {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer {
+          box-sizing: border-box;
+          display: table;
+          margin: 0 auto;
+          position: static;
+          width: 100% !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer h4,
+        #mlb2-30643098.ml-form-embedContainer p,
+        #mlb2-30643098.ml-form-embedContainer span,
+        #mlb2-30643098.ml-form-embedContainer button {
+          text-transform: none !important;
+          letter-spacing: normal !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper {
+          background-color: transparent;
+          border-width: 0px;
+          border-color: transparent;
+          border-radius: 4px;
+          border-style: solid;
+          box-sizing: border-box;
+          display: inline-block !important;
+          margin: 0;
+          padding: 0;
+          position: relative;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { 
+          width: 100%; 
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper.embedForm { 
+          max-width: 100%; 
+          width: 100%; 
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-align-left { text-align: left; }
+        #mlb2-30643098.ml-form-embedContainer .ml-form-align-center { text-align: center; }
+        #mlb2-30643098.ml-form-embedContainer .ml-form-align-default { 
+          display: table-cell !important; 
+          vertical-align: middle !important; 
+          text-align: center !important; 
+        }
+        #mlb2-30643098.ml-form-embedContainer .ml-form-align-right { text-align: right; }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+          padding: 0;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+          text-align: left;
+          margin: 0 0 20px 0;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+          color: #000000;
+          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+          font-size: 30px;
+          font-weight: 400;
+          margin: 0 0 10px 0;
+          text-align: left;
+          word-break: break-word;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+          color: #000000;
+          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 0 10px 0;
+          text-align: left;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
+          text-align: left!important;
+        }
+
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+          margin-bottom: 5px;
+          color: #333333;
+          font-size: 14px;
+          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+          font-weight: bold; 
+          font-style: normal; 
+          text-decoration: none;
+          display: inline-block;
+          line-height: 20px;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+          margin: 0;
+          width: 100%;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+          margin: 0 0 20px 0;
+          width: 100%;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
+          margin: 0 0 15px 0;
+          width: 100%;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
+          margin: 0;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+          background-color: #ffffff !important;
+          color: #333333 !important;
+          border-color: #cccccc;
+          border-radius: 8px !important;
+          border-style: solid !important;
+          border-width: 1px !important;
+          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+          font-size: 16px !important;
+          height: auto;
+          line-height: 21px !important;
+          margin-bottom: 0;
+          margin-top: 0;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 12px 16px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          max-width: 100% !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea {
+          background-color: #ffffff !important;
+          color: #333333 !important;
+          border-color: #cccccc;
+          border-radius: 8px !important;
+          border-style: solid !important;
+          border-width: 1px !important;
+          font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+          font-size: 16px !important;
+          height: auto;
+          line-height: 21px !important;
+          margin-bottom: 0;
+          margin-top: 0;
+          padding: 12px 16px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          max-width: 100% !important;
+          min-height: 120px;
+          resize: vertical;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+          margin: 20px 0 0 0;
+          float: left;
+          width: 100%;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+          background-color: #FF4D2D !important;
+          border: none !important;
+          border-radius: 8px !important;
+          box-shadow: none !important;
+          color: #ffffff !important;
+          cursor: pointer;
+          font-family: 'Inter', sans-serif !important;
+          font-size: 16px !important;
+          font-weight: 700 !important;
+          line-height: 21px !important;
+          height: auto;
+          padding: 14px 24px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          transition: background-color 0.3s ease;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+          background-color: #ff5e43 !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+          display: none;
+        }
+        
+        .ml-error input, .ml-error textarea, .ml-error select {
+          border-color: red!important;
+        }
+
+        .ml-error .label-description,
+        .ml-error .label-description p,
+        .ml-error .label-description p a,
+        .ml-error label:first-child {
+          color: #ff0000 !important;
+        }
+        
+        @media only screen and (max-width: 400px){
+          .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { 
+            width: 100%!important; 
+          }
+        }
+      `}</style>
+      
+      <div id="mlb2-30643098" className="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-30643098">
+        <div className="ml-form-align-center">
+          <div className="ml-form-embedWrapper embedForm">
+            <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div className="ml-form-embedContent" style={{marginBottom: '0px'}}>
+              </div>
+
+              <form className="ml-block-form" action="https://assets.mailerlite.com/jsonp/1675220/forms/165003153655203047/subscribe" data-code="" method="post" target="_blank">
+                <div className="ml-form-formContent">
+                  <div className="ml-form-fieldRow">
+                    <div className="ml-field-group ml-field-last_name">
+                      <input 
+                        aria-label="last_name" 
+                        type="text" 
+                        className="form-control" 
+                        data-inputmask="" 
+                        name="fields[last_name]" 
+                        placeholder="Imię" 
+                        autoComplete="family-name"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="ml-form-fieldRow">
+                    <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input 
+                        aria-label="email" 
+                        aria-required="true" 
+                        type="email" 
+                        className="form-control" 
+                        data-inputmask="" 
+                        name="fields[email]" 
+                        placeholder="Email" 
+                        autoComplete="email"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="ml-form-fieldRow ml-last-item">
+                    <div className="ml-field-group ml-field-name">
+                      <textarea 
+                        className="form-control" 
+                        name="fields[name]" 
+                        aria-label="name" 
+                        maxLength="255" 
+                        placeholder="Wiadomość"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="hidden" name="ml-submit" value="1" />
+
+                <div className="ml-form-embedSubmit">
+                  <button type="submit" className="primary">Prześlij wiadomość</button>
+                  <button disabled={true} style={{display: 'none'}} type="button" className="loading">
+                    <div className="ml-form-embedSubmitLoad"></div>
+                    <span className="sr-only">Loading...</span>
+                  </button>
+                </div>
+
+                <input type="hidden" name="anticsrf" value="true" />
+              </form>
+            </div>
+
+            <div className="ml-form-successBody row-success" style={{display: 'none'}}>
+              <div className="ml-form-successContent">
+                <h4>Przesłano wiadomość.</h4>
+                <p>Wkrótce się odezwę!</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          function ml_webform_success_30643098() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-30643098 .row-success').show();
+            $('.ml-subscribe-form-30643098 .row-form').hide();
+          }
+        `
+      }} />
       
-      <div className="mt-6">
-        <label className="block text-sm font-semibold text-neutral-900 mb-2">Wiadomość *</label>
-        <textarea 
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors resize-none" 
-          rows="5"
-          placeholder="Opisz swój problem lub cel, który chcesz osiągnąć..."
-        ></textarea>
-      </div>
-      
-      <button 
-        type="submit"
-        disabled={isSubmitting}
-        className="mt-8 w-full rounded-xl bg-accent px-6 py-4 font-semibold text-white hover:bg-accent/90 transition-colors group flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? (
-          <>
-            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <span>Wysyłanie...</span>
-          </>
-        ) : (
-          <>
-            <span>Wyślij wiadomość</span>
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-          </>
-        )}
-      </button>
-    </form>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          fetch("https://assets.mailerlite.com/jsonp/1675220/forms/165003153655203047/takel")
+        `
+      }} />
+    </div>
   );
 }
 
@@ -730,7 +953,9 @@ export default function Page() {
 
           {/* Contact form - centered */}
           <div className="max-w-2xl mx-auto">
-            <ContactForm />
+            <div className="slow-reveal rounded-3xl border border-neutral-200 p-8 bg-white shadow-[0_8px_30px_rgba(0,0,0,.05)]">
+              <ContactForm />
+            </div>
           </div>
 
           {/* Contact info */}
