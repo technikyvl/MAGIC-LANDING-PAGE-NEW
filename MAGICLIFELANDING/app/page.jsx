@@ -433,7 +433,7 @@ export default function Page() {
           <div className="slow-reveal mt-12 rounded-3xl bg-neutral-950 text-white overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Client photo */}
-              <div className="relative aspect-[4/3] md:aspect-[3/2] overflow-hidden rounded-3xl">
+              <div className="relative h-full overflow-hidden rounded-3xl">
                 <Image
                   src="/testimonials/ada-jedrzejczyk.webp"
                   alt="Adrianna Jędrzejczyk — wejście na galę Babilon Boxing"
@@ -443,7 +443,7 @@ export default function Page() {
                   style={{ objectPosition: 'center 30%' }}
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 to-transparent"></div>
               </div>
               
               {/* Client review */}
