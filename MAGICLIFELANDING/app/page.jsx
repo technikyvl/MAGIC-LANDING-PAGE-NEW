@@ -194,7 +194,7 @@ export default function Page() {
 
           <div className="relative min-h-[300px]">
             {/* Cards wrapper - horizontal line layout */}
-            <div className="audience-cards audience-ring relative mt-20 h-[300px] flex items-center justify-center">
+            <div className="audience-cards audience-ring relative mt-20 flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="1">
@@ -527,7 +527,7 @@ export default function Page() {
                   <p>Odzyskujesz decyzyjność i kierunek.</p>
                 </div>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </section>
