@@ -352,45 +352,38 @@ html {
   }
 }
 
-/* FAQ Accordion animations */
+/* FAQ Accordion - no animations */
 details {
-  transition: all 0.8s ease-in-out;
+  /* No transitions for instant opening/closing */
 }
 
 details[open] {
-  transition: all 0.8s ease-in-out;
+  /* No transitions for instant opening/closing */
 }
 
 details summary {
-  transition: all 0.5s ease-in-out;
+  /* No transitions for summary */
 }
 
 details[open] summary {
-  transition: all 0.5s ease-in-out;
+  /* No transitions for summary */
 }
 
 details p {
-  transition: all 0.8s ease-in-out;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
+  /* No animations for text - instant display */
 }
 
 details[open] p {
-  transition: all 0.8s ease-in-out;
-  max-height: 200px;
-  opacity: 1;
-  transform: translateY(0);
+  /* No animations for text - instant display */
 }
 
-/* Smooth icon rotation */
+/* No icon animations */
 details summary span {
-  transition: transform 0.6s ease-in-out;
+  /* No transitions for icons */
 }
 
 details[open] summary span {
-  transition: transform 0.6s ease-in-out;
+  /* No transitions for icons */
 }
 
 
