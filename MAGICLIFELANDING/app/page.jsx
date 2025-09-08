@@ -474,9 +474,9 @@ export default function Page() {
           {/* Other reviews */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              ['Andrzej W.', '„…jak nowonarodzony…"'],
-              ['Sysia S.', '„…po trzech sesjach realna zmiana…"'],
-              ['Sebastian B.', '„…rozwiązałem problem od lat…"'],
+              ['Marcin K.', '„Jako przedsiębiorca miałem problemy z podejmowaniem decyzji pod presją. Po kilku sesjach z Rafałem odzyskałem pewność siebie i teraz prowadzę firmę z większą swobodą. Hipnoterapia pomogła mi zrozumieć źródło moich lęków i je przezwyciężyć."'],
+              ['Katarzyna M.', '„Jako zawodniczka MMA miałam problemy z koncentracją przed walkami. Trening mentalny z Rafałem dał mi narzędzia, które wykorzystuję nie tylko w sporcie, ale i w życiu codziennym. Moja forma psychiczna jest teraz na najwyższym poziomie."'],
+              ['Piotr L.', '„Przez lata zmagałem się z atakami paniki i lękami społecznymi. Tradycyjna terapia nie przynosiła efektów. Dopiero hipnoterapia z Rafałem pomogła mi dotrzeć do źródła problemu i go rozwiązać. Teraz żyję normalnie, bez strachu."'],
             ].map(([name, text], i) => (
               <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6">
                 <div className="flex items-center gap-3">
