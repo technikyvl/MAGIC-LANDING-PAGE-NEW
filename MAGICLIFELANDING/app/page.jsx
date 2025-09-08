@@ -170,7 +170,7 @@ export default function Page() {
       </section>
 
       {/* 2) Cytat */}
-      <section className={"relative bg-neutral-950 text-white py-16 pb-8"}>
+      <section className={"relative bg-neutral-950 text-white pt-20 pb-8"}>
         <div className={CONTAINER}>
           <div className="slow-reveal text-center">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
