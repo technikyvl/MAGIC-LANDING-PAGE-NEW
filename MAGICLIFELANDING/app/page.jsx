@@ -170,7 +170,7 @@ export default function Page() {
       </section>
 
       {/* 2) Cytat */}
-      <section className={"relative bg-neutral-950 text-white py-16"}>
+      <section className={"relative bg-neutral-950 text-white py-16 pb-8"}>
         <div className={CONTAINER}>
           <div className="slow-reveal text-center">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
@@ -197,7 +197,7 @@ export default function Page() {
             <div className="audience-cards audience-ring relative mt-20 h-[300px] flex items-center justify-center">
               {/* Box 1 - Przedsiębiorcy (left-top) */}
               <div className="orbit" style={{'--i': '1'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="1">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="1">
                   <h3 className="text-lg font-semibold text-white">Przedsiębiorcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
                 </div>
@@ -205,7 +205,7 @@ export default function Page() {
               
               {/* Box 2 - Przełamywanie schematów (right-top) */}
               <div className="orbit" style={{'--i': '2'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="2">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="2">
                   <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
                   <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
                 </div>
@@ -213,7 +213,7 @@ export default function Page() {
               
               {/* Box 3 - Związki (left-bottom) */}
               <div className="orbit" style={{'--i': '3'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="3">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="3">
                   <h3 className="text-lg font-semibold text-white">Związki</h3>
                   <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
                 </div>
@@ -221,7 +221,7 @@ export default function Page() {
 
               {/* Box 4 - Odpowiedzialność (center-bottom) */}
               <div className="orbit" style={{'--i': '4'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="4">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="4">
                   <h3 className="text-lg font-semibold text-white">Odpowiedzialność</h3>
                   <p className="mt-2 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
                 </div>
@@ -229,7 +229,7 @@ export default function Page() {
 
               {/* Box 5 - Sportowcy (right-bottom) */}
               <div className="orbit" style={{'--i': '5'}}>
-                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm" data-audience-card="5">
+                <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="5">
                   <h3 className="text-lg font-semibold text-white">Sportowcy</h3>
                   <p className="mt-2 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
                 </div>
@@ -346,7 +346,7 @@ export default function Page() {
       <section className="bg-white text-neutral-900 py-24 lg:py-24 md:py-16 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Two-column header */}
-          <div className="mb-18 lg:mb-18 md:mb-14 sm:mb-10">
+          <div className="mb-20 lg:mb-24 md:mb-18 sm:mb-16">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               {/* Left column - Title with accent line */}
               <div className="flex flex-col justify-center">
@@ -391,14 +391,14 @@ export default function Page() {
             ].map((item, index) => (
               <article 
                 key={index} 
-                className={`slow-reveal group rounded-2xl border p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-center ${
+                className={`slow-reveal group rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-center ${
                   item.featured 
                     ? 'border-neutral-800 bg-neutral-900 text-white' 
                     : 'border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300'
                 }`}
               >
                 {/* Number with accent dot */}
-                <div className="mb-4 flex items-center gap-3">
+                <div className="mb-6 flex items-center gap-3">
                   <div className={`h-2 w-2 rounded-full ${item.featured ? 'bg-accent' : 'bg-accent'}`}></div>
                   <span className={`text-sm font-medium ${item.featured ? 'text-neutral-400' : 'text-neutral-500'}`}>
                     {String(index + 1).padStart(2, '0')}
@@ -406,7 +406,7 @@ export default function Page() {
                 </div>
                 
                 {/* Title */}
-                <h3 className={`mb-3 text-xl font-semibold leading-tight ${
+                <h3 className={`mb-4 text-xl font-semibold leading-tight ${
                   item.featured ? 'text-white' : 'text-neutral-900'
                 }`}>
                   {item.title}
@@ -478,14 +478,14 @@ export default function Page() {
               ['Anna W.', '„Zmagałam się z uzależnieniem od alkoholu przez kilka lat. Sesje z Rafałem pomogły mi dotrzeć do głębszych przyczyn mojego problemu i wypracować nowe, zdrowe wzorce myślenia. Dziś jestem trzeźwa i mam kontrolę nad swoim życiem."'],
               ['Piotr L.', '„Miałem problemy z niską samooceną i brakiem pewności siebie w relacjach. Po pracy z Rafałem nauczyłem się akceptować siebie i budować zdrowe relacje. Hipnoterapia dała mi narzędzia do codziennego radzenia sobie z wyzwaniami."'],
             ].map(([name, text], i) => (
-              <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6">
+              <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-white font-semibold">
                     {name[0]}
                   </div>
                   <figcaption className="font-medium">{name}</figcaption>
                 </div>
-                <blockquote className="mt-4 text-neutral-600">{text}</blockquote>
+                <blockquote className="mt-6 text-neutral-600">{text}</blockquote>
               </figure>
             ))}
           </div>
@@ -572,13 +572,13 @@ export default function Page() {
               ["Jak się przygotować?","Spokojna przestrzeń, wygodne słuchawki (online), jasny cel pracy."],
               ["Online czy stacjonarnie? Gwarancje?","Pracuję obie formy. Gwarancja rzetelnej pracy — bez obietnic medycznych."]
             ].map(([q,a],i)=> (
-              <details key={i} className="px-5 sm:px-6 py-4 group">
+              <details key={i} className="px-6 sm:px-8 py-6 group">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-left font-semibold">
                   {q}
                   <span className="ml-4 select-none group-open:hidden">+</span>
                   <span className="ml-4 select-none hidden group-open:inline">–</span>
                 </summary>
-                <p className="mt-3 pb-1 text-neutral-600">{a}</p>
+                <p className="mt-4 pb-2 text-neutral-600">{a}</p>
               </details>
             ))}
           </div>

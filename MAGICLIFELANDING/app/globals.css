@@ -307,7 +307,7 @@ html {
   background:var(--timeline-card);
   border:1px solid var(--timeline-line);
   border-radius:16px;
-  padding:clamp(20px,2.5vw,32px);
+  padding:clamp(24px,3vw,40px);
   position:relative;
   z-index:2;
   transition:all 0.3s ease;
@@ -316,7 +316,7 @@ html {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  min-height:clamp(140px,18vw,180px);
+  min-height:clamp(160px,20vw,200px);
 }
 
 .timeline-content:hover{
@@ -329,7 +329,7 @@ html {
   color:var(--timeline-text);
   font-weight:700;
   font-size:clamp(16px,1.6vw,20px);
-  margin:0 0 12px;
+  margin:0 0 16px;
   line-height:1.2;
 }
 
