@@ -348,28 +348,43 @@ html {
 
 /* FAQ Accordion animations */
 details {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 details[open] {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 details summary {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 details[open] summary {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 details p {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.8s ease-in-out;
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 details[open] p {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth icon rotation */
+details summary span {
+  transition: transform 0.6s ease-in-out;
+}
+
+details[open] summary span {
+  transition: transform 0.6s ease-in-out;
 }
 
 
