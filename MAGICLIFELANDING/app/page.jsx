@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from "react";
+import Image from "next/image";
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
@@ -249,9 +250,9 @@ export default function Page() {
               Dlaczego hipnoterapia?
             </h2>
             <p className="slow-reveal mt-6 max-w-2xl text-lg text-neutral-600 leading-relaxed">
-              Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
-              podświadomości (ok. 95% umysłu).
-            </p>
+            Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie
+            podświadomości (ok. 95% umysłu).
+          </p>
           </div>
 
           {/* Clean grid layout */}
@@ -271,7 +272,7 @@ export default function Page() {
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">Klasyczna terapia</h3>
                 <p className="text-sm text-neutral-600">22 sesje</p>
               </div>
-            </div>
+          </div>
 
             <div className="slow-reveal">
               <div className="bg-accent text-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(164,0,0,.2)] hover:shadow-[0_12px_40px_rgba(164,0,0,.3)] transition-all duration-300">
@@ -288,8 +289,8 @@ export default function Page() {
                 <p className="text-neutral-600 leading-relaxed">
                   Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia się i neuroplastyczność.
                 </p>
-              </div>
-            </div>
+          </div>
+        </div>
 
             {/* Process card */}
             <div className="slow-reveal">
@@ -299,8 +300,8 @@ export default function Page() {
                   <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+          </svg>
+        </div>
                 </div>
                 <p className="text-neutral-600">Poznaj proces SET</p>
               </a>
@@ -432,11 +433,14 @@ export default function Page() {
           <div className="slow-reveal mt-12 rounded-3xl bg-neutral-950 text-white overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Client photo */}
-              <div className="relative h-96 lg:h-auto">
-                <img 
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop&crop=face" 
-                  alt="Klientka - sportowiec" 
-                  className="w-full h-full object-cover"
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/testimonials/my-hero.webp"
+                  alt="Moje zdjęcie"
+                  fill
+                  sizes="(min-width:1024px) 640px, 100vw"
+                  className="object-cover rounded-2xl"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
               </div>
