@@ -132,11 +132,12 @@ html {
   .audience-ring {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: auto;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 2rem 0;
   }
   
   .orbit {
@@ -144,12 +145,18 @@ html {
     width: auto;
     height: auto;
     transform: none;
+    display: flex;
+    align-items: stretch;
   }
   
   .audience-card {
     width: 12rem; /* 192px - fixed width */
+    min-height: 120px;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -161,24 +168,31 @@ html {
     height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
     justify-items: center;
+    align-items: stretch;
   }
   
   .orbit {
     position: relative !important;
-    width: auto !important;
+    width: 100% !important;
     height: auto !important;
     transform: none !important;
     display: flex;
     justify-content: center;
+    align-items: stretch;
   }
   
   .audience-card {
     position: relative !important;
-    width: 12rem;
+    width: 100%;
+    max-width: 14rem;
+    min-height: 100px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .orbit[style*="--i: 1"] { grid-column: 2; }
