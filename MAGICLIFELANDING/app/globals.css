@@ -278,29 +278,21 @@ html {
 }
 
 .timeline-number{
-  width:clamp(40px,5vw,60px);
-  height:clamp(40px,5vw,60px);
-  background:var(--timeline-accent);
-  border:3px solid var(--timeline-bg);
-  border-radius:50%;
-  box-shadow:0 0 25px rgba(255,90,61,0.8);
   position:relative;
   z-index:3;
   margin-bottom:clamp(20px,3vw,32px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
   transition:all 0.3s ease;
   font-weight:900;
-  font-size:clamp(18px,2.2vw,28px);
-  color:white;
-  text-shadow:0 2px 4px rgba(0,0,0,0.3);
+  font-size:clamp(32px,4vw,48px);
+  color:var(--timeline-accent);
+  text-shadow:0 0 20px rgba(255,90,61,0.6);
+  line-height:1;
 }
 
 .timeline-number:hover{
-  transform:scale(1.15);
-  box-shadow:0 0 35px rgba(255,90,61,1);
-  background:linear-gradient(135deg, var(--timeline-accent), #ff7a5c);
+  transform:scale(1.1);
+  text-shadow:0 0 30px rgba(255,90,61,1);
+  color:#ff7a5c;
 }
 
 .timeline-content{
