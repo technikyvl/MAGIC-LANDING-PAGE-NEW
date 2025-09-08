@@ -196,7 +196,7 @@ export default function Page() {
     });
 
     // active nav
-    const ids = ["why", "for", "process", "reviews", "faq", "contact"];
+    const ids = ["why", "audience", "process", "reviews", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
