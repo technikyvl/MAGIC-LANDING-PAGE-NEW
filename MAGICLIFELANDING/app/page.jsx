@@ -640,7 +640,7 @@ export default function Page() {
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-white mb-6">Informacje prawne</h3>
               <div className="space-y-3">
-                <a className="block text-base hover:text-accent transition-colors duration-300" href="#">Polityka prywatności</a>
+                <a className="block text-base hover:text-accent transition-colors duration-300" href="/polityka-prywatnosci">Polityka prywatności</a>
                 <a className="block text-base hover:text-accent transition-colors duration-300" href="#">Regulamin</a>
               </div>
             </div>
