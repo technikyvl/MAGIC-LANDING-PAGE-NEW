@@ -563,7 +563,7 @@ export default function Page() {
       {/* 10) FAQ */}
       <section id="faq" className="bg-white py-16 sm:py-20">
         <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
           <div className="mt-8 divide-y divide-neutral-200 rounded-2xl border border-neutral-200">
             {[
               ["Na czym polega hipnoterapia i SET?","Pracujemy w lekkim transie nad emocjami/obrazami, wprowadzając trwałe zmiany na poziomie podświadomości."],
