@@ -500,7 +500,7 @@ export default function Page() {
           {/* Central hexagon */}
           <div className="hexagonal-center">
             <div className="hexagon-main">
-              <span className="hexagon-text">HIPNO</span>
+              <span className="hexagon-text">HIPNOTERAPIA</span>
             </div>
           </div>
           
