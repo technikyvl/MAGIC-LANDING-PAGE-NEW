@@ -277,35 +277,30 @@ html {
   text-align:center;
 }
 
-.timeline-dot{
-  width:clamp(20px,2.5vw,32px);
-  height:clamp(20px,2.5vw,32px);
+.timeline-number{
+  width:clamp(40px,5vw,60px);
+  height:clamp(40px,5vw,60px);
   background:var(--timeline-accent);
   border:3px solid var(--timeline-bg);
-  border-radius:8px;
+  border-radius:50%;
   box-shadow:0 0 25px rgba(255,90,61,0.8);
   position:relative;
   z-index:3;
   margin-bottom:clamp(20px,3vw,32px);
-  transform:rotate(45deg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   transition:all 0.3s ease;
+  font-weight:900;
+  font-size:clamp(18px,2.2vw,28px);
+  color:white;
+  text-shadow:0 2px 4px rgba(0,0,0,0.3);
 }
 
-.timeline-dot:hover{
-  transform:rotate(45deg) scale(1.2);
+.timeline-number:hover{
+  transform:scale(1.15);
   box-shadow:0 0 35px rgba(255,90,61,1);
-}
-
-.timeline-dot::before{
-  content:'';
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%) rotate(-45deg);
-  width:clamp(8px,1vw,12px);
-  height:clamp(8px,1vw,12px);
-  background:white;
-  border-radius:2px;
+  background:linear-gradient(135deg, var(--timeline-accent), #ff7a5c);
 }
 
 .timeline-content{

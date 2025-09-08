@@ -505,7 +505,7 @@ export default function Page() {
             {/* Timeline items */}
             <div className="timeline-items">
               <div className="timeline-item">
-                <div className="timeline-dot"></div>
+                <div className="timeline-number">1</div>
                 <div className="timeline-content">
                   <h3>Podświadomość 95%</h3>
                   <p>Tam rodzą się reakcje i schematy.</p>
@@ -513,7 +513,7 @@ export default function Page() {
               </div>
               
               <div className="timeline-item">
-                <div className="timeline-dot"></div>
+                <div className="timeline-number">2</div>
                 <div className="timeline-content">
                   <h3>Przyspieszenie zmiany</h3>
                   <p>Krótsza droga niż w większości terapii.</p>
@@ -521,7 +521,7 @@ export default function Page() {
               </div>
               
               <div className="timeline-item">
-                <div className="timeline-dot"></div>
+                <div className="timeline-number">3</div>
                 <div className="timeline-content">
                   <h3>Sprawczość</h3>
                   <p>Odzyskujesz decyzyjność i kierunek.</p>
