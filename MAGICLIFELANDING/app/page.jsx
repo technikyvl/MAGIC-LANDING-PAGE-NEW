@@ -207,7 +207,7 @@ export default function Page() {
               <div className="orbit" style={{'--i': '2'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="2">
                   <h3 className="text-lg font-semibold text-white">Przełamywanie schematów</h3>
-                  <p className="mt-2 text-sm text-neutral-300">Nowa energia i jasność.</p>
+                  <p className="mt-3 text-sm text-neutral-300">Nowa energia i jasność.</p>
                 </div>
               </div>
               
@@ -215,7 +215,7 @@ export default function Page() {
               <div className="orbit" style={{'--i': '3'}}>
                 <div className="slow-reveal audience-card w-48 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm" data-audience-card="3">
                   <h3 className="text-lg font-semibold text-white">Związki</h3>
-                  <p className="mt-2 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
+                  <p className="mt-3 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
                 </div>
               </div>
 
