@@ -610,25 +610,51 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-neutral-950 text-neutral-300">
-        <div className={CONTAINER + " py-12"}>
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div className="font-extrabold text-white">Magic<span className="text-accent">Life</span></div>
-            <nav className="text-sm space-y-2">
-              <a href="#why" className="block hover:text-white">Dlaczego</a>
-              <a href="#for" className="block hover:text-white">Dla kogo</a>
-              <a href="#process" className="block hover:text-white">Proces</a>
-              <a href="#reviews" className="block hover:text-white">Opinie</a>
-              <a href="#faq" className="block hover:text-white">FAQ</a>
-              <a href="#contact" className="block hover:text-white">Kontakt</a>
+      <footer className="bg-gradient-to-br from-neutral-950 to-black text-neutral-300">
+        <div className={CONTAINER + " py-16 sm:py-20"}>
+          <div className="grid gap-12 lg:grid-cols-3 md:grid-cols-2">
+            {/* Logo */}
+            <div className="lg:col-span-1">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                Magic<span className="text-accent">Life</span>
+              </div>
+              <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
+                Transformacja życia przez hipnoterapię i SET
+              </p>
+            </div>
+            
+            {/* Navigation */}
+            <nav className="space-y-4">
+              <h3 className="text-xl font-bold text-white mb-6">Nawigacja</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <a href="#why" className="text-base hover:text-accent transition-colors duration-300">Dlaczego</a>
+                <a href="#for" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
+                <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
+                <a href="#reviews" className="text-base hover:text-accent transition-colors duration-300">Opinie</a>
+                <a href="#faq" className="text-base hover:text-accent transition-colors duration-300">FAQ</a>
+                <a href="#contact" className="text-base hover:text-accent transition-colors duration-300">Kontakt</a>
+              </div>
             </nav>
-            <div className="text-sm">
-              <a className="block hover:text-white" href="#">Polityka prywatności</a>
-              <a className="block hover:text-white" href="#">Regulamin</a>
+            
+            {/* Legal */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-white mb-6">Informacje prawne</h3>
+              <div className="space-y-3">
+                <a className="block text-base hover:text-accent transition-colors duration-300" href="#">Polityka prywatności</a>
+                <a className="block text-base hover:text-accent transition-colors duration-300" href="#">Regulamin</a>
+              </div>
             </div>
           </div>
-          <div className="mt-8 h-px w-full bg-white/10" />
-          <p className="mt-6 text-xs text-neutral-500">© <span id="year"></span> Magic Life. Wszelkie prawa zastrzeżone.</p>
+          
+          {/* Divider */}
+          <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
+          
+          {/* Copyright */}
+          <div className="mt-8 text-center">
+            <p className="text-base text-neutral-500">
+              © <span id="year"></span> Magic Life. Wszelkie prawa zastrzeżone.
+            </p>
+          </div>
         </div>
       </footer>
 
