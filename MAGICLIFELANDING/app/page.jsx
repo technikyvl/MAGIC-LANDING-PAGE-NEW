@@ -1,11 +1,142 @@
 
 'use client';
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
+
+// Komponent formularza kontaktowego
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+        console.error('Błąd:', data.error);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('Błąd:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form 
+      className="slow-reveal rounded-3xl border border-neutral-200 p-8 bg-white shadow-[0_8px_30px_rgba(0,0,0,.05)]" 
+      onSubmit={handleSubmit}
+    >
+      {/* Status messages */}
+      {submitStatus === 'success' && (
+        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+          <p className="text-green-800 font-medium">✓ Dziękuję! Skontaktuję się z Tobą niebawem.</p>
+        </div>
+      )}
+      
+      {submitStatus === 'error' && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+          <p className="text-red-800 font-medium">✗ Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.</p>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-semibold text-neutral-900 mb-2">Imię *</label>
+          <input 
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
+            placeholder="Twoje imię"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-neutral-900 mb-2">E-mail *</label>
+          <input 
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
+            placeholder="twoj@email.pl"
+          />
+        </div>
+      </div>
+      
+      <div className="mt-6">
+        <label className="block text-sm font-semibold text-neutral-900 mb-2">Wiadomość *</label>
+        <textarea 
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors resize-none" 
+          rows="5"
+          placeholder="Opisz swój problem lub cel, który chcesz osiągnąć..."
+        ></textarea>
+      </div>
+      
+      <button 
+        type="submit"
+        disabled={isSubmitting}
+        className="mt-8 w-full rounded-xl bg-accent px-6 py-4 font-semibold text-white hover:bg-accent/90 transition-colors group flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? (
+          <>
+            <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Wysyłanie...</span>
+          </>
+        ) : (
+          <>
+            <span>Wyślij wiadomość</span>
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </>
+        )}
+      </button>
+    </form>
+  );
+}
 
 export default function Page() {
   useEffect(() => {
@@ -599,41 +730,7 @@ export default function Page() {
 
           {/* Contact form - centered */}
           <div className="max-w-2xl mx-auto">
-            <form className="slow-reveal rounded-3xl border border-neutral-200 p-8 bg-white shadow-[0_8px_30px_rgba(0,0,0,.05)]" onSubmit={(e)=>{e.preventDefault(); alert('Dziękuję! Skontaktuję się niebawem.')}}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-neutral-900 mb-2">Imię</label>
-                  <input 
-                    className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
-                    placeholder="Twoje imię"
-                  />
-                </div>
-          <div>
-                  <label className="block text-sm font-semibold text-neutral-900 mb-2">E-mail</label>
-                  <input 
-                    type="email"
-                    className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors" 
-                    placeholder="twoj@email.pl"
-                  />
-                </div>
-              </div>
-              
-              <div className="mt-6">
-                <label className="block text-sm font-semibold text-neutral-900 mb-2">Wiadomość</label>
-                <textarea 
-                  className="w-full rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-colors resize-none" 
-                  rows="5"
-                  placeholder="Opisz swój problem lub cel, który chcesz osiągnąć..."
-                ></textarea>
-          </div>
-              
-              <button className="mt-8 w-full rounded-xl bg-accent px-6 py-4 font-semibold text-white hover:bg-accent/90 transition-colors group flex items-center justify-center gap-2">
-                <span>Wyślij wiadomość</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </button>
-          </form>
+            <ContactForm />
           </div>
 
           {/* Contact info */}
