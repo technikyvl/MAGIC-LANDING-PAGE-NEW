@@ -433,13 +433,13 @@ export default function Page() {
           <div className="slow-reveal mt-12 rounded-3xl bg-neutral-950 text-white overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Client photo */}
-              <div className="relative aspect-[16/10]">
+              <div className="relative aspect-[16/9] md:aspect-[16/10] overflow-hidden rounded-3xl">
                 <Image
-                  src="/testimonials/my-hero.webp"
-                  alt="Moje zdjęcie"
+                  src="/testimonials/ada-jedrzejczyk.webp"
+                  alt="Adrianna Jędrzejczyk — wejście na galę Babilon Boxing"
                   fill
-                  sizes="(min-width:1024px) 640px, 100vw"
-                  className="object-cover rounded-2xl"
+                  sizes="(min-width:1280px) 720px, 100vw"
+                  className="object-cover"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/50 to-transparent"></div>
