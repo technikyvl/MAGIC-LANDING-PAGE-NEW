@@ -267,7 +267,7 @@ export default function Page() {
           </a>
           <ul className="hidden md:flex items-center gap-3 text-sm">
             <li><a href="#why" className="navlink relative px-2 py-1">Dlaczego</a></li>
-            <li><a href="#for" className="navlink relative px-2 py-1">Dla kogo</a></li>
+            <li><a href="#audience" className="navlink relative px-2 py-1">Dla kogo</a></li>
             <li><a href="#process" className="navlink relative px-2 py-1">Proces</a></li>
             <li><a href="#reviews" className="navlink relative px-2 py-1">Opinie</a></li>
             <li><a href="#faq" className="navlink relative px-2 py-1">FAQ</a></li>
@@ -779,7 +779,7 @@ export default function Page() {
               <h3 className="text-xl font-bold text-white mb-6">Nawigacja</h3>
               <div className="grid grid-cols-2 gap-4">
                 <a href="#why" className="text-base hover:text-accent transition-colors duration-300">Dlaczego</a>
-                <a href="#for" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
+                <a href="#audience" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
                 <a href="#reviews" className="text-base hover:text-accent transition-colors duration-300">Opinie</a>
                 <a href="#faq" className="text-base hover:text-accent transition-colors duration-300">FAQ</a>
