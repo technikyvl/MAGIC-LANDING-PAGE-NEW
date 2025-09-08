@@ -163,6 +163,7 @@ html {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding: 1rem 0;
+    justify-items: center;
   }
   
   .orbit {
@@ -170,11 +171,14 @@ html {
     width: auto !important;
     height: auto !important;
     transform: none !important;
+    display: flex;
+    justify-content: center;
   }
   
   .audience-card {
     position: relative !important;
     width: 12rem;
+    margin: 0 auto;
   }
   
   .orbit[style*="--i: 1"] { grid-column: 2; }
@@ -194,6 +198,7 @@ html {
     grid-template-columns: 1fr;
     gap: 0.75rem;
     padding: 1rem 0;
+    justify-items: center;
   }
   
   .orbit {
@@ -201,11 +206,14 @@ html {
     width: auto !important;
     height: auto !important;
     transform: none !important;
+    display: flex;
+    justify-content: center;
   }
   
   .audience-card {
     position: relative !important;
     width: 12rem;
+    margin: 0 auto;
   }
 }
 
