@@ -491,18 +491,28 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8) Why works short */}
-      <section className={"bg-neutral-950 text-white " + SPACING}>
-        <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dlaczego to działa</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {[["Podświadomość 95%","Tam rodzą się reakcje i schematy."],["Przyspieszenie zmiany","Krótsza droga niż w większości terapii."],["Sprawczość","Odzyskujesz decyzyjność i kierunek."]].map(([t,d],i)=>(
-              <div key={i} className="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-6">
-                <h3 className="font-semibold">{t}</h3>
-                <p className="mt-2 text-neutral-300">{d}</p>
+      {/* 8) Why works - TECH/DIAGRAM style */}
+      <section id="why-works" className="why">
+        <div className="why__head">
+          <h2>Dlaczego to działa</h2>
               </div>
-            ))}
-          </div>
+
+        {/* overlay na linie łączące nagłówek z kartami */}
+        <svg className="why__wires" aria-hidden="true"></svg>
+
+        <div className="why__grid">
+          <article className="why__card" data-card="1">
+            <h3>Podświadomość 95%</h3>
+            <p>Tam rodzą się reakcje i schematy.</p>
+          </article>
+          <article className="why__card" data-card="2">
+            <h3>Przyspieszenie zmiany</h3>
+            <p>Krótsza droga niż w większości terapii.</p>
+          </article>
+          <article className="why__card" data-card="3">
+            <h3>Sprawczość</h3>
+            <p>Odzyskujesz decyzyjność i kierunek.</p>
+          </article>
         </div>
       </section>
 
@@ -589,6 +599,59 @@ export default function Page() {
           <p className="mt-6 text-xs text-neutral-500">© <span id="year"></span> Magic Life. Wszelkie prawa zastrzeżone.</p>
         </div>
       </footer>
+
+      {/* JavaScript for TECH/DIAGRAM wires */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          (() => {
+            const sec = document.querySelector('#why-works');
+            if(!sec) return;
+            const svg = sec.querySelector('.why__wires');
+            const head = sec.querySelector('.why__head h2');
+            const cards = Array.from(sec.querySelectorAll('.why__card'));
+
+            // pomocnicze
+            const toSvg = (x,y) => {
+              const pt = svg.createSVGPoint(); pt.x=x; pt.y=y;
+              const m = svg.getScreenCTM(); return m ? pt.matrixTransform(m.inverse()) : pt;
+            };
+            const curve = (s,e) => {
+              const dx=e.x-s.x, dy=e.y-s.y, bend=Math.max(80, Math.hypot(dx,dy)*0.45);
+              const cx = s.x + dx*0.25, cy = s.y + bend; // delikatny łuk
+              return \`M \${s.x} \${s.y} Q \${cx} \${cy} \${e.x} \${e.y}\`;
+            };
+            const ensure = (n) => {
+              const cur = svg.querySelectorAll('path');
+              for(let i=cur.length;i<n;i++){
+                const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+                p.setAttribute('stroke','var(--accent)');
+                p.setAttribute('stroke-width','1.25');
+                p.setAttribute('fill','none');
+                svg.appendChild(p);
+              }
+              Array.from(svg.querySelectorAll('path')).slice(n).forEach(p=>p.remove());
+            };
+
+            const draw = () => {
+              const sb = sec.getBoundingClientRect();
+              svg.setAttribute('width', sb.width);
+              svg.setAttribute('height', sb.height);
+              const hb = head.getBoundingClientRect();
+              const start = toSvg((hb.left+hb.right)/2, hb.bottom + 14); // „mniej więcej" pod nagłówkiem
+              const ends = cards.map(c => {
+                const b = c.getBoundingClientRect();
+                return toSvg((b.left+b.right)/2, b.top);
+              });
+              ensure(ends.length);
+              Array.from(svg.querySelectorAll('path')).forEach((p,i)=> p.setAttribute('d', curve(start, ends[i])));
+            };
+
+            const init = () => { if(document.readyState!=='loading') draw(); else document.addEventListener('DOMContentLoaded', draw, {once:true}); };
+            init();
+            let t; window.addEventListener('resize', ()=>{ clearTimeout(t); t = setTimeout(draw, 120); });
+          })();
+        `
+      }} />
     </>
   );
 }
