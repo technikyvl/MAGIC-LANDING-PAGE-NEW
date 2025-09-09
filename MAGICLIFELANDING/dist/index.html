@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magic Life — Hipnoterapia dla ludzi, którzy chcą więcej od życia</title>
+  <meta name="description" content="Hipnoterapia metodą SET: szybka, skuteczna i bezpieczna droga do trwałej zmiany. Umów konsultację i odmień swoje życie." />
+  <meta property="og:title" content="Magic Life — Hipnoterapia" />
+  <meta property="og:description" content="Hipnoterapia metodą SET: szybka, skuteczna i bezpieczna droga do trwałej zmiany." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#FF5A3D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body class="antialiased bg-white text-neutral-900 font-inter">
+  <!-- 0) Sticky Header (wyspa) -->
+  <div class="sticky top-4 z-50">
+    <nav id="islandNav" aria-label="Główna nawigacja"
+      class="mx-auto flex items-center gap-3 rounded-2xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-4xl px-4 py-3">
+      <a href="#" class="font-extrabold tracking-tight text-neutral-900">
+        Magic<span class="text-accent">Life</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-3 text-sm">
+        <li><a href="#why" class="navlink relative px-2 py-1">Dlaczego</a></li>
+        <li><a href="#audience" class="navlink relative px-2 py-1">Dla kogo</a></li>
+        <li><a href="#process" class="navlink relative px-2 py-1">Proces</a></li>
+        <li><a href="#reviews" class="navlink relative px-2 py-1">Opinie</a></li>
+        <li><a href="#faq" class="navlink relative px-2 py-1">FAQ</a></li>
+        <li><a href="#contact" class="navlink relative px-2 py-1">Kontakt</a></li>
+      </ul>
+      <a href="#contact" class="ml-auto inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-3 py-2 hover:bg-neutral-800">
+        Umów konsultację
+      </a>
+    </nav>
+  </div>
+
+  <!-- 1) HERO -->
+  <section class="relative bg-white text-neutral-900 py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center min-h-[60vh]">
+      <span class="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
+        <span class="inline-block h-2 w-2 rounded-full bg-accent"></span>
+        Metoda SET (Simple Effective Therapy)
+      </span>
+      <h1 class="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)] max-w-5xl">
+        Hipnoterapia dla ludzi, którzy chcą więcej od życia.
+      </h1>
+      <p class="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
+        Pomagam osobom świadomym – liderom, sportowcom, przedsiębiorcom – uwolnić się od blokad,
+        odkryć pełnię swojego potencjału i świadomie tworzyć życie, które kochają.
+      </p>
+      <div class="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="rounded-xl bg-neutral-900 text-white px-8 py-4 font-semibold hover:bg-neutral-800 text-lg">Umów konsultację</a>
+        <a href="https://wa.me/48602200511" class="rounded-xl border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:bg-neutral-50 text-lg">Napisz na WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2) Cytat -->
+  <section class="relative bg-neutral-950 text-white pt-20 pb-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="slow-reveal text-center">
+        <div class="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+        <blockquote class="text-2xl sm:text-3xl leading-tight font-light text-white max-w-3xl mx-auto">
+          „Nasze życie jest owocem naszych myśli."
+        </blockquote>
+        <div class="mt-6 text-base text-neutral-300 font-medium">
+          — Marek Aureliusz
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) For whom (dark) -->
+  <section id="audience" class="relative bg-neutral-950 text-white py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Dla kogo jest ta praca</h1>
+        <p class="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-300">Pracuję z ludźmi, którzy są gotowi na głęboką transformację…</p>
+      </div>
+
+      <div class="relative min-h-[300px]">
+        <!-- Cards wrapper - horizontal line layout -->
+        <div class="audience-cards audience-ring relative mt-20 flex items-center justify-center">
+          <!-- Box 1 - Przedsiębiorcy (left-top) -->
+          <div class="orbit" style="--i: 1">
+            <div class="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="1">
+              <h3 class="text-lg font-semibold text-white">Przedsiębiorcy</h3>
+              <p class="mt-3 text-sm text-neutral-300">Decyzje, lekkość w rozwoju firmy.</p>
+            </div>
+          </div>
+          
+          <!-- Box 2 - Przełamywanie schematów (right-top) -->
+          <div class="orbit" style="--i: 2">
+            <div class="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="2">
+              <h3 class="text-lg font-semibold text-white">Przełamywanie schematów</h3>
+              <p class="mt-3 text-sm text-neutral-300">Nowa energia i jasność.</p>
+            </div>
+          </div>
+          
+          <!-- Box 3 - Związki (left-bottom) -->
+          <div class="orbit" style="--i: 3">
+            <div class="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="3">
+              <h3 class="text-lg font-semibold text-white">Związki</h3>
+              <p class="mt-3 text-sm text-neutral-300">Komunikacja, zaufanie, bliskość.</p>
+            </div>
+          </div>
+
+          <!-- Box 4 - Odpowiedzialność (center-bottom) -->
+          <div class="orbit" style="--i: 4">
+            <div class="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="4">
+              <h3 class="text-lg font-semibold text-white">Odpowiedzialność</h3>
+              <p class="mt-3 text-sm text-neutral-300">Wybierasz rozwój, nie ucieczkę.</p>
+            </div>
+          </div>
+
+          <!-- Box 5 - Sportowcy (right-bottom) -->
+          <div class="orbit" style="--i: 5">
+            <div class="slow-reveal audience-card w-56 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm" data-audience-card="5">
+              <h3 class="text-lg font-semibold text-white">Sportowcy</h3>
+              <p class="mt-3 text-sm text-neutral-300">Pewność siebie, koncentracja, rekordy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="slow-reveal mt-8 text-center text-sm text-neutral-300">Jeśli czujesz, że to czas na prawdziwą zmianę — ta praca jest dla Ciebie.</p>
+    </div>
+  </section>
+
+  <!-- 4) Dlaczego hipnoterapia? -->
+  <section id="why" class="relative bg-white text-neutral-900 py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Dlaczego hipnoterapia?</h1>
+        <p class="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-600">Hipnoterapia to jedna z najszybszych i najskuteczniejszych metod trwałej zmiany — pracuje na poziomie podświadomości (ok. 95% umysłu).</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="slow-reveal text-center">
+          <div class="text-6xl sm:text-7xl font-extrabold text-accent mb-2">38%</div>
+          <div class="text-lg text-neutral-600">Psychoanaliza<br><span class="text-sm text-neutral-500">(600 sesji)</span></div>
+        </div>
+        <div class="slow-reveal text-center">
+          <div class="text-6xl sm:text-7xl font-extrabold text-accent mb-2">72%</div>
+          <div class="text-lg text-neutral-600">Klasyczna terapia<br><span class="text-sm text-neutral-500">(22 sesje)</span></div>
+        </div>
+        <div class="slow-reveal text-center">
+          <div class="text-6xl sm:text-7xl font-extrabold text-accent mb-2">93%</div>
+          <div class="text-lg text-neutral-600">Hipnoterapia<br><span class="text-sm text-neutral-500">(6 sesji)</span></div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="slow-reveal">
+          <h3 class="text-2xl font-bold mb-4">To nie magia</h3>
+          <p class="text-lg text-neutral-600 leading-relaxed">Naukowo potwierdzona praca z mózgiem. Bezpieczna, konkretna, oparta o mechanizmy uczenia się i neuroplastyczność.</p>
+        </div>
+        <div class="slow-reveal">
+          <h3 class="text-2xl font-bold mb-4">Szybko i skutecznie</h3>
+          <p class="text-lg text-neutral-600 leading-relaxed">Często wystarczy 1-3 sesje, aby wprowadzić trwałą zmianę. Pracujemy na poziomie podświadomości, gdzie rodzą się nasze reakcje i schematy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) About Me -->
+  <section class="relative bg-neutral-950 text-white pt-24 sm:pt-32 pb-16 sm:pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Left column - Photo -->
+        <div class="slow-reveal order-2 lg:order-1">
+          <div class="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="./assets/img/rav.magic.webp"
+              alt="Rafał - architekt mentalny"
+              class="w-full h-full object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/30 to-transparent"></div>
+          </div>
+        </div>
+        <!-- Right column - Content -->
+        <div class="slow-reveal order-1 lg:order-2">
+          <div class="inline-block h-[2px] w-16 bg-accent mb-8"></div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
+            O mnie
+          </h2>
+          <div class="space-y-5 text-base leading-relaxed text-neutral-300">
+            <p class="text-lg font-semibold text-white">
+              Jestem architektem mentalnym.
+            </p>
+            <p>
+              Pomagam ludziom zobaczyć siebie w pełnym świetle – bez masek, schematów i historii, które przestały im służyć.
+            </p>
+            <p>
+              Przez lata zgłębiałem tajemnice podświadomości, psychologii i rozwoju osobistego, aby stworzyć własną metodę głębokiej transformacji. Dziś łączę hipnozę, pracę z przekonaniami i neurobiologię zmiany, by pokazać Ci, że możesz prowadzić życie w harmonii ze sobą – i działać z miejsca siły, a nie strachu.
+            </p>
+            <p>
+              Nie jestem teoretykiem. Wiem, czym jest upadek, chaos i brak sensu. Wiem też, jak wygląda życie po drugiej stronie – kiedy odzyskujesz swoją moc i zaczynasz działać w zgodzie ze sobą.
+            </p>
+            <p>
+              Moim zadaniem jest towarzyszyć Ci na tej drodze. Pokazać, że zmiana jest możliwa – i że wszystko, czego potrzebujesz, już w Tobie jest.
+            </p>
+            <div class="pt-6 border-t border-neutral-800">
+              <p class="text-lg font-semibold text-white mb-3">
+                Twoje życie może być sztuką.
+              </p>
+              <p class="text-base text-neutral-300 mb-2">
+                Może być spokojne, pełne i piękne.
+              </p>
+              <p class="text-base text-accent font-medium">
+                A Ty masz w sobie wszystko, by je stworzyć.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) Process – timeline -->
+  <section id="process" class="relative bg-white text-neutral-900 py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Jak wygląda proces – metoda SET</h1>
+        <p class="slow-reveal mt-6 max-w-3xl mx-auto text-xl text-neutral-600">Szybka, skuteczna i bezpieczna droga do trwałej zmiany</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="slow-reveal text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
+          <h3 class="text-xl font-bold mb-3">Diagnoza źródła problemu</h3>
+          <p class="text-neutral-600">Odkrywamy, co zatrzymuje i blokuje Twoje możliwości.</p>
+        </div>
+        <div class="slow-reveal text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">2</div>
+          <h3 class="text-xl font-bold mb-3">Uwolnienie blokad</h3>
+          <p class="text-neutral-600">Bezpieczne oczyszczanie emocji i przekonań.</p>
+        </div>
+        <div class="slow-reveal text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">3</div>
+          <h3 class="text-xl font-bold mb-3">Reprogramowanie podświadomości</h3>
+          <p class="text-neutral-600">Wgrywamy nowe wspierające schematy.</p>
+        </div>
+        <div class="slow-reveal text-center">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">4</div>
+          <h3 class="text-xl font-bold mb-3">Implementacja</h3>
+          <p class="text-neutral-600">Świadomie kreujesz codzienność w nowy sposób.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7) Reviews -->
+  <section id="reviews" class="relative bg-neutral-950 text-white py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Opinie klientów</h1>
+        <p class="slow-reveal mt-6 text-xl text-neutral-300">Średnia ocen w Google: <span class="text-accent font-bold">5.0/5</span> (ponad 89 opinii)</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="./assets/img/ada-jedrzejczyk.webp" alt="Ada Jędrzejczyk" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h4 class="font-semibold text-white">Ada Jędrzejczyk</h4>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+          </div>
+          <blockquote class="text-neutral-300 italic">
+            "Po trzech sesjach z Rafałem poczułam się jak nowonarodzona. Problemy, które nosiłam latami, zniknęły. To nie magia - to profesjonalna praca z podświadomością."
+          </blockquote>
+        </div>
+
+        <div class="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">A</div>
+            <div>
+              <h4 class="font-semibold text-white">Andrzej W.</h4>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+          </div>
+          <blockquote class="text-neutral-300 italic">
+            "Jako przedsiębiorca miałem problem z podejmowaniem decyzji. Po jednej sesji wszystko się zmieniło. Teraz działam z miejsca pewności siebie."
+          </blockquote>
+        </div>
+
+        <div class="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">S</div>
+            <div>
+              <h4 class="font-semibold text-white">Sebastian B.</h4>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+          </div>
+          <blockquote class="text-neutral-300 italic">
+            "Rozwiązałem problem, który nosiłem od lat. Rafał pomógł mi zobaczyć siebie w nowym świetle. Polecam każdemu, kto jest gotowy na zmianę."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8) FAQ -->
+  <section id="faq" class="relative bg-white text-neutral-900 py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">FAQ</h1>
+        <p class="slow-reveal mt-6 text-xl text-neutral-600">Najczęściej zadawane pytania</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-4">
+          <div class="border border-neutral-200 rounded-2xl">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center faq-btn" aria-expanded="true">
+              <span class="font-semibold text-lg">Na czym polega hipnoterapia i metoda SET?</span>
+              <span class="text-accent text-xl">–</span>
+            </button>
+            <div class="faq-panel px-6 pb-4" style="height: auto; opacity: 1">
+              <p class="text-neutral-600">Pracujemy w lekkim transie nad emocjami i obrazami, wprowadzając trwałe zmiany na poziomie podświadomości. Metoda SET (Simple Effective Therapy) to moja autorska metoda, która łączy hipnozę, pracę z przekonaniami i neurobiologię zmiany.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-2xl">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center faq-btn" aria-expanded="false">
+              <span class="font-semibold text-lg">Ile trwa sesja i ile potrzeba spotkań?</span>
+              <span class="text-accent text-xl">+</span>
+            </button>
+            <div class="faq-panel px-6 pb-4" style="height: 0; opacity: 0">
+              <p class="text-neutral-600">Sesja trwa 60-90 minut. Często wystarcza 1-3 spotkania, zależnie od tematu i głębokości problemu. Efekt często widoczny jest już po pierwszej sesji.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-2xl">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center faq-btn" aria-expanded="false">
+              <span class="font-semibold text-lg">Czy to bezpieczne? Czy będę pamiętać sesję?</span>
+              <span class="text-accent text-xl">+</span>
+            </button>
+            <div class="faq-panel px-6 pb-4" style="height: 0; opacity: 0">
+              <p class="text-neutral-600">Tak, to w pełni bezpieczne. Masz pełną świadomość i kontrolę przez cały czas. Większość osób pamięta przebieg pracy. To nie jest "magia" - to naukowo potwierdzona praca z mózgiem.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-2xl">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center faq-btn" aria-expanded="false">
+              <span class="font-semibold text-lg">Jak się przygotować do sesji?</span>
+              <span class="text-accent text-xl">+</span>
+            </button>
+            <div class="faq-panel px-6 pb-4" style="height: 0; opacity: 0">
+              <p class="text-neutral-600">Spokojna przestrzeń, wygodne słuchawki (dla sesji online), jasny cel pracy. Nie musisz się specjalnie przygotowywać - najważniejsze to być otwartym na zmianę.</p>
+            </div>
+          </div>
+
+          <div class="border border-neutral-200 rounded-2xl">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center faq-btn" aria-expanded="false">
+              <span class="font-semibold text-lg">Pracujesz online czy stacjonarnie? Jakie są gwarancje?</span>
+              <span class="text-accent text-xl">+</span>
+            </button>
+            <div class="faq-panel px-6 pb-4" style="height: 0; opacity: 0">
+              <p class="text-neutral-600">Pracuję w obu formach. Gwarancja rzetelnej pracy i profesjonalnego podejścia — bez obietnic medycznych. Każda sesja jest inna, bo każdy człowiek jest inny.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9) Contact -->
+  <section id="contact" class="relative bg-neutral-950 text-white py-32 sm:py-40 lg:py-48">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h1 class="slow-reveal text-5xl sm:text-6xl lg:text-7xl font-extrabold">Skontaktuj się</h1>
+        <p class="slow-reveal mt-6 text-xl text-neutral-300">Masz pytanie? Napisz, chętnie odpowiem.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="slow-reveal">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold mb-4">Dane kontaktowe</h3>
+              <ul class="space-y-3 text-lg">
+                <li><a href="mailto:hello@magiclife.pl" class="text-accent hover:text-accent/80 underline underline-offset-4">hello@magiclife.pl</a></li>
+                <li><a href="https://wa.me/48602200511" class="text-accent hover:text-accent/80 underline underline-offset-4">WhatsApp: +48 602 200 511</a></li>
+                <li><span class="text-neutral-300">Kalendarz rezerwacji (wkrótce)</span></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-2xl font-bold mb-4">Formy pracy</h3>
+              <ul class="space-y-2 text-neutral-300">
+                <li>• Sesje online (Zoom, Teams)</li>
+                <li>• Sesje stacjonarne (Warszawa)</li>
+                <li>• Konsultacje wstępne (bezpłatne)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="slow-reveal">
+          <div class="mailerlite-form-container">
+            <div id="mlb2-1234567" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1234567">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>Umów konsultację</h4>
+                    <p>Napisz do mnie, a skontaktuję się w ciągu 24h</p>
+                  </div>
+                  <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/1234567" data-code="1234567" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-name">
+                          <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Imię" autocomplete="name">
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="E-mail" autocomplete="email">
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-phone">
+                          <input type="text" class="form-control" data-inputmask="" name="fields[phone]" placeholder="Telefon (opcjonalnie)" autocomplete="tel">
+                        </div>
+                      </div>
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-message">
+                          <textarea class="form-control" name="fields[message]" placeholder="Wiadomość" rows="4"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">Wyślij wiadomość</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                      </button>
+                    </div>
+                    <input type="hidden" name="ml-submit" value="1">
+                  </form>
+                </div>
+                <div class="ml-form-embedSuccess">
+                  <div class="ml-form-embedSuccessContent">
+                    <h4>Dziękuję!</h4>
+                    <p>Skontaktuję się z Tobą w ciągu 24h.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10) Footer -->
+  <footer class="bg-neutral-950 text-neutral-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 sm:grid-cols-3">
+        <div class="font-extrabold text-white text-xl">Magic<span class="text-accent">Life</span></div>
+        <nav class="text-sm space-y-2">
+          <a href="#why" class="block hover:text-white">Dlaczego</a>
+          <a href="#audience" class="block hover:text-white">Dla kogo</a>
+          <a href="#process" class="block hover:text-white">Proces</a>
+          <a href="#reviews" class="block hover:text-white">Opinie</a>
+          <a href="#faq" class="block hover:text-white">FAQ</a>
+          <a href="#contact" class="block hover:text-white">Kontakt</a>
+        </nav>
+        <div class="text-sm">
+          <a class="block hover:text-white" href="./polityka-prywatnosci.html">Polityka prywatności</a>
+          <a class="block hover:text-white" href="#">Regulamin</a>
+        </div>
+      </div>
+      <div class="mt-8 h-px w-full bg-white/10"></div>
+      <p class="mt-6 text-xs text-neutral-500">© <span id="year"></span> Magic Life. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
