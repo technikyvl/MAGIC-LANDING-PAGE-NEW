@@ -666,12 +666,12 @@ export default function Page() {
       </section>
 
       {/* 5) About Me */}
-      <section className="relative bg-neutral-950 text-white pt-24 sm:pt-32 pb-12 sm:pb-16">
+      <section className="relative bg-neutral-950 text-white pt-24 sm:pt-32 pb-16 sm:pb-20">
         <div className={CONTAINER}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
-              <div className="relative h-80 lg:h-[480px] rounded-2xl overflow-hidden">
+              <div className="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/testimonials/rav.magic.webp"
                   alt="Rafał - architekt mentalny"
@@ -680,18 +680,18 @@ export default function Page() {
                   className="object-cover object-center"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/30 to-transparent"></div>
               </div>
             </div>
             
             {/* Right column - Content */}
             <div className="slow-reveal order-1 lg:order-2">
-              <div className="inline-block h-[2px] w-12 bg-accent mb-6"></div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+              <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
                 O mnie
               </h2>
               
-              <div className="space-y-4 text-base leading-relaxed text-neutral-300">
+              <div className="space-y-5 text-base leading-relaxed text-neutral-300">
                 <p className="text-lg font-semibold text-white">
                   Jestem architektem mentalnym.
                 </p>
@@ -712,11 +712,11 @@ export default function Page() {
                   Moim zadaniem jest towarzyszyć Ci na tej drodze. Pokazać, że zmiana jest możliwa – i że wszystko, czego potrzebujesz, już w Tobie jest.
                 </p>
                 
-                <div className="pt-4 border-t border-neutral-800">
-                  <p className="text-lg font-semibold text-white mb-2">
+                <div className="pt-6 border-t border-neutral-800">
+                  <p className="text-lg font-semibold text-white mb-3">
                     Twoje życie może być sztuką.
                   </p>
-                  <p className="text-base text-neutral-300">
+                  <p className="text-base text-neutral-300 mb-2">
                     Może być spokojne, pełne i piękne.
                   </p>
                   <p className="text-base text-accent font-medium">
