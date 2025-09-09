@@ -1,7 +1,5 @@
 
-'use client';
-
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import Image from "next/image"; // Removed for static export
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
@@ -11,7 +9,7 @@ const SPACING = "py-32 sm:py-40 lg:py-48";
 function ContactForm() {
   return (
     <div className="mailerlite-form-container">
-      <style jsx>{`
+      <style>{`
         @import url("https://assets.mlcdn.com/fonts.css?version=1757316");
         
         /* LOADER */
@@ -363,31 +361,15 @@ function ContactForm() {
 
 export default function Page() {
   useEffect(() => {
+    // Set current year
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-
-    // reveal
-    const revealEls = Array.from(document.querySelectorAll(".reveal"));
-    const heroRevealEls = Array.from(document.querySelectorAll(".hero-reveal"));
-    const slowRevealEls = Array.from(document.querySelectorAll(".slow-reveal"));
-    const centralDots = Array.from(document.querySelectorAll(".central-dot"));
-    const lineDraws = Array.from(document.querySelectorAll(".line-draw"));
-    
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.6 });
-    
-    revealEls.forEach((el) => io.observe(el));
-    heroRevealEls.forEach((el) => io.observe(el));
-    slowRevealEls.forEach((el) => io.observe(el));
-    centralDots.forEach((el) => io.observe(el));
-    lineDraws.forEach((el) => io.observe(el));
+    // Make all elements visible immediately (no animations for static export)
+    const allElements = document.querySelectorAll(".reveal, .hero-reveal, .slow-reveal, .central-dot, .line-draw");
+    allElements.forEach((el) => {
+      el.classList.add("visible");
+    });
 
     // shrink island
     const island = document.getElementById("islandNav");
@@ -503,20 +485,20 @@ export default function Page() {
       </div>
 
       {/* 1) HERO */}
-      <section className={"relative bg-white text-neutral-900 " + SPACING}>
+      <section className={"relative bg-white text-neutral-900 " + SPACING} style={{display: 'block', opacity: 1, visibility: 'visible'}}>
         <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[60vh]"}>
-          <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
+          <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs" style={{display: 'inline-flex', opacity: 1, visibility: 'visible'}}>
             <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
             Metoda SET (Simple Effective Therapy)
           </span>
-          <h1 className="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)] max-w-5xl">
+          <h1 className="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)] max-w-5xl" style={{display: 'block', opacity: 1, visibility: 'visible'}}>
             Hipnoterapia dla ludzi, którzy chcą więcej od życia.
           </h1>
-          <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
+          <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed" style={{display: 'block', opacity: 1, visibility: 'visible'}}>
             Pomagam osobom świadomym – liderom, sportowcom, przedsiębiorcom – uwolnić się od blokad,
             odkryć pełnię swojego potencjału i świadomie tworzyć życie, które kochają.
           </p>
-          <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style={{display: 'flex', opacity: 1, visibility: 'visible'}}>
             <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-8 py-4 font-semibold hover:bg-neutral-800 text-lg">Umów konsultację</a>
             <a href="https://wa.me/48602200511" className="rounded-xl border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:bg-neutral-50 text-lg">Napisz na WhatsApp</a>
           </div>
