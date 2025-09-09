@@ -671,7 +671,7 @@ export default function Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
-              <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden">
+              <div className="relative h-80 lg:h-[480px] rounded-2xl overflow-hidden">
                 <Image
                   src="/testimonials/rav.magic.webp"
                   alt="Rafał - architekt mentalny"
