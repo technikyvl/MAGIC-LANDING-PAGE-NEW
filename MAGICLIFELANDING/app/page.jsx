@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image"; // Removed for static export
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
@@ -672,13 +672,10 @@ export default function Page() {
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
               <div className="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
+                <img
                   src="/testimonials/rav.magic.webp"
                   alt="Rafał - architekt mentalny"
-                  fill
-                  sizes="(min-width:1024px) 50vw, 100vw"
-                  className="object-cover object-center"
-                  priority
+                  className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/30 to-transparent"></div>
               </div>
@@ -853,14 +850,11 @@ export default function Page() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {/* Client photo */}
               <div className="relative h-64 md:h-full overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
-                <Image
+                <img
                   src="/testimonials/ada-jedrzejczyk.webp"
                   alt="Adrianna Jędrzejczyk — wejście na galę Babilon Boxing"
-                  fill
-                  sizes="(min-width:768px) 50vw, 100vw"
-                  className="object-cover object-center"
+                  className="w-full h-full object-cover object-center"
                   style={{ objectPosition: 'center 30%' }}
-                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 to-transparent"></div>
               </div>
