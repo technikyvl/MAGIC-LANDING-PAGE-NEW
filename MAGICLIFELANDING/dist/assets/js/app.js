@@ -7,23 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Initialize reveal animations with IntersectionObserver
-  const revealElements = document.querySelectorAll(".reveal, .hero-reveal, .slow-reveal");
-  
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-in");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { 
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  });
-  
-  revealElements.forEach(el => {
-    revealObserver.observe(el);
+  // Make all elements visible immediately (no animations for static export)
+  const allElements = document.querySelectorAll(".reveal, .hero-reveal, .slow-reveal");
+  allElements.forEach((el) => {
+    el.classList.add("visible");
   });
 
   // Header island shrink on scroll
@@ -149,21 +136,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Additional reveal animations for any missed elements
-  const additionalRevealElements = $$('.reveal, .hero-reveal, .slow-reveal');
-  const additionalRevealObserver = new IntersectionObserver((entries) => {
+  // Reveal animations on scroll (optional enhancement)
+  const revealElements = $$('.reveal, .hero-reveal, .slow-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-in');
-        additionalRevealObserver.unobserve(entry.target);
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
   
-  additionalRevealElements.forEach(el => {
-    // Only observe if not already animated
-    if (!el.classList.contains('is-in')) {
-      additionalRevealObserver.observe(el);
+  revealElements.forEach(el => {
+    // Only observe if not already visible
+    if (!el.classList.contains('visible')) {
+      revealObserver.observe(el);
     }
   });
 });
