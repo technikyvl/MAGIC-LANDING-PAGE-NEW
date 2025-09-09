@@ -666,12 +666,12 @@ export default function Page() {
       </section>
 
       {/* 5) About Me */}
-      <section className="relative bg-neutral-950 text-white py-16 sm:py-20">
+      <section className="relative bg-neutral-950 text-white pt-16 sm:pt-20 pb-12 sm:pb-16">
         <div className={CONTAINER}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
-              <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
+              <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden">
                 <Image
                   src="/testimonials/rav.magic.webp"
                   alt="Rafał - architekt mentalny"
