@@ -147,3 +147,4 @@ Jeśli masz problemy z konfiguracją, sprawdź:
 2. Logi serwera w terminalu
 3. Czy wszystkie zmienne środowiskowe są ustawione
 4. Czy nodemailer jest zainstalowany
+

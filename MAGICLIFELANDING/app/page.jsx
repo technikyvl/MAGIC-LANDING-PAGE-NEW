@@ -924,7 +924,7 @@ export default function Page() {
               ["Ile trwa sesja / ile potrzeba?","Sesja 60–90 min. Często wystarcza 1–3 spotkania, zależnie od tematu."],
               ["Czy to bezpieczne? Czy będę pamiętać sesję?","Tak. Pełna świadomość, pełna kontrola. Większość osób pamięta przebieg pracy."],
               ["Jak się przygotować?","Spokojna przestrzeń, wygodne słuchawki (online), jasny cel pracy."],
-              ["Online czy stacjonarnie? Gwarancje?","Pracuję obie formy. Gwarancja rzetelnej pracy — bez obietnic medycznych."]
+              ["Online czy stacjonarnie? Gwarancje?","Pracuję obu formach. Gwarancja rzetelnej pracy — bez obietnic medycznych."]
             ].map(([q,a],i)=> (
               <details key={i} className="px-6 sm:px-8 py-6 group">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-left font-semibold">
