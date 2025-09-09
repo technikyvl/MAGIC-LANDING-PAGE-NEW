@@ -668,7 +668,7 @@ export default function Page() {
       {/* 5) About Me */}
       <section className="relative bg-neutral-950 text-white pt-16 sm:pt-20 pb-12 sm:pb-16">
         <div className={CONTAINER}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
               <div className="relative h-80 lg:h-[480px] rounded-2xl overflow-hidden">
