@@ -666,7 +666,7 @@ export default function Page() {
       </section>
 
       {/* 5) About Me */}
-      <section className="relative bg-neutral-950 text-white pt-16 sm:pt-20 pb-12 sm:pb-16">
+      <section className="relative bg-neutral-950 text-white pt-24 sm:pt-32 pb-12 sm:pb-16">
         <div className={CONTAINER}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left column - Photo */}
