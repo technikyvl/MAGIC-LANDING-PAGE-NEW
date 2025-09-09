@@ -666,12 +666,12 @@ export default function Page() {
       </section>
 
       {/* 5) About Me */}
-      <section className={"relative bg-neutral-950 text-white " + SPACING}>
+      <section className="relative bg-neutral-950 text-white py-16 sm:py-20">
         <div className={CONTAINER}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left column - Photo */}
             <div className="slow-reveal order-2 lg:order-1">
-              <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden">
+              <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src="/testimonials/rav.magic.webp"
                   alt="Rafał - architekt mentalny"
@@ -686,13 +686,13 @@ export default function Page() {
             
             {/* Right column - Content */}
             <div className="slow-reveal order-1 lg:order-2">
-              <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+              <div className="inline-block h-[2px] w-12 bg-accent mb-6"></div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
                 O mnie
               </h2>
               
-              <div className="space-y-6 text-lg leading-relaxed text-neutral-300">
-                <p className="text-xl font-semibold text-white">
+              <div className="space-y-4 text-base leading-relaxed text-neutral-300">
+                <p className="text-lg font-semibold text-white">
                   Jestem architektem mentalnym.
                 </p>
                 
@@ -712,14 +712,14 @@ export default function Page() {
                   Moim zadaniem jest towarzyszyć Ci na tej drodze. Pokazać, że zmiana jest możliwa – i że wszystko, czego potrzebujesz, już w Tobie jest.
                 </p>
                 
-                <div className="pt-6 border-t border-neutral-800">
-                  <p className="text-xl font-semibold text-white mb-4">
+                <div className="pt-4 border-t border-neutral-800">
+                  <p className="text-lg font-semibold text-white mb-2">
                     Twoje życie może być sztuką.
                   </p>
-                  <p className="text-lg text-neutral-300">
+                  <p className="text-base text-neutral-300">
                     Może być spokojne, pełne i piękne.
                   </p>
-                  <p className="text-lg text-accent font-medium">
+                  <p className="text-base text-accent font-medium">
                     A Ty masz w sobie wszystko, by je stworzyć.
                   </p>
                 </div>
