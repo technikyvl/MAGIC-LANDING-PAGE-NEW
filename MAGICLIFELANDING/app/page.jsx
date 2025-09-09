@@ -665,7 +665,71 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5) Process – timeline */}
+      {/* 5) About Me */}
+      <section className={"relative bg-neutral-950 text-white " + SPACING}>
+        <div className={CONTAINER}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left column - Photo */}
+            <div className="slow-reveal order-2 lg:order-1">
+              <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden">
+                <Image
+                  src="/testimonials/rav.magic.webp"
+                  alt="Rafał - architekt mentalny"
+                  fill
+                  sizes="(min-width:1024px) 50vw, 100vw"
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/20 to-transparent"></div>
+              </div>
+            </div>
+            
+            {/* Right column - Content */}
+            <div className="slow-reveal order-1 lg:order-2">
+              <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+                O mnie
+              </h2>
+              
+              <div className="space-y-6 text-lg leading-relaxed text-neutral-300">
+                <p className="text-xl font-semibold text-white">
+                  Jestem architektem mentalnym.
+                </p>
+                
+                <p>
+                  Pomagam ludziom zobaczyć siebie w pełnym świetle – bez masek, schematów i historii, które przestały im służyć.
+                </p>
+                
+                <p>
+                  Przez lata zgłębiałem tajemnice podświadomości, psychologii i rozwoju osobistego, aby stworzyć własną metodę głębokiej transformacji. Dziś łączę hipnozę, pracę z przekonaniami i neurobiologię zmiany, by pokazać Ci, że możesz prowadzić życie w harmonii ze sobą – i działać z miejsca siły, a nie strachu.
+                </p>
+                
+                <p>
+                  Nie jestem teoretykiem. Wiem, czym jest upadek, chaos i brak sensu. Wiem też, jak wygląda życie po drugiej stronie – kiedy odzyskujesz swoją moc i zaczynasz działać w zgodzie ze sobą.
+                </p>
+                
+                <p>
+                  Moim zadaniem jest towarzyszyć Ci na tej drodze. Pokazać, że zmiana jest możliwa – i że wszystko, czego potrzebujesz, już w Tobie jest.
+                </p>
+                
+                <div className="pt-6 border-t border-neutral-800">
+                  <p className="text-xl font-semibold text-white mb-4">
+                    Twoje życie może być sztuką.
+                  </p>
+                  <p className="text-lg text-neutral-300">
+                    Może być spokojne, pełne i piękne.
+                  </p>
+                  <p className="text-lg text-accent font-medium">
+                    A Ty masz w sobie wszystko, by je stworzyć.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6) Process – timeline */}
       <section id="process" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
           <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Jak wygląda proces – metoda SET</h2>
@@ -696,7 +760,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 6) Support - Editorial Style */}
+      {/* 7) Support - Editorial Style */}
       <section className="bg-white text-neutral-900 py-16 lg:py-20 md:py-12 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Two-column header */}
@@ -778,7 +842,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 7) Reviews */}
+      {/* 8) Reviews */}
       <section id="reviews" className={"bg-white " + SPACING}>
         <div className={CONTAINER}>
           <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-neutral-900">Opinie klientów</h2>
@@ -846,7 +910,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8) Why works - TIMELINE style */}
+      {/* 9) Why works - TIMELINE style */}
       <section id="why-works" className="timeline-section">
         <div className="timeline-container">
           <h2 className="timeline-title">Dlaczego to działa</h2>
@@ -886,7 +950,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 9) Big CTA */}
+      {/* 10) Big CTA */}
       <section className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
         <div className={CONTAINER + " text-center"}>
           <div className="slow-reveal mx-auto max-w-4xl">
@@ -914,7 +978,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 10) FAQ */}
+      {/* 11) FAQ */}
       <section id="faq" className="bg-white py-16 sm:py-20">
         <div className={CONTAINER}>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
@@ -939,7 +1003,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 11) Contact */}
+      {/* 12) Contact */}
       <section id="contact" className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           {/* Header */}
