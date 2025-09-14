@@ -137,3 +137,4 @@ dist/
 ---
 
 **Strona gotowa z poprawionymi czcionkami i animacjami!** 🎉
+

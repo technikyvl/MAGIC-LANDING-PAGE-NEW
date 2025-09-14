@@ -101,3 +101,4 @@ dist/
 ---
 
 **Wszystkie zmiany cofnięte do stanu Next.js!** 🔄
+

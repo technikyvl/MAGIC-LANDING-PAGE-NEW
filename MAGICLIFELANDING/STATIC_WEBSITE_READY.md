@@ -113,3 +113,4 @@ Jeśli coś nie działa:
 **Strona jest w 100% gotowa do wdrożenia na zwykły hosting!**
 
 Wszystkie problemy z pustym środkiem strony zostały rozwiązane. Teraz masz kompletnie statyczną stronę, która działa bez żadnych zależności od React/Next.js.
+
