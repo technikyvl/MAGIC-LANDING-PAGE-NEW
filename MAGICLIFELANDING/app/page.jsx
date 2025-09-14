@@ -365,10 +365,23 @@ export default function Page() {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    // Make all elements visible immediately (no animations for static export)
-    const allElements = document.querySelectorAll(".reveal, .hero-reveal, .slow-reveal, .central-dot, .line-draw");
-    allElements.forEach((el) => {
-      el.classList.add("visible");
+    // Intersection Observer for reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    // Observe all reveal elements
+    const revealElements = document.querySelectorAll(".reveal, .hero-reveal, .slow-reveal, .central-dot, .line-draw");
+    revealElements.forEach((el) => {
+      revealObserver.observe(el);
     });
 
     // shrink island
