@@ -883,9 +883,9 @@ export default function Page() {
           {/* Other reviews */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
-              ['Marcin K.', '„Jako przedsiębiorca miałem problemy z podejmowaniem decyzji pod presją. Po kilku sesjach z Rafałem odzyskałem pewność siebie i teraz prowadzę firmę z większą swobodą. Hipnoterapia pomogła mi zrozumieć źródło moich lęków i je przezwyciężyć."'],
-              ['Anna W.', '„Zmagałam się z uzależnieniem od alkoholu przez kilka lat. Sesje z Rafałem pomogły mi dotrzeć do głębszych przyczyn mojego problemu i wypracować nowe, zdrowe wzorce myślenia. Dziś jestem trzeźwa i mam kontrolę nad swoim życiem."'],
-              ['Piotr L.', '„Miałem problemy z niską samooceną i brakiem pewności siebie w relacjach. Po pracy z Rafałem nauczyłem się akceptować siebie i budować zdrowe relacje. Hipnoterapia dała mi narzędzia do codziennego radzenia sobie z wyzwaniami."'],
+              ['Przedsiębiorca', '„Przyszedłem na sesje z ogromnym chaosem. Firma niby działała, ale ja byłem wyczerpany, żyłem w ciągłym stresie. Dzięki pracy, którą wykonaliśmy, nauczyłem się odpuszczać kontrolę i zaufać procesowi. Wprowadziłem kilka prostych zmian, które zmieniły wszystko: mam więcej klientów, mniej napięcia i… pierwszy raz od lat czuję się naprawdę spokojny. To nie tylko rozwój biznesu, to rozwój mnie jako człowieka."'],
+              ['Osoba z nałogiem', '„Nie wierzyłem, że ktokolwiek mi pomoże. Alkohol był moim sposobem na życie, na radzenie sobie z emocjami. Sesje uświadomiły mi, skąd bierze się ten mechanizm, i krok po kroku odzyskałem siebie. Dziś jestem trzeźwy, czuję się wolny, a moje relacje z bliskimi odżyły. To było jak powrót do życia, którego nigdy nie znałem."'],
+              ['Manager w firmie', '„Od zawsze marzyłam o własnym domu, ale to marzenie wydawało się odległe i nierealne. Praca nad sobą pozwoliła mi zrozumieć, jak bardzo blokowałam swoje pragnienia. Zmieniłam sposób myślenia, zaczęłam podejmować inne decyzje i… dziś mieszkam w moim wymarzonym domu. Co więcej, awansowałam na stanowisko, o którym wcześniej nawet nie marzyłam. Ta transformacja zmieniła całe moje życie."'],
             ].map(([name, text], i) => (
               <figure key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-8">
                 <div className="flex items-center gap-3">
