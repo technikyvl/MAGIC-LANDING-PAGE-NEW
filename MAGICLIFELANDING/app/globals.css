@@ -49,6 +49,27 @@ html {
   transition: width .25s ease, opacity .25s ease; opacity: 0;
 }
 .navlink.active::after { width: 18px; opacity: 1; }
+.navlink:hover::after { width: 18px; opacity: 1; }
+
+/* CTA button hover animation */
+a[href="#contact"]:last-child {
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+a[href="#contact"]:last-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left .5s ease;
+}
+a[href="#contact"]:last-child:hover::before {
+  left: 100%;
+}
 
 /* shrink island */
 .island--shrink { 
