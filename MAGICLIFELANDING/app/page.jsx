@@ -416,7 +416,7 @@ export default function Page() {
     });
 
     // active nav
-    const ids = ["why", "audience", "process", "reviews", "faq", "contact"];
+    const ids = ["why", "audience", "process", "reviews", "pricing", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -490,6 +490,7 @@ export default function Page() {
             <li><a href="#audience" className="navlink relative px-2 py-1">Dla kogo</a></li>
             <li><a href="#process" className="navlink relative px-2 py-1">Proces</a></li>
             <li><a href="#reviews" className="navlink relative px-2 py-1">Opinie</a></li>
+            <li><a href="#pricing" className="navlink relative px-2 py-1">Cennik</a></li>
             <li><a href="#faq" className="navlink relative px-2 py-1">FAQ</a></li>
             <li><a href="#contact" className="navlink relative px-2 py-1">Kontakt</a></li>
           </ul>
@@ -969,7 +970,135 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 11) FAQ */}
+      {/* 11) Pricing */}
+      <section id="pricing" className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
+        <div className={CONTAINER}>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-4">Cennik usług premium</h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              Wybierz opcję, która najlepiej odpowiada Twoim potrzebom transformacji
+            </p>
+          </div>
+
+          {/* Individual Sessions */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Sesje indywidualne</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <h4 className="text-xl font-semibold text-neutral-900 mb-3">Sesja 1:1 (60 minut)</h4>
+                <p className="text-neutral-600 mb-6">Transformacyjna praca skupiona w pełni na Tobie.</p>
+                <div className="text-3xl font-bold text-accent">550 zł</div>
+              </div>
+              
+              <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <h4 className="text-xl font-semibold text-neutral-900 mb-3">Sesja + rozmowa (75–90 minut)</h4>
+                <p className="text-neutral-600 mb-6">Połączenie rozmowy ukierunkowanej na Twoje cele i intensywnej pracy transformacyjnej.</p>
+                <div className="text-3xl font-bold text-accent">650 zł</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transformational Packages */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Pakiety transformacyjne</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <h4 className="text-xl font-semibold text-neutral-900 mb-4">Pakiet 4 sesji + mentoring</h4>
+                <ul className="space-y-3 text-neutral-600 mb-6">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>4 pełne sesje głębokiej pracy</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>dedykowane sesje (online / stacjonarnie)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>stały kontakt (WhatsApp, e-mail)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>audyt celów i blokad</span>
+                  </li>
+                </ul>
+                <div className="text-3xl font-bold text-accent">3 000 zł</div>
+              </div>
+
+              <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+                <h4 className="text-xl font-semibold text-neutral-900 mb-4">Pakiet 6 sesji + mentoring</h4>
+                <ul className="space-y-3 text-neutral-600 mb-6">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>6 pełnych sesji</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>dedykowane sesje (online / stacjonarnie)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>stały kontakt (WhatsApp, e-mail)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <span>audyt celów i blokad</span>
+                  </li>
+                </ul>
+                <div className="text-3xl font-bold text-accent">4 200 zł</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Special Services */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Workshop */}
+            <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+              <h4 className="text-xl font-semibold text-neutral-900 mb-4">Warsztat 1:1 na żywo</h4>
+              <p className="text-neutral-600 mb-6">Całodniowa, intensywna podróż transformacyjna – praca indywidualna na najwyższym poziomie.</p>
+              <div className="text-3xl font-bold text-accent">2 500 zł</div>
+            </div>
+
+            {/* Premium Mentoring */}
+            <div className="slow-reveal bg-gradient-to-br from-neutral-900 to-black text-white rounded-2xl p-8 shadow-[0_8px_30px_rgba(0,0,0,.2)] hover:shadow-[0_12px_40px_rgba(0,0,0,.3)] transition-all duration-300">
+              <h4 className="text-xl font-semibold text-white mb-4">Mentoring premium dla liderów i przedsiębiorców</h4>
+              <p className="text-neutral-300 mb-4">Ekskluzyjny miesięczny program 1:1, obejmujący:</p>
+              <ul className="space-y-2 text-neutral-300 mb-6 text-sm">
+                <li>• dedykowane sesje (online / stacjonarnie)</li>
+                <li>• stały kontakt (WhatsApp, e-mail)</li>
+                <li>• codzienne rozmowy / mentoring / trening mentalny</li>
+                <li>• audyt celów i blokad</li>
+                <li>• audio-wsparcie (hipnozy, coaching, trening mentalny, medytacje)</li>
+                <li>• indywidualny plan działania</li>
+              </ul>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl font-bold text-neutral-400 line-through">9 000 zł</span>
+                <span className="text-3xl font-bold text-accent">6 000 zł</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Special Areas */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-neutral-900 mb-6">Współpraca w szczególnych obszarach</h3>
+            <p className="text-lg text-neutral-600 mb-4">Indywidualnie wyceniam także pracę z:</p>
+            <div className="flex flex-wrap justify-center gap-4 text-neutral-600">
+              <span className="px-4 py-2 bg-white rounded-full border border-neutral-200">nastolatkami i ich rodzicami</span>
+              <span className="px-4 py-2 bg-white rounded-full border border-neutral-200">parami rozwijającymi relacje</span>
+              <span className="px-4 py-2 bg-white rounded-full border border-neutral-200">osobami chcącymi uwolnić się od nałogów</span>
+            </div>
+          </div>
+
+          {/* Note */}
+          <div className="mt-12 text-center">
+            <p className="text-neutral-500 italic">Wszystkie spotkania mogą odbywać się online lub stacjonarnie.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 12) FAQ */}
       <section id="faq" className="bg-white py-16 sm:py-20">
         <div className={CONTAINER}>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
@@ -1062,6 +1191,7 @@ export default function Page() {
                 <a href="#audience" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
                 <a href="#reviews" className="text-base hover:text-accent transition-colors duration-300">Opinie</a>
+                <a href="#pricing" className="text-base hover:text-accent transition-colors duration-300">Cennik</a>
                 <a href="#faq" className="text-base hover:text-accent transition-colors duration-300">FAQ</a>
                 <a href="#contact" className="text-base hover:text-accent transition-colors duration-300">Kontakt</a>
               </div>
