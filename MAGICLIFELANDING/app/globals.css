@@ -52,12 +52,19 @@ html {
 
 /* shrink island */
 .island--shrink { 
-  max-width: 60rem !important; 
-  padding: .75rem 1.25rem !important; 
-  gap: 5rem !important;
+  max-width: 50rem !important; 
+  padding: .75rem 1rem !important; 
+  gap: 2rem !important;
 }
-.island--shrink ul { gap: 4rem !important; }
-.island--shrink .navlink { padding: .5rem .75rem !important; }
+.island--shrink ul { gap: 1.5rem !important; }
+.island--shrink .navlink { 
+  padding: .375rem .5rem !important; 
+  font-size: .875rem !important; 
+}
+.island--shrink a[href="#contact"]:last-child { 
+  padding: .5rem .75rem !important; 
+  font-size: .875rem !important; 
+}
 
 
 /* Tree root animation */
