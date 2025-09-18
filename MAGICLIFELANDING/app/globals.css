@@ -51,7 +51,7 @@ html {
 .navlink.active::after { width: 18px; opacity: 1; }
 
 /* shrink island */
-.island--shrink { max-width: 48rem !important; padding: .5rem .75rem !important; }
+.island--shrink { max-width: 56rem !important; padding: .75rem 1rem !important; }
 
 
 /* Tree root animation */
