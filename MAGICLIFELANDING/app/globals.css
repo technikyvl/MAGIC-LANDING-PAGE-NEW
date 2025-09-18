@@ -52,17 +52,17 @@ html {
 
 /* shrink island */
 .island--shrink { 
-  max-width: 50rem !important; 
-  padding: .75rem 1rem !important; 
-  gap: 2rem !important;
+  max-width: 58rem !important; 
+  padding: .75rem 1.25rem !important; 
+  gap: 2.5rem !important;
 }
-.island--shrink ul { gap: 1.5rem !important; }
+.island--shrink ul { gap: 2rem !important; }
 .island--shrink .navlink { 
-  padding: .375rem .5rem !important; 
+  padding: .5rem .75rem !important; 
   font-size: .875rem !important; 
 }
 .island--shrink a[href="#contact"]:last-child { 
-  padding: .5rem .75rem !important; 
+  padding: .625rem 1rem !important; 
   font-size: .875rem !important; 
 }
 
