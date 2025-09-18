@@ -52,11 +52,11 @@ html {
 
 /* shrink island */
 .island--shrink { 
-  max-width: 58rem !important; 
+  max-width: 65rem !important; 
   padding: .75rem 1.25rem !important; 
-  gap: 2.5rem !important;
+  gap: 1.25rem !important;
 }
-.island--shrink ul { gap: 2rem !important; }
+.island--shrink ul { gap: 1rem !important; }
 .island--shrink .navlink { 
   padding: .5rem .75rem !important; 
   font-size: .875rem !important; 
