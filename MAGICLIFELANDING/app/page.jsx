@@ -985,13 +985,7 @@ export default function Page() {
           {/* Individual Sessions */}
           <div className="mb-16">
             <h3 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Sesje indywidualne</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
-                <h4 className="text-xl font-semibold text-neutral-900 mb-3">Sesja 1:1 (60 minut)</h4>
-                <p className="text-neutral-600 mb-6">Transformacyjna praca skupiona w pełni na Tobie.</p>
-                <div className="text-3xl font-bold text-accent">550 zł</div>
-              </div>
-              
+            <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
               <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
                 <h4 className="text-xl font-semibold text-neutral-900 mb-3">Sesja + rozmowa (75–90 minut)</h4>
                 <p className="text-neutral-600 mb-6">Połączenie rozmowy ukierunkowanej na Twoje cele i intensywnej pracy transformacyjnej.</p>
