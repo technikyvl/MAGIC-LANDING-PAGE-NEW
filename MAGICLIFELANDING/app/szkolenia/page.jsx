@@ -490,21 +490,83 @@ export default function TrainingPage() {
       </section>
 
       {/* Instructor */}
-      <section className={"bg-white text-neutral-900 " + SPACING}>
+      <section className={"bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-center mb-16">Kto prowadzi kurs?</h2>
-          <div className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Rafał Eliasik</h3>
-              <p className="text-accent font-semibold">Certyfikowany Master Hipnozy i Hipnoterapii, trener mentalny oraz strateg biznesowy</p>
+          <div className="text-center mb-16">
+            <div className="slow-reveal inline-flex items-center gap-3 rounded-full bg-accent/10 px-6 py-3 mb-8">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-accent font-semibold">Kto prowadzi kurs?</span>
             </div>
-            <div className="max-w-4xl mx-auto text-neutral-700 leading-relaxed space-y-4">
-              <p>
-                Od lat prowadzi ludzi w procesach zmiany – w życiu prywatnym i zawodowym. Pracuje z przedsiębiorcami, sportowcami oraz osobami, które chcą sięgnąć po swój pełny potencjał.
-              </p>
-              <p>
-                Łączy doświadczenie w pracy z podświadomością, transformacją osobistą i rozwojem biznesu. Dzięki temu podczas kursu otrzymasz nie tylko techniki hipnotyczne, ale też praktyczne spojrzenie na to, jak stosować je w realnej pracy z ludźmi.
-              </p>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+              <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                Twój przewodnik
+              </span>
+              <br />
+              <span className="text-accent">w transformacji</span>
+            </h2>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-3xl border border-neutral-200/50 p-8 sm:p-12 shadow-2xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Photo */}
+                <div className="slow-reveal order-2 lg:order-1">
+                  <div className="relative group">
+                    <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
+                      <img
+                        src="/testimonials/rav.magic.webp"
+                        alt="Rafał Eliasik - Certyfikowany Master Hipnozy"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent"></div>
+                    </div>
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/50 rounded-full animate-pulse delay-500"></div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="slow-reveal order-1 lg:order-2">
+                  <div className="mb-8">
+                    <h3 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">Rafał Eliasik</h3>
+                    <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 mb-6">
+                      <div className="w-2 h-2 bg-accent rounded-full"></div>
+                      <span className="text-accent font-semibold text-sm">Certyfikowany Master Hipnozy i Hipnoterapii</span>
+                    </div>
+                    <p className="text-lg text-neutral-600 mb-6">
+                      Trener mentalny oraz strateg biznesowy
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-6 text-neutral-700 leading-relaxed">
+                    <p className="text-lg">
+                      Od lat prowadzi ludzi w procesach zmiany – w życiu prywatnym i zawodowym. Pracuje z przedsiębiorcami, sportowcami oraz osobami, które chcą sięgnąć po swój pełny potencjał.
+                    </p>
+                    
+                    <p>
+                      Łączy doświadczenie w pracy z podświadomością, transformacją osobistą i rozwojem biznesu. Dzięki temu podczas kursu otrzymasz nie tylko techniki hipnotyczne, ale też praktyczne spojrzenie na to, jak stosować je w realnej pracy z ludźmi.
+                    </p>
+                    
+                    <div className="pt-6 border-t border-neutral-200">
+                      <div className="flex flex-wrap gap-4">
+                        <div className="flex items-center gap-2 text-sm text-neutral-600">
+                          <div className="w-2 h-2 bg-accent rounded-full"></div>
+                          <span>Master Hipnozy</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-neutral-600">
+                          <div className="w-2 h-2 bg-accent rounded-full"></div>
+                          <span>Trener mentalny</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-neutral-600">
+                          <div className="w-2 h-2 bg-accent rounded-full"></div>
+                          <span>Strateg biznesowy</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
