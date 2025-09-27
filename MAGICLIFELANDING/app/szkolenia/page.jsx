@@ -639,7 +639,7 @@ export default function TrainingPage() {
                 
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
                   <span className="bg-gradient-to-r from-white via-neutral-200 to-white bg-clip-text text-transparent">
-                    🌙 Gotowy na pierwszy krok?
+                    Gotowy na pierwszy krok?
                   </span>
                 </h2>
                 
