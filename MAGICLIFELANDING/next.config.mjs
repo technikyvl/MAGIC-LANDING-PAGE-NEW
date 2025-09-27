@@ -1,8 +1,13 @@
 export default { 
   reactStrictMode: true,
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false,
   images: {
     unoptimized: true
+  },
+  basePath: '',
+  assetPrefix: '',
+  async redirects() {
+    return []
   }
 };
