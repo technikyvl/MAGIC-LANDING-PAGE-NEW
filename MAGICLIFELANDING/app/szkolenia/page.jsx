@@ -89,22 +89,61 @@ export default function TrainingPage() {
         </nav>
       </div>
 
-      {/* Hero Section */}
-      <section className={"relative bg-white text-neutral-900 " + SPACING}>
-        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[60vh]"}>
-          <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-neutral-200 px-3 py-1 text-xs">
-            <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
-            Szkolenia z hipnozy
-          </span>
-          <h1 className="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(40px,8vw,76px)] max-w-5xl">
-            ✨ PRAKTYK Techniki HIPNOZY MARZEŃ
-          </h1>
-          <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
-            24–25 października 2025 | Kurs stacjonarny
-          </p>
-          <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#contact" className="rounded-xl bg-neutral-900 text-white px-8 py-4 font-semibold hover:bg-neutral-800 text-lg">Zapisz się teraz</a>
-            <a href="https://wa.me/48602200511" className="rounded-xl border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:bg-neutral-50 text-lg">Napisz na WhatsApp</a>
+      {/* Hero Section - Creative Layout */}
+      <section className={"relative bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 " + SPACING}>
+        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[80vh] relative"}>
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-10 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/3 rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent/8 rounded-full blur-lg animate-pulse delay-500"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
+              <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+              Szkolenia z hipnozy
+            </span>
+            
+            <h1 className="hero-reveal mt-8 font-extrabold leading-[0.9] tracking-[-0.02em] text-[clamp(48px,10vw,96px)] max-w-6xl">
+              <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                ✨ PRAKTYK
+              </span>
+              <br />
+              <span className="text-accent">Techniki HIPNOZY MARZEŃ</span>
+            </h1>
+            
+            <div className="hero-reveal mt-8 inline-flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-6 py-4 shadow-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-lg font-semibold text-neutral-900">24–25 października 2025</span>
+              </div>
+              <div className="w-px h-6 bg-neutral-300"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-300"></div>
+                <span className="text-lg font-semibold text-neutral-900">Kurs stacjonarny</span>
+              </div>
+            </div>
+            
+            <div className="hero-reveal mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a href="#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-10 py-5 font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                <span className="relative z-10 flex items-center gap-3">
+                  <span>Zapisz się teraz</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a href="https://wa.me/48602200511" className="group rounded-2xl border-2 border-neutral-300 px-10 py-5 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105">
+                <span className="flex items-center gap-3">
+                  <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                  </svg>
+                  Napisz na WhatsApp
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -129,35 +168,94 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Why This Course */}
-      <section className={"bg-white text-neutral-900 " + SPACING}>
+      {/* Why This Course - Interactive Hexagon Layout */}
+      <section className={"bg-gradient-to-br from-white via-neutral-50 to-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <div className="text-center mb-16">
-            <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
-            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-              Dlaczego warto?
+          <div className="text-center mb-20">
+            <div className="slow-reveal inline-flex items-center gap-3 rounded-full bg-accent/10 px-6 py-3 mb-8">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-accent font-semibold">Dlaczego warto?</span>
+            </div>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+              <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                Transformacja
+              </span>
+              <br />
+              <span className="text-accent">w 48 godzin</span>
             </h2>
-            <p className="slow-reveal mt-6 max-w-2xl mx-auto text-lg text-neutral-600 leading-relaxed">
+            <p className="slow-reveal max-w-3xl mx-auto text-xl text-neutral-600 leading-relaxed">
               Podczas dwudniowego kursu otrzymasz wszystko, czego potrzebujesz, by rozpocząć swoją drogę w hipnozie.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-            <p className="text-lg text-neutral-700 mb-6 leading-relaxed text-center">
-              To połączenie teorii i praktyki, dzięki któremu:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Interactive Benefits Grid */}
+          <div className="relative">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                "Zrozumiesz jak działa hipnoza i co odróżnia ją od mitów i wyobrażeń.",
-                "Doświadczysz stanu transu na sobie już w pierwszych godzinach szkolenia.",
-                "Nauczysz się prostych, skutecznych indukcji i technik pogłębiania transu.",
-                "Opanujesz zasady rozmowy wstępnej, bezpieczeństwa i pracy z klientem.",
-                "Poprowadzisz swoją pierwszą sesję hipnotyczną w parach.",
-                "Wyjdziesz z pewnością, że masz narzędzie, które realnie wspiera zmianę u innych."
+                {
+                  icon: "🧠",
+                  title: "Zrozumiesz hipnozę",
+                  description: "Jak działa i co odróżnia ją od mitów i wyobrażeń.",
+                  color: "from-blue-500 to-blue-600"
+                },
+                {
+                  icon: "✨",
+                  title: "Doświadczysz transu",
+                  description: "Na sobie już w pierwszych godzinach szkolenia.",
+                  color: "from-purple-500 to-purple-600"
+                },
+                {
+                  icon: "🎯",
+                  title: "Nauczysz się indukcji",
+                  description: "Prostych, skutecznych technik pogłębiania transu.",
+                  color: "from-green-500 to-green-600"
+                },
+                {
+                  icon: "🛡️",
+                  title: "Opanujesz bezpieczeństwo",
+                  description: "Zasady rozmowy wstępnej i pracy z klientem.",
+                  color: "from-orange-500 to-orange-600"
+                },
+                {
+                  icon: "🤝",
+                  title: "Poprowadzisz sesję",
+                  description: "Swoją pierwszą sesję hipnotyczną w parach.",
+                  color: "from-pink-500 to-pink-600"
+                },
+                {
+                  icon: "💪",
+                  title: "Zyskasz pewność",
+                  description: "Że masz narzędzie, które realnie wspiera zmianę.",
+                  color: "from-red-500 to-red-600"
+                }
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-neutral-700">{item}</span>
+                <div key={index} className="group slow-reveal">
+                  <div className="relative h-full bg-white rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
+                    {/* Hover Effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {item.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-accent transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                    
+                    {/* Decorative Element */}
+                    <div className="absolute top-4 right-4 w-8 h-8 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors duration-300"></div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -165,82 +263,204 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Course Program */}
-      <section className={"bg-neutral-950 text-white " + SPACING}>
+      {/* Course Program - Interactive Timeline */}
+      <section className={"bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-center mb-16">Program kursu</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="text-center mb-20">
+            <div className="slow-reveal inline-flex items-center gap-3 rounded-full bg-accent/20 px-6 py-3 mb-8">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-accent font-semibold">Program kursu</span>
+            </div>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+              <span className="bg-gradient-to-r from-white via-neutral-200 to-white bg-clip-text text-transparent">
+                48 godzin
+              </span>
+              <br />
+              <span className="text-accent">intensywnej nauki</span>
+            </h2>
+          </div>
+
+          {/* Interactive Timeline */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent via-accent/50 to-accent rounded-full"></div>
+            
             {/* Day 1 */}
-            <div className="slow-reveal bg-white/5 rounded-2xl border border-white/10 p-8 backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-white mb-6 text-accent">Dzień 1 – Fundamenty i pierwsze doświadczenie transu</h3>
-              <ul className="space-y-4">
-                {[
-                  "Czym naprawdę jest hipnoza – fakty i obalenie mitów.",
-                  "Świadomość i podświadomość – zasady działania umysłu.",
-                  "Sesja wprowadzająca: doświadczenie przyjemnego transu prowadzonego przez trenera.",
-                  "Rozmowa wstępna, budowanie relacji i zasady bezpieczeństwa.",
-                  "Testy sugestywności – jak sprawdzić podatność na sugestie.",
-                  "Proste indukcje: progresywna relaksacja i fiksacja wzroku.",
-                  "Pogłębianie transu i techniki bezpiecznego wyprowadzania.",
-                  "Ćwiczenia w parach: mini-sesja krok po kroku."
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-neutral-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="slow-reveal relative mb-16">
+              <div className="flex flex-col lg:flex-row items-center gap-12">
+                {/* Content */}
+                <div className="lg:w-1/2 lg:pr-12">
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        1
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">Dzień 1</h3>
+                        <p className="text-accent font-semibold">Fundamenty i pierwsze doświadczenie transu</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {[
+                        "Czym naprawdę jest hipnoza – fakty i obalenie mitów.",
+                        "Świadomość i podświadomość – zasady działania umysłu.",
+                        "Sesja wprowadzająca: doświadczenie przyjemnego transu prowadzonego przez trenera.",
+                        "Rozmowa wstępna, budowanie relacji i zasady bezpieczeństwa.",
+                        "Testy sugestywności – jak sprawdzić podatność na sugestie.",
+                        "Proste indukcje: progresywna relaksacja i fiksacja wzroku.",
+                        "Pogłębianie transu i techniki bezpiecznego wyprowadzania.",
+                        "Ćwiczenia w parach: mini-sesja krok po kroku."
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start gap-3 group">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                          <span className="text-neutral-300 group-hover:text-white transition-colors duration-300">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Visual Element */}
+                <div className="lg:w-1/2 lg:pl-12">
+                  <div className="relative">
+                    <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
+                      <div className="text-6xl">🧠</div>
+                    </div>
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent/50 rounded-full animate-pulse delay-500"></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Day 2 */}
-            <div className="slow-reveal bg-white/5 rounded-2xl border border-white/10 p-8 backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-white mb-6 text-accent">Dzień 2 – Praktyka i pełna sesja</h3>
-              <ul className="space-y-4">
-                {[
-                  "Lingwistyka hipnotyczna – jak formułować sugestie.",
-                  "Ćwiczenia w parach: dawanie i odbieranie sugestii.",
-                  "Powtórka indukcji i techniki pogłębiania.",
-                  "Praca z symboliką – wprowadzenie do wyobraźni w hipnozie.",
-                  "Ćwiczenia: pełna sesja hipnotyczna w parach (rozmowa → test → indukcja → pogłębienie → sugestia → wyprowadzenie).",
-                  "Podsumowanie i certyfikacja: PRAKTYK Techniki Hipnozy Marzeń."
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-neutral-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="slow-reveal relative">
+              <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+                {/* Content */}
+                <div className="lg:w-1/2 lg:pl-12">
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        2
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">Dzień 2</h3>
+                        <p className="text-accent font-semibold">Praktyka i pełna sesja</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {[
+                        "Lingwistyka hipnotyczna – jak formułować sugestie.",
+                        "Ćwiczenia w parach: dawanie i odbieranie sugestii.",
+                        "Powtórka indukcji i techniki pogłębiania.",
+                        "Praca z symboliką – wprowadzenie do wyobraźni w hipnozie.",
+                        "Ćwiczenia: pełna sesja hipnotyczna w parach (rozmowa → test → indukcja → pogłębienie → sugestia → wyprowadzenie).",
+                        "Podsumowanie i certyfikacja: PRAKTYK Techniki Hipnozy Marzeń."
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start gap-3 group">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                          <span className="text-neutral-300 group-hover:text-white transition-colors duration-300">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Visual Element */}
+                <div className="lg:w-1/2 lg:pr-12">
+                  <div className="relative">
+                    <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
+                      <div className="text-6xl">✨</div>
+                    </div>
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
+                    <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/50 rounded-full animate-pulse delay-300"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What You'll Gain */}
-      <section className={"bg-white text-neutral-900 " + SPACING}>
+      {/* What You'll Gain - Interactive Cards */}
+      <section className={"bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold text-center mb-16">Co zyskasz?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center mb-20">
+            <div className="slow-reveal inline-flex items-center gap-3 rounded-full bg-accent/10 px-6 py-3 mb-8">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-accent font-semibold">Co zyskasz?</span>
+            </div>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">
+              <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                Twoja transformacja
+              </span>
+              <br />
+              <span className="text-accent">w 4 krokach</span>
+            </h2>
+          </div>
+
+          {/* Interactive Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
+                icon: "🎓",
                 title: "Fundamenty hipnozy",
-                description: "Teoria, praktyka i osobiste doświadczenie transu."
+                description: "Teoria, praktyka i osobiste doświadczenie transu.",
+                gradient: "from-blue-500 to-blue-600",
+                bgGradient: "from-blue-50 to-blue-100"
               },
               {
+                icon: "💪",
                 title: "Pewność działania",
-                description: "Poprowadzisz swoją pierwszą sesję już podczas kursu."
+                description: "Poprowadzisz swoją pierwszą sesję już podczas kursu.",
+                gradient: "from-green-500 to-green-600",
+                bgGradient: "from-green-50 to-green-100"
               },
               {
+                icon: "🛡️",
                 title: "Bezpieczeństwo",
-                description: "Nauczysz się ram i zasad pracy z klientem."
+                description: "Nauczysz się ram i zasad pracy z klientem.",
+                gradient: "from-orange-500 to-orange-600",
+                bgGradient: "from-orange-50 to-orange-100"
               },
               {
+                icon: "🏆",
                 title: "Certyfikat ukończenia",
-                description: "PRAKTYK Techniki Hipnozy Marzeń."
+                description: "PRAKTYK Techniki Hipnozy Marzeń.",
+                gradient: "from-purple-500 to-purple-600",
+                bgGradient: "from-purple-50 to-purple-100"
               }
             ].map((item, index) => (
-              <div key={index} className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-6 shadow-[0_8px_30px_rgba(0,0,0,.06)] text-center">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-3">{item.title}</h3>
-                <p className="text-neutral-600 text-sm">{item.description}</p>
+              <div key={index} className="group slow-reveal">
+                <div className={`relative h-full bg-gradient-to-br ${item.bgGradient} rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden`}>
+                  {/* Hover Effect Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                        {item.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-neutral-900 group-hover:text-accent transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                        <div className="w-12 h-1 bg-accent rounded-full mt-2 group-hover:w-16 transition-all duration-300"></div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-neutral-700 leading-relaxed group-hover:text-neutral-900 transition-colors duration-300">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors duration-300"></div>
+                  <div className="absolute bottom-4 left-4 w-6 h-6 bg-accent/5 rounded-full group-hover:bg-accent/10 transition-colors duration-300"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -336,35 +556,81 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
-        <div className={CONTAINER + " text-center"}>
-          <div className="slow-reveal mx-auto max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 leading-tight mb-8">
-              🌙 Gotowy na pierwszy krok?
-            </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-neutral-600 leading-relaxed">
-              Zarezerwuj swoje miejsce i odkryj, jak ogromną moc ma Twój umysł.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
-                href="/#contact" 
-                className="group relative overflow-hidden rounded-2xl bg-neutral-900 text-white px-8 py-4 font-semibold transition-all duration-300 hover:bg-accent hover:scale-105 hover:shadow-xl"
-              >
-                <span className="relative z-10">👉 Zapisz się teraz</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
-              <a 
-                href="https://wa.me/48602200511" 
-                className="group rounded-2xl border-2 border-neutral-300 px-8 py-4 font-semibold text-neutral-700 transition-all duration-300 hover:border-accent hover:text-accent hover:bg-accent/5 hover:scale-105"
-              >
-                <span className="flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                  </svg>
-                  Napisz na WhatsApp
-                </span>
-              </a>
+      {/* CTA Section - Interactive & Creative */}
+      <section className="bg-gradient-to-br from-neutral-950 via-neutral-900 to-black py-20 sm:py-24 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/8 rounded-full blur-2xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div className={CONTAINER + " text-center relative z-10"}>
+          <div className="slow-reveal mx-auto max-w-5xl">
+            {/* Main CTA Card */}
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-12 sm:p-16 backdrop-blur-sm shadow-2xl">
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-3 rounded-full bg-accent/20 px-6 py-3 mb-8">
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                  <span className="text-accent font-semibold">Gotowy na transformację?</span>
+                </div>
+                
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8">
+                  <span className="bg-gradient-to-r from-white via-neutral-200 to-white bg-clip-text text-transparent">
+                    🌙 Gotowy na pierwszy krok?
+                  </span>
+                </h2>
+                
+                <p className="mx-auto mb-12 max-w-3xl text-xl text-neutral-300 leading-relaxed">
+                  Zarezerwuj swoje miejsce i odkryj, jak ogromną moc ma Twój umysł.
+                </p>
+              </div>
+              
+              {/* Interactive Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a 
+                  href="/#contact" 
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-orange-500 text-white px-12 py-6 font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/25"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    <span>👉 Zapisz się teraz</span>
+                    <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                
+                <a 
+                  href="https://wa.me/48602200511" 
+                  className="group rounded-2xl border-2 border-white/30 px-12 py-6 font-bold text-white transition-all duration-300 hover:border-accent hover:bg-accent/10 hover:scale-105 backdrop-blur-sm"
+                >
+                  <span className="flex items-center gap-3">
+                    <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    Napisz na WhatsApp
+                  </span>
+                </a>
+              </div>
+              
+              {/* Additional Info */}
+              <div className="mt-12 pt-8 border-t border-white/20">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-neutral-400">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                    <span className="text-sm">Kameralna grupa</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse delay-300"></div>
+                    <span className="text-sm">Certyfikat ukończenia</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse delay-500"></div>
+                    <span className="text-sm">Materiały szkoleniowe</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
