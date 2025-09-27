@@ -107,7 +107,7 @@ export default function TrainingPage() {
             
             <h1 className="hero-reveal mt-8 font-extrabold leading-[0.9] tracking-[-0.02em] text-[clamp(48px,10vw,96px)] max-w-6xl">
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
-                ✨ PRAKTYK
+                PRAKTYK
               </span>
               <br />
               <span className="text-accent">Techniki HIPNOZY MARZEŃ</span>
@@ -202,37 +202,37 @@ export default function TrainingPage() {
                   icon: "🧠",
                   title: "Zrozumiesz hipnozę",
                   description: "Jak działa i co odróżnia ją od mitów i wyobrażeń.",
-                  color: "from-blue-500 to-blue-600"
+                  color: "from-accent to-orange-600"
                 },
                 {
                   icon: "✨",
                   title: "Doświadczysz transu",
                   description: "Na sobie już w pierwszych godzinach szkolenia.",
-                  color: "from-purple-500 to-purple-600"
+                  color: "from-accent to-orange-600"
                 },
                 {
                   icon: "🎯",
                   title: "Nauczysz się indukcji",
                   description: "Prostych, skutecznych technik pogłębiania transu.",
-                  color: "from-green-500 to-green-600"
+                  color: "from-accent to-orange-600"
                 },
                 {
                   icon: "🛡️",
                   title: "Opanujesz bezpieczeństwo",
                   description: "Zasady rozmowy wstępnej i pracy z klientem.",
-                  color: "from-orange-500 to-orange-600"
+                  color: "from-accent to-orange-600"
                 },
                 {
                   icon: "🤝",
                   title: "Poprowadzisz sesję",
                   description: "Swoją pierwszą sesję hipnotyczną w parach.",
-                  color: "from-pink-500 to-pink-600"
+                  color: "from-accent to-orange-600"
                 },
                 {
                   icon: "💪",
                   title: "Zyskasz pewność",
                   description: "Że masz narzędzie, które realnie wspiera zmianę.",
-                  color: "from-red-500 to-red-600"
+                  color: "from-accent to-orange-600"
                 }
               ].map((item, index) => (
                 <div key={index} className="group slow-reveal">
@@ -408,29 +408,29 @@ export default function TrainingPage() {
                 icon: "🎓",
                 title: "Fundamenty hipnozy",
                 description: "Teoria, praktyka i osobiste doświadczenie transu.",
-                gradient: "from-blue-500 to-blue-600",
-                bgGradient: "from-blue-50 to-blue-100"
+                gradient: "from-accent to-orange-600",
+                bgGradient: "from-white to-white"
               },
               {
                 icon: "💪",
                 title: "Pewność działania",
                 description: "Poprowadzisz swoją pierwszą sesję już podczas kursu.",
-                gradient: "from-green-500 to-green-600",
-                bgGradient: "from-green-50 to-green-100"
+                gradient: "from-accent to-orange-600",
+                bgGradient: "from-white to-white"
               },
               {
                 icon: "🛡️",
                 title: "Bezpieczeństwo",
                 description: "Nauczysz się ram i zasad pracy z klientem.",
-                gradient: "from-orange-500 to-orange-600",
-                bgGradient: "from-orange-50 to-orange-100"
+                gradient: "from-accent to-orange-600",
+                bgGradient: "from-white to-white"
               },
               {
                 icon: "🏆",
                 title: "Certyfikat ukończenia",
                 description: "PRAKTYK Techniki Hipnozy Marzeń.",
-                gradient: "from-purple-500 to-purple-600",
-                bgGradient: "from-purple-50 to-purple-100"
+                gradient: "from-accent to-orange-600",
+                bgGradient: "from-white to-white"
               }
             ].map((item, index) => (
               <div key={index} className="group slow-reveal">
