@@ -36,6 +36,39 @@ export default function TrainingPage() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        
+        // Update button icon
+        const icon = mobileMenuToggle.querySelector("svg");
+        if (icon) {
+          if (isOpen) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+          } else {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+          }
+        }
+      });
+      
+      // Close menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuToggle.querySelector("svg");
+          if (icon) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+          }
+        });
+      });
+    }
+
     // Smooth scroll for anchor links
     const handleSmoothScroll = (e) => {
       const href = e.target.getAttribute('href');
@@ -69,10 +102,12 @@ export default function TrainingPage() {
       {/* Header */}
       <div className="sticky top-4 z-50">
         <nav id="islandNav" aria-label="Główna nawigacja"
-          className={"mx-auto flex items-center justify-center gap-8 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-6xl px-8 py-5"}>
-          <a href="/" className="font-extrabold tracking-tight text-neutral-900">
+          className={"mx-auto flex items-center justify-between gap-4 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-6xl px-4 sm:px-8 py-4 sm:py-5"}>
+          <a href="/" className="font-extrabold tracking-tight text-neutral-900 text-lg sm:text-xl">
             Magic<span className="text-accent">Life</span>
           </a>
+          
+          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-6 text-sm">
             <li><a href="/#why" className="navlink relative px-3 py-2 whitespace-nowrap">Dlaczego</a></li>
             <li><a href="/#audience" className="navlink relative px-3 py-2 whitespace-nowrap">Dla kogo</a></li>
@@ -83,10 +118,44 @@ export default function TrainingPage() {
             <li><a href="/#faq" className="navlink relative px-3 py-2 whitespace-nowrap">FAQ</a></li>
             <li><a href="/#contact" className="navlink relative px-3 py-2 whitespace-nowrap">Kontakt</a></li>
           </ul>
-          <a href="/#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-4 py-3 hover:bg-neutral-800 whitespace-nowrap">
+          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-3">
+            <a href="/#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-xs sm:text-sm font-semibold px-3 py-2 sm:px-4 sm:py-3 hover:bg-neutral-800 whitespace-nowrap">
+              Kontakt
+            </a>
+            <button 
+              id="mobileMenuToggle"
+              className="p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+              aria-label="Otwórz menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Desktop CTA Button */}
+          <a href="/#contact" className="hidden md:inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-4 py-3 hover:bg-neutral-800 whitespace-nowrap">
             Umów konsultację
           </a>
         </nav>
+        
+        {/* Mobile Navigation Menu */}
+        <div id="mobileMenu" className="md:hidden mt-4 mx-auto max-w-6xl px-4 sm:px-8 hidden">
+          <div className="bg-white/95 backdrop-blur-sm border border-white/60 rounded-2xl shadow-lg p-6">
+            <ul className="space-y-4">
+              <li><a href="/#why" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Dlaczego</a></li>
+              <li><a href="/#audience" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Dla kogo</a></li>
+              <li><a href="/#process" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Proces</a></li>
+              <li><a href="/#reviews" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Opinie</a></li>
+              <li><a href="/#pricing" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Cennik</a></li>
+              <li><a href="/szkolenia" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-accent font-semibold">Szkolenia</a></li>
+              <li><a href="/#faq" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">FAQ</a></li>
+              <li><a href="/#contact" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* Hero Section - Creative Layout */}
@@ -105,12 +174,12 @@ export default function TrainingPage() {
               Szkolenia z hipnozy
             </span>
             
-            <h1 className="hero-reveal mt-8 font-extrabold leading-[0.9] tracking-[-0.02em] text-[clamp(48px,10vw,96px)] max-w-6xl">
+            <h1 className="hero-reveal mt-8 font-extrabold leading-[0.9] tracking-[-0.02em] text-[clamp(32px,8vw,96px)] sm:text-[clamp(40px,9vw,96px)] lg:text-[clamp(48px,10vw,96px)] max-w-6xl">
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
                 PRAKTYK
               </span>
               <br />
-              <span className="text-accent">Techniki HIPNOZY MARZEŃ</span>
+              <span className="text-accent text-[clamp(24px,6vw,64px)] sm:text-[clamp(28px,7vw,64px)] lg:text-[clamp(32px,8vw,64px)]">Techniki HIPNOZY MARZEŃ</span>
             </h1>
             
             <div className="hero-reveal mt-8 inline-flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-6 py-4 shadow-lg">
