@@ -236,9 +236,9 @@ export default function TrainingPage() {
                 }
               ].map((item, index) => (
                 <div key={index} className="group slow-reveal">
-                  <div className="relative h-full bg-white rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm">
+                  <div className="relative h-full bg-white rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
                     {/* Hover Effect */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
                     
                     {/* Content */}
                     <div className="relative z-10">
@@ -290,7 +290,7 @@ export default function TrainingPage() {
               <div className="flex flex-col lg:flex-row items-center gap-12">
                 {/* Content */}
                 <div className="lg:w-1/2 lg:pr-12">
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
                         1
@@ -339,7 +339,7 @@ export default function TrainingPage() {
               <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
                 {/* Content */}
                 <div className="lg:w-1/2 lg:pl-12">
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
                         2
@@ -434,9 +434,9 @@ export default function TrainingPage() {
               }
             ].map((item, index) => (
               <div key={index} className="group slow-reveal">
-                <div className={`relative h-full bg-gradient-to-br ${item.bgGradient} rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden`}>
+                <div className={`relative h-full bg-gradient-to-br ${item.bgGradient} rounded-3xl border border-neutral-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden`}>
                   {/* Hover Effect Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                   
                   {/* Content */}
                   <div className="relative z-10">
@@ -516,7 +516,7 @@ export default function TrainingPage() {
                       <img
                         src="/testimonials/rav.magic.webp"
                         alt="Rafał Eliasik - Certyfikowany Master Hipnozy"
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent"></div>
                     </div>
