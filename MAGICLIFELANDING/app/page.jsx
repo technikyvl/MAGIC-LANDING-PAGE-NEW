@@ -416,7 +416,7 @@ export default function Page() {
     });
 
     // active nav
-    const ids = ["why", "audience", "process", "reviews", "pricing", "faq", "contact"];
+    const ids = ["why", "audience", "process", "reviews", "pricing", "training", "faq", "contact"];
     const secObs = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -491,6 +491,7 @@ export default function Page() {
             <li><a href="#process" className="navlink relative px-3 py-2 whitespace-nowrap">Proces</a></li>
             <li><a href="#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
             <li><a href="#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
+            <li><a href="#training" className="navlink relative px-3 py-2 whitespace-nowrap">Szkolenia</a></li>
             <li><a href="#faq" className="navlink relative px-3 py-2 whitespace-nowrap">FAQ</a></li>
             <li><a href="#contact" className="navlink relative px-3 py-2 whitespace-nowrap">Kontakt</a></li>
           </ul>
@@ -1092,7 +1093,251 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 12) FAQ */}
+      {/* 12) Training */}
+      <section id="training" className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
+        <div className={CONTAINER}>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-4">Szkolenia</h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              Odkryj moc hipnozy i naucz się jednej z najskuteczniejszych metod pracy z umysłem
+            </p>
+          </div>
+
+          {/* Main Training Course */}
+          <div className="max-w-6xl mx-auto">
+            {/* Course Header */}
+            <div className="slow-reveal bg-gradient-to-br from-neutral-900 to-black text-white rounded-3xl p-8 sm:p-12 mb-12 shadow-[0_20px_60px_rgba(0,0,0,.3)]">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 px-4 py-2 text-sm font-medium text-accent mb-6">
+                  <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
+                  ✨ PRAKTYK Techniki HIPNOZY MARZEŃ
+                </div>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4">24–25 października 2025 | Kurs stacjonarny</h3>
+              </div>
+              
+              {/* Course Description */}
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
+                  Jeżeli czujesz…<br/>
+                  …że praca z ludźmi sprawia Ci przyjemność,<br/>
+                  ale brakuje Ci narzędzia, które naprawdę działa i daje szybkie efekty.
+                </p>
+                <p className="text-lg text-neutral-300 mb-8 leading-relaxed">
+                  Jeżeli chcesz korzystać z jednej z najskuteczniejszych metod pracy z umysłem, która otwiera ludzi na zmianę szybciej niż cokolwiek innego –<br/>
+                  <span className="text-accent font-semibold">to szkolenie jest właśnie dla Ciebie.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Why This Course */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Dlaczego warto?</h3>
+              <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                <p className="text-lg text-neutral-700 mb-6 leading-relaxed">
+                  Podczas dwudniowego kursu otrzymasz wszystko, czego potrzebujesz, by rozpocząć swoją drogę w hipnozie.<br/>
+                  To połączenie teorii i praktyki, dzięki któremu:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    "Zrozumiesz jak działa hipnoza i co odróżnia ją od mitów i wyobrażeń.",
+                    "Doświadczysz stanu transu na sobie już w pierwszych godzinach szkolenia.",
+                    "Nauczysz się prostych, skutecznych indukcji i technik pogłębiania transu.",
+                    "Opanujesz zasady rozmowy wstępnej, bezpieczeństwa i pracy z klientem.",
+                    "Poprowadzisz swoją pierwszą sesję hipnotyczną w parach.",
+                    "Wyjdziesz z pewnością, że masz narzędzie, które realnie wspiera zmianę u innych."
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-neutral-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Course Program */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Program kursu</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Day 1 */}
+                <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <h4 className="text-xl font-bold text-neutral-900 mb-6 text-accent">Dzień 1 – Fundamenty i pierwsze doświadczenie transu</h4>
+                  <ul className="space-y-4">
+                    {[
+                      "Czym naprawdę jest hipnoza – fakty i obalenie mitów.",
+                      "Świadomość i podświadomość – zasady działania umysłu.",
+                      "Sesja wprowadzająca: doświadczenie przyjemnego transu prowadzonego przez trenera.",
+                      "Rozmowa wstępna, budowanie relacji i zasady bezpieczeństwa.",
+                      "Testy sugestywności – jak sprawdzić podatność na sugestie.",
+                      "Proste indukcje: progresywna relaksacja i fiksacja wzroku.",
+                      "Pogłębianie transu i techniki bezpiecznego wyprowadzania.",
+                      "Ćwiczenia w parach: mini-sesja krok po kroku."
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-neutral-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Day 2 */}
+                <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                  <h4 className="text-xl font-bold text-neutral-900 mb-6 text-accent">Dzień 2 – Praktyka i pełna sesja</h4>
+                  <ul className="space-y-4">
+                    {[
+                      "Lingwistyka hipnotyczna – jak formułować sugestie.",
+                      "Ćwiczenia w parach: dawanie i odbieranie sugestii.",
+                      "Powtórka indukcji i techniki pogłębiania.",
+                      "Praca z symboliką – wprowadzenie do wyobraźni w hipnozie.",
+                      "Ćwiczenia: pełna sesja hipnotyczna w parach (rozmowa → test → indukcja → pogłębienie → sugestia → wyprowadzenie).",
+                      "Podsumowanie i certyfikacja: PRAKTYK Techniki Hipnozy Marzeń."
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-neutral-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* What You'll Gain */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Co zyskasz?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    title: "Fundamenty hipnozy",
+                    description: "Teoria, praktyka i osobiste doświadczenie transu."
+                  },
+                  {
+                    title: "Pewność działania",
+                    description: "Poprowadzisz swoją pierwszą sesję już podczas kursu."
+                  },
+                  {
+                    title: "Bezpieczeństwo",
+                    description: "Nauczysz się ram i zasad pracy z klientem."
+                  },
+                  {
+                    title: "Certyfikat ukończenia",
+                    description: "PRAKTYK Techniki Hipnozy Marzeń."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-[0_8px_30px_rgba(0,0,0,.06)] text-center">
+                    <h4 className="text-lg font-semibold text-neutral-900 mb-3">{item.title}</h4>
+                    <p className="text-neutral-600 text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Target Audience */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Dla kogo jest ten kurs?</h3>
+              <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    "Dla osób, które chcą rozpocząć swoją drogę w hipnozie.",
+                    "Dla tych, którzy pracują z ludźmi (np. coachowie, terapeuci, doradcy) i chcą wzbogacić swój warsztat.",
+                    "Dla trenerów personalnych i wszystkich trenerów, którzy chcą pomóc swoim podopiecznym osiągać lepsze efekty i szybciej przełamywać blokady.",
+                    "Dla każdego, kto czuje, że hipnoza może stać się narzędziem realnej zmiany – dla siebie i innych."
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-neutral-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Instructor */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Kto prowadzi kurs?</h3>
+              <div className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                <div className="text-center mb-6">
+                  <h4 className="text-xl font-bold text-neutral-900 mb-2">Rafał Eliasik</h4>
+                  <p className="text-accent font-semibold">Certyfikowany Master Hipnozy i Hipnoterapii, trener mentalny oraz strateg biznesowy</p>
+                </div>
+                <div className="max-w-4xl mx-auto text-neutral-700 leading-relaxed space-y-4">
+                  <p>
+                    Od lat prowadzi ludzi w procesach zmiany – w życiu prywatnym i zawodowym. Pracuje z przedsiębiorcami, sportowcami oraz osobami, które chcą sięgnąć po swój pełny potencjał.
+                  </p>
+                  <p>
+                    Łączy doświadczenie w pracy z podświadomością, transformacją osobistą i rozwojem biznesu. Dzięki temu podczas kursu otrzymasz nie tylko techniki hipnotyczne, ale też praktyczne spojrzenie na to, jak stosować je w realnej pracy z ludźmi.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Organizational Details */}
+            <div className="slow-reveal mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-8 text-center">Szczegóły organizacyjne</h3>
+              <div className="bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">📍</span>
+                      <span className="text-neutral-700"><strong>Forma:</strong> kurs stacjonarny</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">📅</span>
+                      <span className="text-neutral-700"><strong>Termin:</strong> 24–25 października 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">🕙</span>
+                      <span className="text-neutral-700"><strong>Godziny:</strong> 10:00 – 16:00 (z przerwą obiadową i kawowymi)</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">📜</span>
+                      <span className="text-neutral-700"><strong>Certyfikat:</strong> PRAKTYK Techniki Hipnozy Marzeń</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">💰</span>
+                      <span className="text-neutral-700"><strong>Cena:</strong> <span className="text-accent font-bold text-xl">2490 zł</span></span>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-neutral-50 rounded-xl p-4">
+                      <p className="text-sm text-neutral-600 mb-2"><strong>Organizator zapewnia:</strong></p>
+                      <p className="text-sm text-neutral-700">kawę, napoje i przekąski</p>
+                    </div>
+                    <div className="bg-neutral-50 rounded-xl p-4">
+                      <p className="text-sm text-neutral-600 mb-2"><strong>Organizator nie zapewnia:</strong></p>
+                      <p className="text-sm text-neutral-700">noclegu ani obiadu – w czasie przerwy obiadowej wspólnie składamy zamówienie w sprawdzonej restauracji. Każdy wybiera posiłek dla siebie zgodnie ze swoimi preferencjami (np. wege, tradycyjne, fit).</p>
+                    </div>
+                    <div className="bg-accent/10 rounded-xl p-4 border border-accent/20">
+                      <p className="text-sm text-accent font-semibold">⚠️ Ilość miejsc ograniczona – pracujemy w bardzo kameralnej grupie.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="slow-reveal text-center">
+              <div className="bg-gradient-to-br from-neutral-900 to-black text-white rounded-3xl p-8 sm:p-12 shadow-[0_20px_60px_rgba(0,0,0,.3)]">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">🌙 Gotowy na pierwszy krok?</h3>
+                <p className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+                  Zarezerwuj swoje miejsce i odkryj, jak ogromną moc ma Twój umysł.
+                </p>
+                <a 
+                  href="#contact" 
+                  className="inline-flex items-center gap-2 rounded-2xl bg-accent text-white px-8 py-4 font-semibold text-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                >
+                  👉 Zapisz się teraz
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13) FAQ */}
       <section id="faq" className="bg-white py-16 sm:py-20">
         <div className={CONTAINER}>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900">FAQ</h2>
@@ -1186,6 +1431,7 @@ export default function Page() {
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
                 <a href="#reviews" className="text-base hover:text-accent transition-colors duration-300">Opinie</a>
                 <a href="#pricing" className="text-base hover:text-accent transition-colors duration-300">Cennik</a>
+                <a href="#training" className="text-base hover:text-accent transition-colors duration-300">Szkolenia</a>
                 <a href="#faq" className="text-base hover:text-accent transition-colors duration-300">FAQ</a>
                 <a href="#contact" className="text-base hover:text-accent transition-colors duration-300">Kontakt</a>
               </div>
