@@ -352,18 +352,26 @@ export default function TrainingPage() {
 
           {/* Interactive Timeline */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent via-accent/50 to-accent rounded-full"></div>
+            {/* Timeline Line - Hidden on mobile, visible on desktop */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent via-accent/50 to-accent rounded-full"></div>
             
             {/* Day 1 */}
             <div className="slow-reveal relative mb-16">
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 {/* Content */}
-                <div className="lg:w-1/2 lg:pr-12 w-full">
+                <div className="lg:w-1/2 lg:pr-12 w-full relative">
+                  {/* Mobile: Number positioned at top-left */}
+                  <div className="lg:hidden absolute -top-4 -left-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
+                    1
+                  </div>
                   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      {/* Desktop: Show number in card */}
+                      <div className="hidden lg:flex w-12 h-12 bg-accent rounded-full items-center justify-center text-white font-bold text-lg">
                         1
+                      </div>
+                      {/* Mobile: Hide number in card (shown outside) */}
+                      <div className="lg:hidden w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-white font-bold text-lg">
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-white">Dzień 1</h3>
@@ -408,11 +416,19 @@ export default function TrainingPage() {
             <div className="slow-reveal relative">
               <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
                 {/* Content */}
-                <div className="lg:w-1/2 lg:pl-12 w-full">
+                <div className="lg:w-1/2 lg:pl-12 w-full relative">
+                  {/* Mobile: Number positioned at top-right */}
+                  <div className="lg:hidden absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg z-10">
+                    2
+                  </div>
                   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20 p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-500">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      {/* Desktop: Show number in card */}
+                      <div className="hidden lg:flex w-12 h-12 bg-accent rounded-full items-center justify-center text-white font-bold text-lg">
                         2
+                      </div>
+                      {/* Mobile: Hide number in card (shown outside) */}
+                      <div className="lg:hidden w-12 h-12 bg-transparent rounded-full flex items-center justify-center text-white font-bold text-lg">
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-white">Dzień 2</h3>
