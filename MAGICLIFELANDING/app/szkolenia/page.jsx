@@ -195,7 +195,7 @@ export default function TrainingPage() {
             </div>
             
             <div className="hero-reveal mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-              <a href="#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-6 py-4 sm:px-10 sm:py-5 font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto text-center">
+              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-6 py-4 sm:px-10 sm:py-5 font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto text-center">
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   <span>Zapisz się teraz</span>
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
