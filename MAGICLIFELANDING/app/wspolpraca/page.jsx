@@ -205,7 +205,7 @@ export default function WspolpracaPage() {
                   { t: "Równowaga twarde/miękkie", d: "Struktury, jakość, odpowiedzialność + psychologia człowieka." },
                 ].map((item, i) => (
                   <div key={i} className="relative mb-6 lg:mb-8">
-                    <div className="absolute -left-[11px] top-1.5 w-4 h-4 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,99,71,.15)]" />
+                    <div className="absolute -left-[27px] top-1.5 w-4 h-4 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,99,71,.15)]" />
                     <h3 className="text-xl font-bold text-white">{item.t}</h3>
                     <p className="text-neutral-300 mt-1">{item.d}</p>
                   </div>
