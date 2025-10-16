@@ -51,9 +51,26 @@ export default function WspolpracaPage() {
       mobileMenuToggle.addEventListener("click", onToggle);
     }
 
+    // Prevent iOS/Android rubber-band overscroll at top/bottom
+    let startY = 0;
+    const onTouchStart = (e) => { startY = e.touches[0]?.clientY || 0; };
+    const onTouchMove = (e) => {
+      const currentY = e.touches[0]?.clientY || 0;
+      const scrollingDownFromTop = window.scrollY <= 0 && currentY > startY;
+      const reachedBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight;
+      const scrollingUpFromBottom = reachedBottom && currentY < startY;
+      if (scrollingDownFromTop || scrollingUpFromBottom) {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener('touchstart', onTouchStart, { passive: false });
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener('click', clickHandler);
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchmove', onTouchMove);
     };
   }, []);
 
