@@ -486,15 +486,10 @@ export default function Page() {
             Magic<span className="text-accent">Life</span>
           </a>
           <ul className="hidden md:flex items-center gap-6 text-sm">
-            <li><a href="#why" className="navlink relative px-3 py-2 whitespace-nowrap">Dlaczego</a></li>
-            <li><a href="#audience" className="navlink relative px-3 py-2 whitespace-nowrap">Dla kogo</a></li>
-            <li><a href="#process" className="navlink relative px-3 py-2 whitespace-nowrap">Proces</a></li>
             <li><a href="#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
             <li><a href="#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
             <li><a href="/wspolpraca" className="navlink relative px-3 py-2 whitespace-nowrap">Współpraca</a></li>
             <li><a href="/szkolenia" className="navlink relative px-3 py-2 whitespace-nowrap">Szkolenia</a></li>
-            <li><a href="#faq" className="navlink relative px-3 py-2 whitespace-nowrap">FAQ</a></li>
-            <li><a href="#contact" className="navlink relative px-3 py-2 whitespace-nowrap">Kontakt</a></li>
           </ul>
           <a href="#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-4 py-3 hover:bg-neutral-800 whitespace-nowrap">
             Umów konsultację
