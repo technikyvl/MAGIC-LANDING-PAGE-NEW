@@ -7,11 +7,39 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global page background and top-gap normalization */
+:root{
+  --page-bg: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+}
+html, body{
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--page-bg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+}
+main, .page, .page-wrapper, .container-root{
+  background: inherit !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+main > section:first-child,
+.page > section:first-child,
+.page-wrapper > section:first-child{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+html { scroll-padding-top: 0 !important; }
+body.has-sticky-padding,
+body.header-fixed { padding-top: 0 !important; }
+body::before, body::after{ top: 0; left: 0; right: 0; }
+.header-overlay,
+.gradient-top,
+.hero::before{ background: transparent !important; }
+
 /* Global top-gap safeguards (header + first section alignment) */
-html, body { margin: 0; padding: 0; background: #fff; }
-main { padding-top: 0; }
-section:first-of-type { margin-top: 0; }
-/* Ensure no extra scroll offset from CSS */
+/* Ensure no extra scroll offset from CSS (reinforced) */
 html { scroll-padding-top: 0; }
 
 /* reveal-from-shadow */
