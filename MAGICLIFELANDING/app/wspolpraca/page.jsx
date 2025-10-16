@@ -175,31 +175,41 @@ export default function WspolpracaPage() {
         </div>
       </section>
 
-      {/* Kim jestem */}
-      <section id="kim-jestem" className={"relative bg-neutral-950 text-white pt-28 sm:pt-36 pb-20 sm:pb-24"}>
-        <div className={CONTAINER}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Photo */}
-            <div className="slow-reveal order-2 lg:order-1">
-              <div className="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="/testimonials/rav.magic.webp"
-                  alt="Ekspert od hipnozy — Magic Life"
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/30 to-transparent"></div>
+      {/* Kim jestem — storyteling timeline */}
+      <section id="kim-jestem" className={"relative bg-neutral-950 text-white pt-28 sm:pt-36 pb-20 sm:pb-24 overflow-hidden"}>
+        <div className="absolute inset-0 pointer-events-none opacity-30">
+          <div className="absolute -top-20 right-1/3 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        <div className={CONTAINER + " relative z-10"}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            {/* Photo card */}
+            <div className="slow-reveal lg:col-span-5 order-2 lg:order-1">
+              <div className="relative h-80 lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/testimonials/rav.magic.webp" alt="Ekspert — Magic Life" className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 to-transparent" />
               </div>
             </div>
 
-            {/* Content */}
-            <div className="slow-reveal order-1 lg:order-2">
-              <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">Kim jestem</h2>
-              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-neutral-300 max-w-2xl">
-                <p className="text-xl font-semibold text-white">Jestem managerem, przedsiębiorcą i trenerem mentalnym.</p>
-                <p>Przez dwie dekady budowałem i prowadziłem firmy w różnych branżach — od transportu międzynarodowego, przez produkcję i sprzedaż maszyn, sprzętu i odzieży sportowej, po branżę beauty, suplementy diety, kancelarię prawną i nieruchomości.</p>
-                <p>Znam każdy etap biznesu — od pomysłu, przez chaos wzrostu, po moment, w którym firma potrzebuje nowego poziomu organizacji, przywództwa i jakości.</p>
-                <p>Od ośmiu lat pracuję z ludźmi głęboko — z ich przekonaniami, emocjami i mechanizmami, które wpływają na decyzje i sposób prowadzenia biznesu. Dzięki temu łączę twarde kompetencje operacyjne z miękkim, psychologicznym rozumieniem człowieka.</p>
+            {/* Timeline */}
+            <div className="slow-reveal lg:col-span-7 order-1 lg:order-2">
+              <div className="mb-8">
+                <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Kim jestem</h2>
+              </div>
+              <div className="relative pl-6">
+                <div className="absolute left-2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent/60 via-accent/30 to-transparent" />
+                {[
+                  { t: "Manager i przedsiębiorca", d: "Ponad 20 lat budowania firm w wielu branżach." },
+                  { t: "Strateg i partner", d: "Łączę perspektywę operacyjną ze strategiczną, porządkując chaos wzrostu." },
+                  { t: "Trener mentalny", d: "8 lat pracy z podświadomością ludzi i liderów." },
+                  { t: "Równowaga twarde/miękkie", d: "Struktury, jakość, odpowiedzialność + psychologia człowieka." },
+                ].map((item, i) => (
+                  <div key={i} className="relative mb-6 lg:mb-8">
+                    <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,99,71,.15)]" />
+                    <h3 className="text-xl font-bold text-white">{item.t}</h3>
+                    <p className="text-neutral-300 mt-1">{item.d}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -234,67 +244,76 @@ export default function WspolpracaPage() {
         </div>
       </section>
 
-      {/* Doświadczenie */}
+      {/* Doświadczenie — skill clusters */}
       <section id="doswiadczenie" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-16">
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Doświadczenie</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+            <div className="slow-reveal lg:col-span-5 rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-xl font-semibold mb-4">Branże</h3>
-              <ul className="space-y-2 text-neutral-300">
-                {["transport międzynarodowy","produkcja i sprzedaż maszyn","sprzęt i odzież sportowa","suplementy diety","branża beauty","kancelaria prawna","nieruchomości (poszukiwanie i remonty dla inwestorów)"].map((b,i)=> (
-                  <li key={i} className="pl-5 before:content-['•'] before:text-accent before:mr-3">{b}</li>
+              <div className="flex flex-wrap gap-2">
+                {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
+                  <span key={i} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-neutral-200 text-sm">{b}</span>
                 ))}
-              </ul>
+              </div>
             </div>
-            <div className="slow-reveal rounded-2xl border border-white/10 bg-white/5 p-8">
-              <h3 className="text-xl font-semibold mb-4">Obszary kompetencji</h3>
-              <ul className="space-y-2 text-neutral-300">
-                {["zarządzanie operacyjne i strategiczne","budowa i optymalizacja procesów","rozwój i strukturyzacja firm","mentoring i rozwój liderów","pośrednictwo gospodarcze","tworzenie synergii między ludźmi, projektami i kapitałem","budowanie kultury jakości i odpowiedzialności"].map((b,i)=> (
-                  <li key={i} className="pl-5 before:content-['•'] before:text-accent before:mr-3">{b}</li>
+            <div className="slow-reveal lg:col-span-7 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-xl font-semibold mb-4">Kompetencje</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {["Operacje i strategia","Procesy i optymalizacja","Struktury i wzrost","Mentoring liderów","Pośrednictwo gospodarcze","Synergie projektów i kapitału","Kultura jakości"].map((b,i)=> (
+                  <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                    <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <span className="text-neutral-200">{b}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Formy współpracy */}
-      <section id="formy" className={"bg-white text-neutral-900 " + SPACING}>
+      {/* Formy współpracy — creative tiles */}
+      <section id="formy" className={"relative bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Formy współpracy</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {[
               ["Manager operacyjny / strategiczny","Wchodzę do firmy, by zobaczyć to, czego inni nie widzą — i poukładać wszystko tak, żeby zaczęło działać płynnie i z jakością."],
               ["Partner biznesowy do wzrostu","Pokazuję kierunki, które potrafią całkowicie odmienić tempo, jakość i sens rozwoju firmy."],
               ["Rozwój mentalny lidera i zespołu","Pomagam odzyskać spokój, koncentrację i zaangażowanie — tworząc kulturę jakości, odpowiedzialności i zaufania."]
             ].map(([t,d],i)=> (
-              <article key={i} className="slow-reveal relative rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300 overflow-hidden">
+              <article key={i} className="slow-reveal group relative rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-orange-500/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
                 <div className="mb-4 flex items-center gap-3">
+                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">{String(i+1).padStart(2,'0')}</span>
                   <div className="h-2 w-2 rounded-full bg-accent"></div>
-                  <span className="text-sm text-neutral-500">{String(i+1).padStart(2,'0')}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{t}</h3>
-                <p className="text-neutral-600">{d}</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">{t}</h3>
+                <p className="text-neutral-600 leading-relaxed">{d}</p>
+                <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
+                  <span className="text-sm text-neutral-500">Dowiedz się więcej</span>
+                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Dla kogo */}
+      {/* Dla kogo — audience chips */}
       <section id="dla-kogo" className={"relative bg-neutral-950 text-white " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-12">
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             {[
               "Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.",
               "Dla liderów, którzy chcą budować stabilny, świadomy biznes.",
@@ -302,35 +321,36 @@ export default function WspolpracaPage() {
               "Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.",
               "Dla zespołów, które potrzebują spójności, jasności i nowej energii."
             ].map((item, index) => (
-              <div key={index} className="slow-reveal flex items-start gap-3">
-                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-neutral-300">{item}</span>
-              </div>
+              <span key={index} className="slow-reveal px-4 py-2 rounded-full bg-white/5 border border-white/10 text-neutral-200 text-sm">
+                {item}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Efekty współpracy */}
-      <section id="efekty" className={"bg-white text-neutral-900 " + SPACING}>
+      {/* Efekty współpracy — creative stats */}
+      <section id="efekty" className={"relative bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Efekty współpracy</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              "Więcej klarowności w decyzjach i kierunku.",
-              "Więcej jakości w procesach, komunikacji i relacjach.",
-              "Stabilny wzrost i realna odpowiedzialność w zespole.",
-              "Biznes, który działa lekko, ale precyzyjnie.",
-              "Zwiększone zyski jako naturalny efekt spójności i świadomego zarządzania."
+              { t: "Klarowność decyzji", p: 90 },
+              { t: "Jakość procesów", p: 85 },
+              { t: "Stabilny wzrost", p: 80 },
+              { t: "Lekkość działania", p: 88 },
+              { t: "Zaangażowanie zespołu", p: 92 },
+              { t: "Zyskowność", p: 84 },
             ].map((e,i)=> (
-              <div key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-neutral-700">{e}</p>
+              <div key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_8px_30px_rgba(0,0,0,.06)]">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-3">{e.t}</h3>
+                <div className="w-full h-2.5 rounded-full bg-neutral-200 overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-accent to-orange-500" style={{ width: e.p + '%' }} />
                 </div>
+                <div className="mt-2 text-sm text-neutral-500">~{e.p}% poprawy</div>
               </div>
             ))}
           </div>
