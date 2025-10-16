@@ -223,22 +223,34 @@ export default function WspolpracaPage() {
             <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
             <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="slow-reveal text-lg text-neutral-700 leading-relaxed space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="slow-reveal lg:col-span-7 text-lg text-neutral-700 leading-relaxed space-y-4">
               <p>Zajmuję się rozwojem biznesu i pośrednictwem gospodarczym – pomagam firmom znaleźć finansowanie, partnerów i klientów, a przedsiębiorcom uporządkować pomysły tak, by naprawdę działały.</p>
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
             </div>
-            <div className="slow-reveal relative rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] bg-white overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-orange-500/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
-              <ul className="space-y-3 text-neutral-700">
-                {["diagnoza sytuacji i priorytetów","mapowanie możliwości i ryzyk","porządkowanie komunikacji i procesów","wdrożenie struktur i odpowiedzialności"].map((t,i)=> (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="slow-reveal lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/testimonials/Praktyk hipnozy 2.webp" 
+                  alt="Praktyk hipnozy - Magic Life" 
+                  className="w-full h-80 object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Usługi</h3>
+                    <ul className="space-y-2">
+                      {["diagnoza sytuacji i priorytetów","mapowanie możliwości i ryzyk","porządkowanie komunikacji i procesów","wdrożenie struktur i odpowiedzialności"].map((t,i)=> (
+                        <li key={i} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm text-neutral-700">{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
