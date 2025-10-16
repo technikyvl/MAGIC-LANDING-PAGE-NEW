@@ -481,8 +481,8 @@ export default function Page() {
       {/* 0) Header */}
       <div className="sticky top-4 z-50">
         <nav id="islandNav" aria-label="Główna nawigacja"
-          className={"mx-auto flex items-center justify-center gap-8 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-6xl px-8 py-5"}>
-          <a href="#" className="font-extrabold tracking-tight text-neutral-900">
+          className={"mx-auto flex items-center justify-between gap-4 rounded-3xl backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/85 border border-white/60 shadow-[0_8px_40px_rgba(0,0,0,.06)] transition-all duration-300 max-w-5xl px-4 sm:px-8 py-4 sm:py-5"}>
+          <a href="/" className="font-extrabold tracking-tight text-neutral-900 text-lg sm:text-xl">
             Magic<span className="text-accent">Life</span>
           </a>
           <ul className="hidden md:flex items-center gap-6 text-sm">
@@ -491,10 +491,36 @@ export default function Page() {
             <li><a href="/wspolpraca" className="navlink relative px-3 py-2 whitespace-nowrap">Współpraca</a></li>
             <li><a href="/szkolenia" className="navlink relative px-3 py-2 whitespace-nowrap">Szkolenia</a></li>
           </ul>
-          <a href="#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-4 py-3 hover:bg-neutral-800 whitespace-nowrap">
-            Umów konsultację
+          <div className="md:hidden flex items-center gap-3">
+            <a href="#contact" className="inline-flex items-center rounded-xl bg-neutral-900 text-white text-xs sm:text-sm font-semibold px-3 py-2 sm:px-4 sm:py-3 hover:bg-neutral-800 whitespace-nowrap">
+              Umów rozmowę
+            </a>
+            <button 
+              id="mobileMenuToggle"
+              className="p-2 rounded-lg hover:bg-neutral-100 transition-colors"
+              aria-label="Otwórz menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+          <a href="#contact" className="hidden md:inline-flex items-center rounded-xl bg-neutral-900 text-white text-sm font-semibold px-4 py-3 hover:bg-neutral-800 whitespace-nowrap">
+            Umów rozmowę
           </a>
         </nav>
+        {/* Mobile Navigation Menu */}
+        <div id="mobileMenu" className="md:hidden mt-4 mx-auto max-w-5xl px-4 sm:px-8 hidden">
+          <div className="bg-white/95 backdrop-blur-sm border border-white/60 rounded-2xl shadow-lg p-6">
+            <ul className="space-y-4">
+              <li><a href="#reviews" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Opinie</a></li>
+              <li><a href="#pricing" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Cennik</a></li>
+              <li><a href="/wspolpraca" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Współpraca</a></li>
+              <li><a href="/szkolenia" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Szkolenia</a></li>
+              <li><a href="#contact" className="block px-4 py-3 rounded-lg bg-neutral-900 text-white text-center font-semibold">Umów rozmowę</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* 1) HERO */}
