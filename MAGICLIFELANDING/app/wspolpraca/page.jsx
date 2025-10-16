@@ -118,47 +118,47 @@ export default function WspolpracaPage() {
       </div>
 
       {/* Hero / Intro - enhanced to mirror Szkolenia style (bez emoji) */}
-      <section className={"relative bg-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32 overflow-hidden"}>
+      <section className={"relative bg-white text-neutral-900 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28 overflow-hidden"}>
         {/* Subtle animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 bg-accent/8 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-24 right-12 w-44 h-44 bg-accent/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent/10 rounded-full blur-lg animate-pulse delay-500"></div>
         </div>
-        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[80vh] relative"}>
+        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[70vh] relative"}>
           <div className="relative z-10 max-w-6xl">
-            <div className="hero-reveal mb-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
+            <div className="hero-reveal mb-4">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5 text-xs sm:text-sm font-medium text-accent backdrop-blur-sm">
                 <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
                 WSPÓŁPRACA — managerska, partnerska i biznesowa
               </div>
             </div>
 
-            <h1 className="hero-reveal font-extrabold leading-[0.95] tracking-[-0.02em] text-[clamp(36px,8vw,92px)] max-w-5xl mx-auto">
+            <h1 className="hero-reveal font-extrabold leading-[0.98] tracking-[-0.02em] text-[clamp(32px,6.5vw,72px)] max-w-5xl mx-auto">
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
                 Rozwój firmy zaczyna się od człowieka.
               </span>
             </h1>
 
-            <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
+            <p className="hero-reveal mx-auto mt-4 max-w-4xl text-base sm:text-lg text-neutral-600 leading-relaxed">
               Łączę blisko 20 lat prowadzenia firm z ponad 8-letnim doświadczeniem w pracy z podświadomością ludzi i przedsiębiorców. Wspieram liderów, zespoły i inwestorów w tworzeniu biznesów, które działają — sprawnie, stabilnie i z jakością, która naprawdę ma znaczenie.
             </p>
 
             {/* Info pill styled similarly to Szkolenia */}
-            <div className="hero-reveal mt-8 inline-flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-6 py-4 shadow-lg">
+            <div className="hero-reveal mt-6 inline-flex items-center gap-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-4 py-3 shadow-lg">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                <span className="text-base sm:text-lg font-semibold text-neutral-900">Partnerstwo operacyjne i strategiczne</span>
+                <span className="text-sm sm:text-base font-semibold text-neutral-900">Partnerstwo operacyjne i strategiczne</span>
               </div>
-              <div className="hidden sm:block w-px h-6 bg-neutral-300"></div>
+              <div className="hidden sm:block w-px h-5 bg-neutral-300"></div>
               <div className="hidden sm:flex items-center gap-2">
                 <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-300"></div>
-                <span className="text-base sm:text-lg font-semibold text-neutral-900">Rozwój lidera i zespołu</span>
+                <span className="text-sm sm:text-base font-semibold text-neutral-900">Rozwój lidera i zespołu</span>
               </div>
             </div>
 
-            <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-6 py-4 sm:px-10 sm:py-5 font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto text-center">
+            <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-5 py-3 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto text-center">
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   <span>Umów rozmowę</span>
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,8 +167,8 @@ export default function WspolpracaPage() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#czym-sie-zajmuje" className="group rounded-2xl border-2 border-neutral-300 px-6 py-4 sm:px-10 sm:py-5 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
-                <span className="flex items-center justify-center gap-3">Dowiedz się więcej</span>
+              <a href="#czym-sie-zajmuje" className="group rounded-2xl border-2 border-neutral-300 px-5 py-3 sm:px-8 sm:py-4 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
+                <span className="flex items-center justify-center gap-2">Dowiedz się więcej</span>
               </a>
             </div>
           </div>
