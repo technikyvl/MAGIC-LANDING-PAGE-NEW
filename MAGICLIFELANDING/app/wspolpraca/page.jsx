@@ -219,9 +219,9 @@ export default function WspolpracaPage() {
       {/* Czym się zajmuję */}
       <section id="czym-sie-zajmuje" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <div className="mb-12">
-            <div className="inline-block h-[2px] w-20 bg-accent mb-8"></div>
-            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
+          <div className="text-center mb-12">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Czym się zajmuję</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="slow-reveal lg:col-span-7 text-lg text-neutral-700 leading-relaxed space-y-4">
