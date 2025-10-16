@@ -117,22 +117,60 @@ export default function WspolpracaPage() {
         </div>
       </div>
 
-      {/* Hero / Intro */}
-      <section className={"relative bg-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32"}>
-        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[70vh]"}>
-          <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
-            WSPÓŁPRACA — Managerska, partnerska i biznesowa
-          </span>
-          <h1 className="hero-reveal mt-8 font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(36px,7vw,72px)] max-w-5xl">
-            Rozwój firmy zaczyna się od człowieka.
-          </h1>
-          <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
-            Łączę blisko 20 lat prowadzenia firm z ponad 8-letnim doświadczeniem w pracy z podświadomością ludzi i przedsiębiorców. Wspieram liderów, zespoły i inwestorów w tworzeniu biznesów, które działają — sprawnie, stabilnie i z jakością, która naprawdę ma znaczenie.
-          </p>
-          <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/#contact" className="rounded-xl bg-neutral-900 text-white px-8 py-4 font-semibold hover:bg-neutral-800 text-lg">Umów rozmowę</a>
-            <a href="#czym-sie-zajmuje" className="rounded-xl border border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:bg-neutral-50 text-lg">Dowiedz się więcej</a>
+      {/* Hero / Intro - enhanced to mirror Szkolenia style (bez emoji) */}
+      <section className={"relative bg-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32 overflow-hidden"}>
+        {/* Subtle animated background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-accent/8 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-24 right-12 w-44 h-44 bg-accent/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent/10 rounded-full blur-lg animate-pulse delay-500"></div>
+        </div>
+        <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[80vh] relative"}>
+          <div className="relative z-10 max-w-6xl">
+            <div className="hero-reveal mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
+                <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+                WSPÓŁPRACA — managerska, partnerska i biznesowa
+              </div>
+            </div>
+
+            <h1 className="hero-reveal font-extrabold leading-[0.95] tracking-[-0.02em] text-[clamp(36px,8vw,92px)] max-w-5xl mx-auto">
+              <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                Rozwój firmy zaczyna się od człowieka.
+              </span>
+            </h1>
+
+            <p className="hero-reveal mx-auto mt-6 max-w-4xl text-xl text-neutral-600 leading-relaxed">
+              Łączę blisko 20 lat prowadzenia firm z ponad 8-letnim doświadczeniem w pracy z podświadomością ludzi i przedsiębiorców. Wspieram liderów, zespoły i inwestorów w tworzeniu biznesów, które działają — sprawnie, stabilnie i z jakością, która naprawdę ma znaczenie.
+            </p>
+
+            {/* Info pill styled similarly to Szkolenia */}
+            <div className="hero-reveal mt-8 inline-flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-6 py-4 shadow-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-base sm:text-lg font-semibold text-neutral-900">Partnerstwo operacyjne i strategiczne</span>
+              </div>
+              <div className="hidden sm:block w-px h-6 bg-neutral-300"></div>
+              <div className="hidden sm:flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-300"></div>
+                <span className="text-base sm:text-lg font-semibold text-neutral-900">Rozwój lidera i zespołu</span>
+              </div>
+            </div>
+
+            <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-6 py-4 sm:px-10 sm:py-5 font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl w-full sm:w-auto text-center">
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  <span>Umów rozmowę</span>
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a href="#czym-sie-zajmuje" className="group rounded-2xl border-2 border-neutral-300 px-6 py-4 sm:px-10 sm:py-5 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
+                <span className="flex items-center justify-center gap-3">Dowiedz się więcej</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -181,7 +219,8 @@ export default function WspolpracaPage() {
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
             </div>
-            <div className="slow-reveal rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] bg-white">
+            <div className="slow-reveal relative rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] bg-white overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-orange-500/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
               <ul className="space-y-3 text-neutral-700">
                 {["diagnoza sytuacji i priorytetów","mapowanie możliwości i ryzyk","porządkowanie komunikacji i procesów","wdrożenie struktur i odpowiedzialności"].map((t,i)=> (
                   <li key={i} className="flex items-start gap-3">
@@ -235,7 +274,8 @@ export default function WspolpracaPage() {
               ["Partner biznesowy do wzrostu","Pokazuję kierunki, które potrafią całkowicie odmienić tempo, jakość i sens rozwoju firmy."],
               ["Rozwój mentalny lidera i zespołu","Pomagam odzyskać spokój, koncentrację i zaangażowanie — tworząc kulturę jakości, odpowiedzialności i zaufania."]
             ].map(([t,d],i)=> (
-              <article key={i} className="slow-reveal rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
+              <article key={i} className="slow-reveal relative rounded-2xl border border-neutral-200 bg-white p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-orange-500/5 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"></div>
                 <div className="mb-4 flex items-center gap-3">
                   <div className="h-2 w-2 rounded-full bg-accent"></div>
                   <span className="text-sm text-neutral-500">{String(i+1).padStart(2,'0')}</span>
@@ -298,17 +338,25 @@ export default function WspolpracaPage() {
       </section>
 
       {/* CTA / Kontakt */}
-      <section className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20">
-        <div className={CONTAINER + " text-center"}>
+      <section className="bg-gradient-to-br from-neutral-50 to-white py-16 sm:py-20 relative overflow-hidden">
+        {/* Subtle background accents */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-10 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        <div className={CONTAINER + " text-center relative z-10"}>
           <div className="slow-reveal mx-auto max-w-3xl">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 leading-tight">Porozmawiajmy</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-600 leading-relaxed">
               Jeśli czujesz, że Twój biznes może działać z większą jakością, klarownością i spokojem, zrób pierwszy krok. Umów się na bezpłatną rozmowę wstępną (30 minut online). Zobaczmy, czy możemy stworzyć coś wyjątkowego razem.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-neutral-900 text-white px-8 py-4 font-semibold transition-all duration-300 hover:bg-accent hover:scale-105 hover:shadow-xl">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+              <a href="/#contact" className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-neutral-900 to-neutral-800 text-white px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <span className="relative z-10">Umów rozmowę</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a href="#formy" className="group rounded-2xl border-2 border-neutral-300 px-8 py-4 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300">
+                Zobacz formy współpracy
               </a>
             </div>
           </div>
