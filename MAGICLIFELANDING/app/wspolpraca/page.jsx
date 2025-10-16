@@ -118,7 +118,7 @@ export default function WspolpracaPage() {
       </div>
 
       {/* Hero / Intro */}
-      <section className={"relative bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32"}>
+      <section className={"relative bg-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32"}>
         <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[70vh]"}>
           <span className="hero-reveal inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-accent"></span>
