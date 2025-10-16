@@ -169,7 +169,7 @@ export default function TrainingPage() {
       </div>
 
       {/* Hero Section - Creative Layout */}
-      <section className={"relative bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 " + SPACING}>
+      <section className={"relative bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32"}>
         <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[80vh] relative"}>
           {/* Floating Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
