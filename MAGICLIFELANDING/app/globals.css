@@ -18,6 +18,7 @@ html, body{
   background-repeat: no-repeat !important;
   background-position: center top !important;
   background-size: cover !important;
+  overscroll-behavior-y: none; /* prevent top/bottom rubber-band overscroll */
 }
 main, .page, .page-wrapper, .container-root{
   background: inherit !important;
