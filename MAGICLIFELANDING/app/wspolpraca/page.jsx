@@ -2,15 +2,6 @@
 
 import { useEffect } from "react";
 
-export const metadata = {
-  title: "Współpraca — Magic Life",
-  description: "Managerska, partnerska i biznesowa współpraca: rozwój firm, liderów i zespołów z naciskiem na jakość, struktury i świadome przywództwo.",
-  openGraph: {
-    title: "Współpraca — Magic Life",
-    description: "Managerska, partnerska i biznesowa współpraca: rozwój firm, liderów i zespołów z naciskiem na jakość, struktury i świadome przywództwo."
-  }
-};
-
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
 
