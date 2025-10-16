@@ -7,6 +7,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global top-gap safeguards (header + first section alignment) */
+html, body { margin: 0; padding: 0; background: #fff; }
+main { padding-top: 0; }
+section:first-of-type { margin-top: 0; }
+/* Ensure no extra scroll offset from CSS */
+html { scroll-padding-top: 0; }
+
 /* reveal-from-shadow */
 .reveal { 
   opacity: 0; 
