@@ -178,24 +178,16 @@ export default function TrainingPage() {
           <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-accent/15 to-accent/8 rounded-full blur-lg animate-pulse delay-500"></div>
           <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-br from-accent/5 to-accent/2 rounded-full blur-2xl animate-pulse delay-700"></div>
           
-          {/* Floating Icons */}
-          <div className="absolute top-32 right-20 text-4xl opacity-20 animate-bounce delay-1000">🧠</div>
-          <div className="absolute bottom-32 left-20 text-3xl opacity-15 animate-bounce delay-500">✨</div>
-          <div className="absolute top-1/2 right-10 text-2xl opacity-10 animate-bounce delay-300">🎯</div>
+          {/* Floating Icons removed to keep layout simpler */}
         </div>
         
         <div className={CONTAINER + " text-center flex flex-col items-center justify-center min-h-[85vh] relative"}>
           <div className="relative z-10 max-w-7xl">
-            {/* Animated Badge */}
+            {/* Badge */}
             <div className="hero-reveal mb-8">
-              <div className="inline-flex items-center gap-3 rounded-full border border-accent/30 bg-gradient-to-r from-accent/10 to-accent/5 px-6 py-3 text-sm font-semibold text-accent backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse delay-150"></div>
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse delay-300"></div>
-                </div>
-                <span>Szkolenia z hipnozy</span>
-                <div className="w-1 h-1 rounded-full bg-accent/50"></div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent backdrop-blur-sm">
+                <span className="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+                Szkolenia z hipnozy
               </div>
             </div>
             
@@ -210,23 +202,21 @@ export default function TrainingPage() {
               </span>
             </h1>
             
-            {/* Interactive Info Card */}
-            <div className="hero-reveal mb-12">
-              <div className="inline-flex items-center gap-6 rounded-3xl bg-white/90 backdrop-blur-md border border-neutral-200/60 px-8 py-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:bg-white/95">
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 bg-gradient-to-r from-accent to-orange-500 rounded-full animate-pulse"></div>
-                  <span className="text-xl font-bold text-neutral-900">24–25 października 2025</span>
-                </div>
-                <div className="w-px h-8 bg-gradient-to-b from-transparent via-neutral-300 to-transparent"></div>
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 bg-gradient-to-r from-accent to-orange-500 rounded-full animate-pulse delay-300"></div>
-                  <span className="text-xl font-bold text-neutral-900">Kurs stacjonarny</span>
-                </div>
-                <div className="w-px h-8 bg-gradient-to-b from-transparent via-neutral-300 to-transparent"></div>
-                <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 bg-gradient-to-r from-accent to-orange-500 rounded-full animate-pulse delay-500"></div>
-                  <span className="text-xl font-bold text-neutral-900">48 godzin</span>
-                </div>
+            {/* Info Card */}
+            <div className="hero-reveal mt-8 inline-flex items-center gap-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-neutral-200/50 px-6 py-4 shadow-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-lg font-semibold text-neutral-900">24–25 października 2025</span>
+              </div>
+              <div className="w-px h-6 bg-neutral-300"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-300"></div>
+                <span className="text-lg font-semibold text-neutral-900">Kurs stacjonarny</span>
+              </div>
+              <div className="w-px h-6 bg-neutral-300"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-500"></div>
+                <span className="text-lg font-semibold text-neutral-900">48 godzin</span>
               </div>
             </div>
             
