@@ -168,8 +168,8 @@ export default function TrainingPage() {
         </div>
       </div>
 
-      {/* Hero Section - Ultra Creative Layout */}
-      <section className={"relative bg-gradient-to-br from-white via-neutral-50 to-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32 overflow-hidden"}>
+      {/* Hero Section */}
+      <section className={"relative bg-white text-neutral-900 pt-20 sm:pt-24 lg:pt-28 pb-24 sm:pb-28 lg:pb-32 overflow-hidden"}>
         {/* Dynamic Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Animated Geometric Shapes */}
