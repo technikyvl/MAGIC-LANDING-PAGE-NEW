@@ -234,7 +234,7 @@ export default function WspolpracaPage() {
                 <img 
                   src="/testimonials/Praktyk hipnozy 2.webp" 
                   alt="Praktyk hipnozy - Magic Life" 
-                  className="w-full h-80 object-cover object-center"
+                  className="w-full h-[28rem] sm:h-[32rem] lg:h-[36rem] object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
