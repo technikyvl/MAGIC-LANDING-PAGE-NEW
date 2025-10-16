@@ -491,6 +491,7 @@ export default function Page() {
             <li><a href="#process" className="navlink relative px-3 py-2 whitespace-nowrap">Proces</a></li>
             <li><a href="#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
             <li><a href="#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
+            <li><a href="/wspolpraca" className="navlink relative px-3 py-2 whitespace-nowrap">Współpraca</a></li>
             <li><a href="/szkolenia" className="navlink relative px-3 py-2 whitespace-nowrap">Szkolenia</a></li>
             <li><a href="#faq" className="navlink relative px-3 py-2 whitespace-nowrap">FAQ</a></li>
             <li><a href="#contact" className="navlink relative px-3 py-2 whitespace-nowrap">Kontakt</a></li>
@@ -1187,6 +1188,7 @@ export default function Page() {
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
                 <a href="#reviews" className="text-base hover:text-accent transition-colors duration-300">Opinie</a>
                 <a href="#pricing" className="text-base hover:text-accent transition-colors duration-300">Cennik</a>
+                <a href="/wspolpraca" className="text-base hover:text-accent transition-colors duration-300">Współpraca</a>
                 <a href="/szkolenia" className="text-base hover:text-accent transition-colors duration-300">Szkolenia</a>
                 <a href="#faq" className="text-base hover:text-accent transition-colors duration-300">FAQ</a>
                 <a href="#contact" className="text-base hover:text-accent transition-colors duration-300">Kontakt</a>

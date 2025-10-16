@@ -114,6 +114,7 @@ export default function TrainingPage() {
             <li><a href="/#process" className="navlink relative px-3 py-2 whitespace-nowrap">Proces</a></li>
             <li><a href="/#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
             <li><a href="/#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
+            <li><a href="/wspolpraca" className="navlink relative px-3 py-2 whitespace-nowrap">Współpraca</a></li>
             <li><a href="/szkolenia" className="navlink relative px-3 py-2 whitespace-nowrap text-accent font-semibold">Szkolenia</a></li>
             <li><a href="/#faq" className="navlink relative px-3 py-2 whitespace-nowrap">FAQ</a></li>
             <li><a href="/#contact" className="navlink relative px-3 py-2 whitespace-nowrap">Kontakt</a></li>
@@ -150,6 +151,7 @@ export default function TrainingPage() {
               <li><a href="/#process" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Proces</a></li>
               <li><a href="/#reviews" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Opinie</a></li>
               <li><a href="/#pricing" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Cennik</a></li>
+              <li><a href="/wspolpraca" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Współpraca</a></li>
               <li><a href="/szkolenia" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-accent font-semibold">Szkolenia</a></li>
               <li><a href="/#faq" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">FAQ</a></li>
               <li><a href="/#contact" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Kontakt</a></li>
