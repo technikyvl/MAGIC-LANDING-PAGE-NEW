@@ -94,16 +94,31 @@ export default function WspolpracaPage() {
       </section>
 
       {/* Kim jestem */}
-      <section id="kim-jestem" className={"relative bg-neutral-950 text-white pt-24 sm:pt-32 pb-16 sm:pb-20"}>
+      <section id="kim-jestem" className={"relative bg-neutral-950 text-white pt-28 sm:pt-36 pb-20 sm:pb-24"}>
         <div className={CONTAINER}>
-          <div className="slow-reveal max-w-4xl">
-            <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">Kim jestem</h2>
-            <div className="space-y-5 text-base leading-relaxed text-neutral-300">
-              <p className="text-lg font-semibold text-white">Jestem managerem, przedsiębiorcą i trenerem mentalnym.</p>
-              <p>Przez dwie dekady budowałem i prowadziłem firmy w różnych branżach — od transportu międzynarodowego, przez produkcję i sprzedaż maszyn, sprzętu i odzieży sportowej, po branżę beauty, suplementy diety, kancelarię prawną i nieruchomości.</p>
-              <p>Znam każdy etap biznesu — od pomysłu, przez chaos wzrostu, po moment, w którym firma potrzebuje nowego poziomu organizacji, przywództwa i jakości.</p>
-              <p>Od ośmiu lat pracuję z ludźmi głęboko — z ich przekonaniami, emocjami i mechanizmami, które wpływają na decyzje i sposób prowadzenia biznesu. Dzięki temu łączę twarde kompetencje operacyjne z miękkim, psychologicznym rozumieniem człowieka.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Photo */}
+            <div className="slow-reveal order-2 lg:order-1">
+              <div className="relative h-80 lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/testimonials/rav.magic.webp"
+                  alt="Ekspert od hipnozy — Magic Life"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/30 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="slow-reveal order-1 lg:order-2">
+              <div className="inline-block h-[2px] w-16 bg-accent mb-8"></div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-8">Kim jestem</h2>
+              <div className="space-y-6 text-base sm:text-lg leading-relaxed text-neutral-300 max-w-2xl">
+                <p className="text-xl font-semibold text-white">Jestem managerem, przedsiębiorcą i trenerem mentalnym.</p>
+                <p>Przez dwie dekady budowałem i prowadziłem firmy w różnych branżach — od transportu międzynarodowego, przez produkcję i sprzedaż maszyn, sprzętu i odzieży sportowej, po branżę beauty, suplementy diety, kancelarię prawną i nieruchomości.</p>
+                <p>Znam każdy etap biznesu — od pomysłu, przez chaos wzrostu, po moment, w którym firma potrzebuje nowego poziomu organizacji, przywództwa i jakości.</p>
+                <p>Od ośmiu lat pracuję z ludźmi głęboko — z ich przekonaniami, emocjami i mechanizmami, które wpływają na decyzje i sposób prowadzenia biznesu. Dzięki temu łączę twarde kompetencje operacyjne z miękkim, psychologicznym rozumieniem człowieka.</p>
+              </div>
             </div>
           </div>
         </div>
