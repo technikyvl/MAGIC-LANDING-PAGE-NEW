@@ -219,11 +219,11 @@ export default function WspolpracaPage() {
       {/* Czym się zajmuję */}
       <section id="czym-sie-zajmuje" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <div className="text-center mb-8">
+          <div className="text-center mb-4">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Czym się zajmuję</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="slow-reveal lg:col-span-7 text-lg text-neutral-700 leading-relaxed space-y-4">
               <p>Zajmuję się rozwojem biznesu i pośrednictwem gospodarczym – pomagam firmom znaleźć finansowanie, partnerów i klientów, a przedsiębiorcom uporządkować pomysły tak, by naprawdę działały.</p>
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
