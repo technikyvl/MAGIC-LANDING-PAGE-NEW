@@ -196,8 +196,8 @@ export default function WspolpracaPage() {
                 <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Kim jestem</h2>
               </div>
-              <div className="relative pl-6">
-                <div className="absolute left-2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent/60 via-accent/30 to-transparent" />
+              <div className="relative pl-8">
+                <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-gradient-to-b from-accent/60 via-accent/30 to-transparent" />
                 {[
                   { t: "Manager i przedsiębiorca", d: "Ponad 20 lat budowania firm w wielu branżach." },
                   { t: "Strateg i partner", d: "Łączę perspektywę operacyjną ze strategiczną, porządkując chaos wzrostu." },
@@ -205,7 +205,7 @@ export default function WspolpracaPage() {
                   { t: "Równowaga twarde/miękkie", d: "Struktury, jakość, odpowiedzialność + psychologia człowieka." },
                 ].map((item, i) => (
                   <div key={i} className="relative mb-6 lg:mb-8">
-                    <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,99,71,.15)]" />
+                    <div className="absolute -left-[11px] top-1.5 w-4 h-4 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,99,71,.15)]" />
                     <h3 className="text-xl font-bold text-white">{item.t}</h3>
                     <p className="text-neutral-300 mt-1">{item.d}</p>
                   </div>
