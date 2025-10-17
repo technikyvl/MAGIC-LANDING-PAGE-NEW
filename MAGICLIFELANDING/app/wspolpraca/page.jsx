@@ -377,70 +377,57 @@ export default function WspolpracaPage() {
             <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Profil osób i firm, z którymi osiągamy najlepsze efekty.</p>
           </div>
 
-          {/* asymmetric grid for variety */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
-            {/* Entrepreneurs (highlight) */}
-            <article className="slow-reveal lg:col-span-7 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10 flex items-start gap-3">
-                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                <p className="text-neutral-200 text-base leading-relaxed">Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.</p>
-              </div>
-            </article>
+          {/* network layout with central line and connectors */}
+          <div className="relative">
+            {/* central vertical line */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gradient-to-b from-white/30 via-white/15 to-transparent" />
 
-            {/* Leaders */}
-            <article className="slow-reveal lg:col-span-5 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10 flex items-start gap-3">
-                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                <p className="text-neutral-200 text-base leading-relaxed">Dla liderów, którzy chcą budować stabilny, świadomy biznes.</p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              {/* LEFT stack (3) aligned to right with connectors */}
+              <div className="lg:col-span-5 flex flex-col gap-4">
+                {["Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.","Dla liderów, którzy chcą budować stabilny, świadomy biznes.","Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej."].map((txt,idx)=> (
+                  <article key={idx} className="slow-reveal relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 pr-8 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                    {/* connector to central line */}
+                    <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/15" />
+                    <div className="relative z-10 flex items-start gap-3 justify-end text-right">
+                      <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
+                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
 
-            {/* Firms in growth */}
-            <article className="slow-reveal lg:col-span-8 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10 flex items-start gap-3">
-                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                <p className="text-neutral-200 text-base leading-relaxed">Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej.</p>
-              </div>
-            </article>
+              {/* middle spacer for vertical line */}
+              <div className="hidden lg:block lg:col-span-2" />
 
-            {/* Investors */}
-            <article className="slow-reveal lg:col-span-4 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10 flex items-start gap-3">
-                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                <p className="text-neutral-200 text-base leading-relaxed">Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.</p>
+              {/* RIGHT stack (2) aligned to left with connectors */}
+              <div className="lg:col-span-5 flex flex-col gap-4">
+                {["Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.","Dla zespołów, które potrzebują spójności, jasności i nowej energii."].map((txt,idx)=> (
+                  <article key={idx} className="slow-reveal relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 pl-8 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                    {/* connector to central line */}
+                    <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/15" />
+                    <div className="relative z-10 flex items-start gap-3">
+                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                      <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
+            </div>
 
-            {/* Teams */}
-            <article className="slow-reveal lg:col-span-4 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10 flex items-start gap-3">
-                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                <p className="text-neutral-200 text-base leading-relaxed">Dla zespołów, które potrzebują spójności, jasności i nowej energii.</p>
+            {/* bottom callout spanning the grid */}
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-300 text-sm sm:text-base">Nie wiesz, gdzie najlepiej zacząć? 30-minutowa rozmowa pomoże ustalić kierunek.</p>
               </div>
-            </article>
-
-            {/* Callout with CTA */}
-            <article className="slow-reveal lg:col-span-8 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col justify-between">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                  <h3 className="font-semibold">Nie jesteś pewien, czy to dla Ciebie?</h3>
-                </div>
-                <p className="mt-2 text-neutral-300 text-sm sm:text-base">Krótka rozmowa (30 min) pozwoli szybko ocenić potencjał współpracy i najbliższe kroki.</p>
-              </div>
-              <div className="relative z-10 mt-4">
-                <a href="/#contact" className="inline-flex items-center gap-2 rounded-xl bg-white/10 border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/15 transition-all">
-                  Umów rozmowę
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                </a>
-              </div>
-            </article>
+              <a href="/#contact" className="inline-flex items-center gap-2 rounded-xl bg-white/10 border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/15 transition-all">
+                Umów rozmowę
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
