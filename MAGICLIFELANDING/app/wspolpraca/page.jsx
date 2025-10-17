@@ -260,9 +260,8 @@ export default function WspolpracaPage() {
         </div>
       </section>
 
-      {/* Doświadczenie — dynamic clusters */}
+      {/* Doświadczenie — expanded logical layout */}
       <section id="doswiadczenie" className={"relative bg-neutral-950 text-white " + SPACING}>
-        {/* subtle animated background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-24 left-8 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-12 w-56 h-56 bg-accent/5 rounded-full blur-3xl" />
@@ -271,16 +270,15 @@ export default function WspolpracaPage() {
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
             <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold">Doświadczenie</h2>
-            <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Obszary, w których działam na co dzień — połączone w praktyczne kompetencje.</p>
+            <p className="mt-3 text-neutral-400 max-w-3xl mx-auto text-sm sm:text-base">Obszary i kompetencje, które łączę w praktyczne wyniki. Najpierw kontekst branżowy, niżej kluczowe domeny działania.</p>
           </div>
 
-          {/* layout: sticky summary left + interactive grid right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            {/* LEFT: Branże (sticky on desktop) */}
-            <aside className="slow-reveal lg:col-span-5">
-              <div className="lg:sticky lg:top-28 rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-white/10">
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">Branże</h3>
+          <div className="grid gap-6 lg:gap-8">
+            {/* FULL-WIDTH: Branże / kontekst */}
+            <div className="slow-reveal rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-8 lg:p-10">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div>
+                  <h3 className="text-2xl font-semibold">Branże</h3>
                   <p className="mt-1 text-neutral-400 text-sm">Przekrój sektorów, w których współtworzyłem procesy i wzrost.</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
@@ -288,45 +286,36 @@ export default function WspolpracaPage() {
                     ))}
                   </div>
                 </div>
-                <div className="px-6 pb-6">
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-neutral-300">
-                    {["+20 lat w biznesie","7 branż","operacje i strategia","mentoring liderów"].map((s,idx)=> (
-                      <div key={idx} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-center">{s}</div>
-                    ))}
-                  </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-neutral-300">
+                  {["+20 lat w biznesie","7 branż","operacje i strategia","mentoring liderów"].map((s,idx)=> (
+                    <div key={idx} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-center">{s}</div>
+                  ))}
                 </div>
               </div>
-            </aside>
+            </div>
 
-            {/* RIGHT: Kompetencje jako interaktywne karty */}
-            <div className="slow-reveal lg:col-span-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  {t:"Operacje i strategia",d:"Porządkowanie operacji, cele, metryki i wykonanie.",i:0},
-                  {t:"Procesy i optymalizacja",d:"Mapa procesów, wąskie gardła, ciągłe usprawnienia.",i:1},
-                  {t:"Struktury i wzrost",d:"Role, odpowiedzialności, plan skalowania.",i:2},
-                  {t:"Mentoring liderów",d:"Decyzyjność, komunikacja i odporność mentalna.",i:3},
-                  {t:"Pośrednictwo gospodarcze",d:"Synergie między ludźmi, projektami i kapitałem.",i:4},
-                  {t:"Synergie projektów i kapitału",d:"Łączenie partnerstw i finansowania do wzrostu.",i:5},
-                  {t:"Kultura jakości",d:"Standardy, odpowiedzialność i feedback, które działają.",i:6},
-                ].map(({t,d,i})=> (
-                  <article key={t} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(0,0,0,.25)]">
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-                    <div className="relative z-10 flex items-start gap-3">
-                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                      <div>
-                        <h3 className="font-semibold text-base sm:text-lg">{t}</h3>
-                        <p className="mt-1 text-sm text-neutral-300 leading-relaxed">{d}</p>
-                      </div>
+            {/* GRID: kluczowe domeny działania */}
+            <div className="slow-reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {[
+                {t:"Operacje i strategia",d:"Porządkowanie operacji, cele, metryki i wykonanie.",i:1},
+                {t:"Procesy i optymalizacja",d:"Mapa procesów, wąskie gardła, ciągłe usprawnienia.",i:2},
+                {t:"Struktury i wzrost",d:"Role, odpowiedzialności, plan skalowania.",i:3},
+                {t:"Mentoring liderów",d:"Decyzyjność, komunikacja i odporność mentalna.",i:4},
+                {t:"Pośrednictwo gospodarcze",d:"Synergie między ludźmi, projektami i kapitałem.",i:5},
+                {t:"Synergie projektów i kapitału",d:"Łączenie partnerstw i finansowania do wzrostu.",i:6},
+              ].map(({t,d,i})=> (
+                <article key={t} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-7 lg:p-8 min-h-[220px] transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(0,0,0,.25)]">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                  <div className="relative z-10 flex items-start gap-3">
+                    <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                    <div>
+                      <h3 className="font-semibold text-lg">{t}</h3>
+                      <p className="mt-2 text-neutral-300 text-sm leading-relaxed">{d}</p>
                     </div>
-                    <div className="relative z-10 mt-4 flex items-center justify-between text-xs text-neutral-400">
-                      <span className="inline-flex items-center gap-2"><span className="h-1 w-6 bg-accent/60 rounded-full"/>case {String(i+1).padStart(2,'0')}</span>
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">Rozwiń →</span>
-                    </div>
-                  </article>
-                ))}
-              </div>
+                  </div>
+                  <div className="relative z-10 mt-5 text-xs text-neutral-400">case {String(i).padStart(2,'0')}</div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
