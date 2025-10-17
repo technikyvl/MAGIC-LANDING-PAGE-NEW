@@ -383,36 +383,38 @@ export default function WspolpracaPage() {
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gradient-to-b from-white/30 via-white/15 to-transparent" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {/* LEFT stack (3) aligned to right with connectors */}
-              <div className="lg:col-span-5 flex flex-col gap-4">
+              {/* LEFT stack (3) aligned to right with connectors - no boxes */}
+              <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.","Dla liderów, którzy chcą budować stabilny, świadomy biznes.","Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej."].map((txt,idx)=> (
-                  <article key={idx} className="slow-reveal relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 pr-8 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                  <div key={idx} className="slow-reveal relative py-3">
                     {/* connector to central line */}
-                    <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/15" />
-                    <div className="relative z-10 flex items-start gap-3 justify-end text-right">
+                    <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
+                    <div className="relative z-10 flex items-center justify-end gap-3 text-right">
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent/20 text-accent font-semibold text-xs border border-accent/30">
+                        {String(idx + 1).padStart(2,'0')}
+                      </span>
                       <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
-                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
                     </div>
-                  </article>
+                  </div>
                 ))}
               </div>
 
               {/* middle spacer for vertical line */}
               <div className="hidden lg:block lg:col-span-2" />
 
-              {/* RIGHT stack (2) aligned to left with connectors */}
-              <div className="lg:col-span-5 flex flex-col gap-4">
+              {/* RIGHT stack (2) aligned to left with connectors - no boxes */}
+              <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.","Dla zespołów, które potrzebują spójności, jasności i nowej energii."].map((txt,idx)=> (
-                  <article key={idx} className="slow-reveal relative group overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 pl-8 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                  <div key={idx} className="slow-reveal relative py-3">
                     {/* connector to central line */}
-                    <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/15" />
-                    <div className="relative z-10 flex items-start gap-3">
-                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                    <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
+                    <div className="relative z-10 flex items-center gap-3">
+                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent/20 text-accent font-semibold text-xs border border-accent/30">
+                        {String(idx + 1 + 3).padStart(2,'0')}
+                      </span>
                       <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
                     </div>
-                  </article>
+                  </div>
                 ))}
               </div>
             </div>
