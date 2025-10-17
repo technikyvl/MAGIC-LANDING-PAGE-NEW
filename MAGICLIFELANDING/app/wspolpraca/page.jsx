@@ -353,12 +353,7 @@ export default function WspolpracaPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">{t}</h3>
                 <p className="text-neutral-600 leading-relaxed">{d}</p>
-                <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between">
-                  <span className="text-sm text-neutral-500">Dowiedz się więcej</span>
-                  <svg className="w-5 h-5 text-neutral-400 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
+                {/* CTA removed per request */}
               </article>
             ))}
           </div>
