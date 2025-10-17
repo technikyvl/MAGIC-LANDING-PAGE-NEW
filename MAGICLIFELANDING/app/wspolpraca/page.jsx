@@ -374,7 +374,7 @@ export default function WspolpracaPage() {
                       <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx + 1).padStart(2,'0')}
                       </span>
-                      <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
+                      <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx * 2 + 1).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
@@ -397,7 +397,7 @@ export default function WspolpracaPage() {
                       <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(3 + idx + 1).padStart(2,'0')}
                       </span>
-                      <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
+                      <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx * 2 + 2).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
