@@ -386,14 +386,14 @@ export default function WspolpracaPage() {
               {/* LEFT stack (3) aligned to right with connectors - no boxes */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.","Dla liderów, którzy chcą budować stabilny, świadomy biznes.","Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej."].map((txt,idx)=> (
-                  <div key={idx} className={`slow-reveal relative py-3 ${idx===1?'lg:mt-8':idx===2?'lg:mt-16':''}`}>
+                  <div key={idx} className={`slow-reveal relative py-4 ${idx===1?'lg:mt-12':idx===2?'lg:mt-20':''}`}>
                     {/* connector to central line */}
                     <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
-                    <div className="relative z-10 flex items-center justify-end gap-3 text-right">
-                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent/20 text-accent font-bold text-sm border border-accent/30">
+                    <div className="relative z-10 flex items-center justify-end gap-4 text-right">
+                      <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx + 1).padStart(2,'0')}
                       </span>
-                      <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
+                      <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
                     </div>
                   </div>
                 ))}
@@ -405,14 +405,14 @@ export default function WspolpracaPage() {
               {/* RIGHT stack (2) aligned to left with connectors - no boxes */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.","Dla zespołów, które potrzebują spójności, jasności i nowej energii."].map((txt,idx)=> (
-                  <div key={idx} className={`slow-reveal relative py-3 ${idx===0?'lg:mt-12':'lg:mt-24'}` }>
+                  <div key={idx} className={`slow-reveal relative py-4 ${idx===0?'lg:mt-16':'lg:mt-28'}` }>
                     {/* connector to central line */}
                     <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
-                    <div className="relative z-10 flex items-center gap-3">
-                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent/20 text-accent font-bold text-sm border border-accent/30">
+                    <div className="relative z-10 flex items-center gap-4">
+                      <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx + 1 + 3).padStart(2,'0')}
                       </span>
-                      <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
+                      <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
                     </div>
                   </div>
                 ))}
@@ -420,7 +420,7 @@ export default function WspolpracaPage() {
             </div>
 
             {/* bottom callout spanning the grid */}
-            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="mt-16 lg:mt-24 rounded-2xl border border-white/10 bg-white/5 p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex items-center gap-3">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
                 <p className="text-neutral-300 text-sm sm:text-base">Nie wiesz, gdzie najlepiej zacząć? 30-minutowa rozmowa pomoże ustalić kierunek.</p>
