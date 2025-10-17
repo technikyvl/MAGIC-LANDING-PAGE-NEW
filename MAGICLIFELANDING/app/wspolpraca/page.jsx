@@ -260,29 +260,71 @@ export default function WspolpracaPage() {
         </div>
       </section>
 
-      {/* Doświadczenie — skill clusters */}
+      {/* Doświadczenie — dynamic clusters */}
       <section id="doswiadczenie" className={"relative bg-neutral-950 text-white " + SPACING}>
-        <div className={CONTAINER}>
-          <div className="text-center mb-16">
+        {/* subtle animated background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-24 left-8 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-12 w-56 h-56 bg-accent/5 rounded-full blur-3xl" />
+        </div>
+        <div className={CONTAINER + " relative z-10"}>
+          <div className="text-center mb-12">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Doświadczenie</h2>
+            <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Obszary, w których działam na co dzień — połączone w praktyczne kompetencje.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-            <div className="slow-reveal lg:col-span-5 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-semibold mb-4">Branże</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
-                  <span key={i} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-neutral-200 text-sm">{b}</span>
-                ))}
-              </div>
-            </div>
-            <div className="slow-reveal lg:col-span-7 rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-semibold mb-4">Kompetencje</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {["Operacje i strategia","Procesy i optymalizacja","Struktury i wzrost","Mentoring liderów","Pośrednictwo gospodarcze","Synergie projektów i kapitału","Kultura jakości"].map((b,i)=> (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-                    <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-neutral-200">{b}</span>
+
+          {/* layout: sticky summary left + interactive grid right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            {/* LEFT: Branże (sticky on desktop) */}
+            <aside className="slow-reveal lg:col-span-5">
+              <div className="lg:sticky lg:top-28 rounded-2xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-white/10">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold">Branże</h3>
+                  <p className="mt-1 text-neutral-400 text-sm">Przekrój sektorów, w których współtworzyłem procesy i wzrost.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
+                      <span key={i} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-neutral-200 text-sm hover:bg-white/15 transition-colors">{b}</span>
+                    ))}
                   </div>
+                </div>
+                <div className="px-6 pb-6">
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-neutral-300">
+                    {["+20 lat w biznesie","7 branż","operacje i strategia","mentoring liderów"].map((s,idx)=> (
+                      <div key={idx} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-center">{s}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            {/* RIGHT: Kompetencje jako interaktywne karty */}
+            <div className="slow-reveal lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {t:"Operacje i strategia",d:"Porządkowanie operacji, cele, metryki i wykonanie.",i:0},
+                  {t:"Procesy i optymalizacja",d:"Mapa procesów, wąskie gardła, ciągłe usprawnienia.",i:1},
+                  {t:"Struktury i wzrost",d:"Role, odpowiedzialności, plan skalowania.",i:2},
+                  {t:"Mentoring liderów",d:"Decyzyjność, komunikacja i odporność mentalna.",i:3},
+                  {t:"Pośrednictwo gospodarcze",d:"Synergie między ludźmi, projektami i kapitałem.",i:4},
+                  {t:"Synergie projektów i kapitału",d:"Łączenie partnerstw i finansowania do wzrostu.",i:5},
+                  {t:"Kultura jakości",d:"Standardy, odpowiedzialność i feedback, które działają.",i:6},
+                ].map(({t,d,i})=> (
+                  <article key={t} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(0,0,0,.25)]">
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                    <div className="relative z-10 flex items-start gap-3">
+                      <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                      <div>
+                        <h3 className="font-semibold text-base sm:text-lg">{t}</h3>
+                        <p className="mt-1 text-sm text-neutral-300 leading-relaxed">{d}</p>
+                      </div>
+                    </div>
+                    <div className="relative z-10 mt-4 flex items-center justify-between text-xs text-neutral-400">
+                      <span className="inline-flex items-center gap-2"><span className="h-1 w-6 bg-accent/60 rounded-full"/>case {String(i+1).padStart(2,'0')}</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">Rozwiń →</span>
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>
