@@ -365,13 +365,17 @@ export default function WspolpracaPage() {
         </div>
       </section>
 
-      {/* Dla kogo — audience chips */}
+      {/* Dla kogo — audience cards */}
       <section id="dla-kogo" className={"relative bg-neutral-950 text-white " + SPACING}>
-        <div className={CONTAINER}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-16 right-24 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+        <div className={CONTAINER + " relative z-10"}>
           <div className="text-center mb-12">
+            <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo</h2>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               "Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.",
               "Dla liderów, którzy chcą budować stabilny, świadomy biznes.",
@@ -379,9 +383,13 @@ export default function WspolpracaPage() {
               "Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.",
               "Dla zespołów, które potrzebują spójności, jasności i nowej energii."
             ].map((item, index) => (
-              <span key={index} className="slow-reveal px-4 py-2 rounded-full bg-white/5 border border-white/10 text-neutral-200 text-sm">
-                {item}
-              </span>
+              <article key={index} className="slow-reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+                <div className="relative z-10 flex items-start gap-3">
+                  <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                  <p className="text-neutral-200 text-sm sm:text-base leading-relaxed">{item}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
