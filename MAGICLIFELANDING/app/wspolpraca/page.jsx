@@ -373,8 +373,8 @@ export default function WspolpracaPage() {
         <div className={CONTAINER + " relative z-10"}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
-            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo</h2>
-            <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Profil osób i firm, z którymi osiągamy najlepsze efekty.</p>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold">Dla kogo</h2>
+            <p className="mt-4 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Profil osób i firm, z którymi osiągamy najlepsze efekty.</p>
           </div>
 
           {/* network layout with central line and connectors */}
@@ -386,11 +386,11 @@ export default function WspolpracaPage() {
               {/* LEFT stack (3) aligned to right with connectors - no boxes */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.","Dla liderów, którzy chcą budować stabilny, świadomy biznes.","Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej."].map((txt,idx)=> (
-                  <div key={idx} className="slow-reveal relative py-3">
+                  <div key={idx} className={`slow-reveal relative py-3 ${idx===1?'lg:mt-8':idx===2?'lg:mt-16':''}`}>
                     {/* connector to central line */}
                     <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center justify-end gap-3 text-right">
-                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent/20 text-accent font-semibold text-xs border border-accent/30">
+                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent/20 text-accent font-bold text-sm border border-accent/30">
                         {String(idx + 1).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
@@ -405,11 +405,11 @@ export default function WspolpracaPage() {
               {/* RIGHT stack (2) aligned to left with connectors - no boxes */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                 {["Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.","Dla zespołów, które potrzebują spójności, jasności i nowej energii."].map((txt,idx)=> (
-                  <div key={idx} className="slow-reveal relative py-3">
+                  <div key={idx} className={`slow-reveal relative py-3 ${idx===0?'lg:mt-12':'lg:mt-24'}` }>
                     {/* connector to central line */}
                     <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center gap-3">
-                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent/20 text-accent font-semibold text-xs border border-accent/30">
+                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent/20 text-accent font-bold text-sm border border-accent/30">
                         {String(idx + 1 + 3).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-base leading-relaxed max-w-xl">{txt}</p>
