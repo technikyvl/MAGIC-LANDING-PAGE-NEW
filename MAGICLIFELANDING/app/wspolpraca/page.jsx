@@ -224,12 +224,12 @@ export default function WspolpracaPage() {
             <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            <div className="slow-reveal lg:col-span-7 text-lg text-neutral-700 leading-relaxed space-y-4 lg:mt-8">
+            <div className="slow-reveal lg:col-span-7 text-lg text-neutral-700 leading-relaxed space-y-4">
               <p>Zajmuję się rozwojem biznesu i pośrednictwem gospodarczym – pomagam firmom znaleźć finansowanie, partnerów i klientów, a przedsiębiorcom uporządkować pomysły tak, by naprawdę działały.</p>
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
             </div>
-            <div className="slow-reveal lg:col-span-5 lg:-mt-4 xl:-mt-6">
+            <div className="slow-reveal lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/testimonials/Praktyk hipnozy 2.webp" 
@@ -237,7 +237,8 @@ export default function WspolpracaPage() {
                   className="w-full h-[28rem] sm:h-[32rem] lg:h-[36rem] object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
+                {/* Card overlay on large screens; stacked below image on mobile */}
+                <div className="relative lg:absolute lg:bottom-6 lg:left-6 lg:right-6 mt-4 lg:mt-0">
                   <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
                     <h3 className="text-lg font-semibold text-neutral-900 mb-3">Usługi</h3>
                     <ul className="space-y-2">
