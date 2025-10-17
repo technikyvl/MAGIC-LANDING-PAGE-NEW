@@ -229,7 +229,7 @@ export default function WspolpracaPage() {
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
             </div>
-            <div className="slow-reveal lg:col-span-5">
+            <div className="slow-reveal lg:col-span-5 lg:-mt-8 xl:-mt-10">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/testimonials/Praktyk hipnozy 2.webp" 
