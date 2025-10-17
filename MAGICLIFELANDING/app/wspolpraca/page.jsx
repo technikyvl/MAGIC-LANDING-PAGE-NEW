@@ -219,7 +219,7 @@ export default function WspolpracaPage() {
       {/* Czym się zajmuję */}
       <section id="czym-sie-zajmuje" className={"bg-white text-neutral-900 " + SPACING}>
         <div className={CONTAINER}>
-          <div className="text-center mb-2">
+          <div className="mb-2">
             <div className="inline-block h-[2px] w-16 bg-accent mb-4"></div>
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Czym się zajmuję</h2>
           </div>
