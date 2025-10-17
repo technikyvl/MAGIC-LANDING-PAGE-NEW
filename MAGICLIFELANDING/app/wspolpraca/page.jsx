@@ -374,23 +374,73 @@ export default function WspolpracaPage() {
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
             <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Dla kogo</h2>
+            <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Profil osób i firm, z którymi osiągamy najlepsze efekty.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              "Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.",
-              "Dla liderów, którzy chcą budować stabilny, świadomy biznes.",
-              "Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej.",
-              "Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.",
-              "Dla zespołów, które potrzebują spójności, jasności i nowej energii."
-            ].map((item, index) => (
-              <article key={index} className="slow-reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
-                <div className="relative z-10 flex items-start gap-3">
-                  <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
-                  <p className="text-neutral-200 text-sm sm:text-base leading-relaxed">{item}</p>
+
+          {/* asymmetric grid for variety */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
+            {/* Entrepreneurs (highlight) */}
+            <article className="slow-reveal lg:col-span-7 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10 flex items-start gap-3">
+                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-200 text-base leading-relaxed">Dla przedsiębiorców, którzy cenią jakość — w sobie, w ludziach i w firmie.</p>
+              </div>
+            </article>
+
+            {/* Leaders */}
+            <article className="slow-reveal lg:col-span-5 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10 flex items-start gap-3">
+                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-200 text-base leading-relaxed">Dla liderów, którzy chcą budować stabilny, świadomy biznes.</p>
+              </div>
+            </article>
+
+            {/* Firms in growth */}
+            <article className="slow-reveal lg:col-span-8 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10 flex items-start gap-3">
+                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-200 text-base leading-relaxed">Dla firm w fazie wzrostu, zmiany lub przebudowy organizacyjnej.</p>
+              </div>
+            </article>
+
+            {/* Investors */}
+            <article className="slow-reveal lg:col-span-4 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10 flex items-start gap-3">
+                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-200 text-base leading-relaxed">Dla inwestorów i właścicieli, którzy chcą rozwijać swoje projekty poprzez mądre partnerstwa i połączenia kapitału.</p>
+              </div>
+            </article>
+
+            {/* Teams */}
+            <article className="slow-reveal lg:col-span-4 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10 flex items-start gap-3">
+                <span className="mt-1 inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                <p className="text-neutral-200 text-base leading-relaxed">Dla zespołów, które potrzebują spójności, jasności i nowej energii.</p>
+              </div>
+            </article>
+
+            {/* Callout with CTA */}
+            <article className="slow-reveal lg:col-span-8 group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col justify-between">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-br from-accent/30 to-orange-500/30" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-3">
+                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,120,96,.15)]" />
+                  <h3 className="font-semibold">Nie jesteś pewien, czy to dla Ciebie?</h3>
                 </div>
-              </article>
-            ))}
+                <p className="mt-2 text-neutral-300 text-sm sm:text-base">Krótka rozmowa (30 min) pozwoli szybko ocenić potencjał współpracy i najbliższe kroki.</p>
+              </div>
+              <div className="relative z-10 mt-4">
+                <a href="/#contact" className="inline-flex items-center gap-2 rounded-xl bg-white/10 border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/15 transition-all">
+                  Umów rozmowę
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
