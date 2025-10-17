@@ -274,23 +274,19 @@ export default function WspolpracaPage() {
           </div>
 
           <div className="grid gap-6 lg:gap-8">
-            {/* FULL-WIDTH: Branże / kontekst */}
-            <div className="slow-reveal rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-8 lg:p-10">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl font-semibold">Branże</h3>
-                  <p className="mt-1 text-neutral-400 text-sm">Przekrój sektorów, w których współtworzyłem procesy i wzrost.</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
-                      <span key={i} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-neutral-200 text-sm hover:bg-white/15 transition-colors">{b}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-neutral-300">
-                  {["+20 lat w biznesie","7 branż","operacje i strategia","mentoring liderów"].map((s,idx)=> (
-                    <div key={idx} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-center">{s}</div>
-                  ))}
-                </div>
+            {/* Branże / kontekst – lekki, bez dużego kontenera */}
+            <div className="slow-reveal">
+              <h3 className="text-2xl font-semibold text-center">Branże</h3>
+              <p className="mt-1 text-neutral-400 text-sm text-center">Przekrój sektorów, w których współtworzyłem procesy i wzrost.</p>
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                {["Transport","Maszyny","Sport","Suplementy","Beauty","Prawo","Nieruchomości"].map((b,i)=> (
+                  <span key={i} className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-neutral-200 text-sm hover:bg-white/15 transition-colors">{b}</span>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm text-neutral-300">
+                {["+20 lat w biznesie","7 branż","operacje i strategia","mentoring liderów"].map((s,idx)=> (
+                  <div key={idx} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2">{s}</div>
+                ))}
               </div>
             </div>
 
