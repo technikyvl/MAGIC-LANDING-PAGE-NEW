@@ -371,7 +371,7 @@ export default function WspolpracaPage() {
                     <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center gap-4 text-left lg:justify-end lg:text-right">
                       {/* Mobile: sequential 01..; Desktop: asym 1,3,5 */}
-                      <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
+                      <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(idx + 1).padStart(2,'0')}
                       </span>
                       <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
@@ -394,7 +394,7 @@ export default function WspolpracaPage() {
                     <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center gap-4 text-left">
                       {/* Mobile: continue sequential after left side (3 items) -> 04,05; Desktop: asym 2,4 */}
-                      <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
+                      <span className="inline-flex lg:hidden items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
                         {String(3 + idx + 1).padStart(2,'0')}
                       </span>
                       <span className="hidden lg:inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
