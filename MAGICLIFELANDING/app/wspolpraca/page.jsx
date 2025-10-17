@@ -226,12 +226,12 @@ export default function WspolpracaPage() {
             <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            <div id="what-i-do-text" className="slow-reveal lg:col-span-7 self-start mt-0 pt-0 text-lg text-neutral-700 leading-relaxed space-y-4">
+            <div id="what-i-do-text" className="slow-reveal lg:col-span-7 self-start mt-0 pt-0 text-lg text-neutral-700 leading-relaxed space-y-4 [&>*:first-child]:mt-0 [&>p]:m-0">
               <p>Zajmuję się rozwojem biznesu i pośrednictwem gospodarczym – pomagam firmom znaleźć finansowanie, partnerów i klientów, a przedsiębiorcom uporządkować pomysły tak, by naprawdę działały.</p>
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
             </div>
-            <div id="what-i-do-media" className="slow-reveal lg:col-span-5 self-start mt-0 pt-0">
+            <div id="what-i-do-media" className="slow-reveal lg:col-span-5 self-start mt-0 pt-0 lg:-mt-1">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/testimonials/Praktyk hipnozy 2.webp" 
