@@ -270,7 +270,7 @@ export default function WspolpracaPage() {
         <div className={CONTAINER + " relative z-10"}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6" />
-            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Doświadczenie</h2>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold">Doświadczenie</h2>
             <p className="mt-3 text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">Obszary, w których działam na co dzień — połączone w praktyczne kompetencje.</p>
           </div>
 
@@ -337,7 +337,7 @@ export default function WspolpracaPage() {
         <div className={CONTAINER}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
-            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Formy współpracy</h2>
+            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold">Formy współpracy</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {[
