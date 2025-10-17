@@ -221,12 +221,13 @@ export default function WspolpracaPage() {
         <div className={CONTAINER}>
           {/* Invisible anchor for optional id without changing visible content */}
           <div id="what-i-do" className="hidden" aria-hidden="true"></div>
-          <div className="mb-10">
-            <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
-            <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
-          </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
             <div id="what-i-do-text" className="slow-reveal lg:col-span-7 self-start mt-0 pt-0 text-lg text-neutral-700 leading-relaxed space-y-4 [&>*:first-child]:mt-0 [&>p]:m-0">
+              {/* Przeniesiony nagłówek do lewej kolumny, aby obniżyć go razem z tekstem */}
+              <div className="mt-6 sm:mt-8 lg:mt-12 mb-6">
+                <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
+                <h2 className="slow-reveal text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Czym się zajmuję</h2>
+              </div>
               <p>Zajmuję się rozwojem biznesu i pośrednictwem gospodarczym – pomagam firmom znaleźć finansowanie, partnerów i klientów, a przedsiębiorcom uporządkować pomysły tak, by naprawdę działały.</p>
               <p>W pracy łączę perspektywę managera, partnera i stratega biznesowego. Wchodzę do firmy i widzę więcej — to, co ukryte pod codziennością: niewykorzystane możliwości, błędne założenia, słabe punkty komunikacji.</p>
               <p>Z tych elementów tworzę strukturę, która pozwala rosnąć szybciej, klarowniej i z większym spokojem w decyzjach.</p>
