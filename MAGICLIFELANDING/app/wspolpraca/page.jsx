@@ -378,7 +378,7 @@ export default function WspolpracaPage() {
           </div>
 
           {/* network layout with central line and connectors */}
-          <div className="relative">
+          <div className="relative mt-10 sm:mt-12 lg:mt-16">
             {/* central vertical line */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gradient-to-b from-white/30 via-white/15 to-transparent" />
 
@@ -391,7 +391,7 @@ export default function WspolpracaPage() {
                     <span className="hidden lg:block absolute right-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center justify-end gap-4 text-right">
                       <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
-                        {String(idx + 1).padStart(2,'0')}
+                        {String(idx * 2 + 1).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
                     </div>
@@ -410,7 +410,7 @@ export default function WspolpracaPage() {
                     <span className="hidden lg:block absolute left-[-24px] top-1/2 -translate-y-1/2 h-px w-6 bg-white/25" />
                     <div className="relative z-10 flex items-center gap-4">
                       <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 text-accent font-extrabold text-base sm:text-lg border border-accent/30">
-                        {String(idx + 1 + 3).padStart(2,'0')}
+                        {String(idx * 2 + 2).padStart(2,'0')}
                       </span>
                       <p className="text-neutral-200 text-lg sm:text-xl leading-relaxed max-w-2xl">{txt}</p>
                     </div>
