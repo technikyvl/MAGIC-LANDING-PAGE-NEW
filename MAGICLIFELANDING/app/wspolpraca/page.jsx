@@ -117,7 +117,7 @@ export default function WspolpracaPage() {
         </div>
       </div>
 
-      {/* Hero / Intro - enhanced to mirror Szkolenia style (bez emoji) */}
+      {/* Hero / Intro - enhanced to mirror Szkolenia style (bez emoji) - updated */}
       <section className={"relative bg-white text-neutral-900 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28 overflow-hidden"}>
         {/* Subtle animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
