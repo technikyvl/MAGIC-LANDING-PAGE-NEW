@@ -427,7 +427,7 @@ export default function WspolpracaPage() {
         <div className={CONTAINER}>
           <div className="text-center mb-12">
             <div className="inline-block h-[2px] w-16 bg-accent mb-6"></div>
-            <h2 className="slow-reveal text-3xl sm:text-4xl font-extrabold">Efekty współpracy</h2>
+            <h2 className="slow-reveal text-2xl sm:text-3xl font-extrabold">Efekty współpracy</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
