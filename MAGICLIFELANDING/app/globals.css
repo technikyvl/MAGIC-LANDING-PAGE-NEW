@@ -5,6 +5,7 @@
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for sticky header */
 }
 
 /* Global page background and top-gap normalization */

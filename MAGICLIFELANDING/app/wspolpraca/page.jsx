@@ -33,7 +33,14 @@ export default function WspolpracaPage() {
         const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Calculate offset for sticky header
+          const headerHeight = 80; // Approximate header height
+          const elementPosition = targetElement.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
         }
       }
     };
@@ -46,9 +53,63 @@ export default function WspolpracaPage() {
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
+    
     if (mobileMenuToggle && mobileMenu) {
-      const onToggle = () => mobileMenu.classList.toggle("hidden");
-      mobileMenuToggle.addEventListener("click", onToggle);
+      const toggleMenu = () => {
+        mobileMenu.classList.toggle("hidden");
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        
+        // Update button icon
+        const icon = mobileMenuToggle.querySelector("svg");
+        if (icon) {
+          if (isOpen) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+            mobileMenuToggle.setAttribute("aria-label", "Zamknij menu");
+          } else {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            mobileMenuToggle.setAttribute("aria-label", "Otwórz menu");
+          }
+        }
+      };
+      
+      mobileMenuToggle.addEventListener("click", toggleMenu);
+      
+      // Close menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuToggle.querySelector("svg");
+          if (icon) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            mobileMenuToggle.setAttribute("aria-label", "Otwórz menu");
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuToggle.querySelector("svg");
+          if (icon) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            mobileMenuToggle.setAttribute("aria-label", "Otwórz menu");
+          }
+        }
+      });
+      
+      // Close menu on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileMenuToggle.querySelector("svg");
+          if (icon) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            mobileMenuToggle.setAttribute("aria-label", "Otwórz menu");
+          }
+        }
+      });
     }
 
     // Prevent iOS/Android rubber-band overscroll at top/bottom
