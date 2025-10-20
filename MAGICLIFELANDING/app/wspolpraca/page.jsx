@@ -54,6 +54,10 @@ export default function WspolpracaPage() {
           // Handle cross-page navigation with anchors
           e.preventDefault();
           window.location.href = href;
+        } else if (href === '/#reviews' || href === '/#pricing' || href === '/#contact' || href === '/#faq') {
+          // Handle specific cross-page anchors
+          e.preventDefault();
+          window.location.href = href;
         }
       }
     };
@@ -154,8 +158,8 @@ export default function WspolpracaPage() {
             Magic<span className="text-accent">Life</span>
           </a>
           <ul className="hidden md:flex items-center gap-6 text-sm">
-            <li><a href="/\#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
-            <li><a href="/\#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
+            <li><a href="/#reviews" className="navlink relative px-3 py-2 whitespace-nowrap">Opinie</a></li>
+            <li><a href="/#pricing" className="navlink relative px-3 py-2 whitespace-nowrap">Cennik</a></li>
             <li><a href="/wspolpraca" className="navlink relative px-3 py-2 whitespace-nowrap">Współpraca</a></li>
             <li><a href="/szkolenia" className="navlink relative px-3 py-2 whitespace-nowrap">Szkolenia</a></li>
           </ul>
@@ -177,8 +181,8 @@ export default function WspolpracaPage() {
         <div id="mobileMenu" className="md:hidden mt-4 mx-auto max-w-5xl px-4 sm:px-8 hidden">
           <div className="bg-white/95 backdrop-blur-sm border border-white/60 rounded-2xl shadow-lg p-6">
             <ul className="space-y-4">
-              <li><a href="/\#reviews" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Opinie</a></li>
-              <li><a href="/\#pricing" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Cennik</a></li>
+              <li><a href="/#reviews" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Opinie</a></li>
+              <li><a href="/#pricing" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Cennik</a></li>
               <li><a href="/wspolpraca" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Współpraca</a></li>
               <li><a href="/szkolenia" className="block px-4 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-neutral-900 font-medium">Szkolenia</a></li>
               <li><a href="/#contact" className="block px-4 py-3 rounded-lg bg-neutral-900 text-white text-center font-semibold">Umów rozmowę</a></li>

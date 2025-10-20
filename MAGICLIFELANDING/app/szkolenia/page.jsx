@@ -135,6 +135,10 @@ export default function TrainingPage() {
           // Handle cross-page navigation with anchors
           e.preventDefault();
           window.location.href = href;
+        } else if (href === '/#reviews' || href === '/#pricing' || href === '/#contact' || href === '/#faq') {
+          // Handle specific cross-page anchors
+          e.preventDefault();
+          window.location.href = href;
         }
       }
     });
