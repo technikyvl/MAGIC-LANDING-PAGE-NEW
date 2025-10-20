@@ -46,7 +46,16 @@ export default function WspolpracaPage() {
     };
     const clickHandler = (e) => {
       const t = e.target;
-      if (t.tagName === 'A' && t.getAttribute('href')?.startsWith('#')) handleSmoothScroll(e);
+      if (t.tagName === 'A') {
+        const href = t.getAttribute('href');
+        if (href?.startsWith('#')) {
+          handleSmoothScroll(e);
+        } else if (href?.startsWith('/#')) {
+          // Handle cross-page navigation with anchors
+          e.preventDefault();
+          window.location.href = href;
+        }
+      }
     };
     document.addEventListener('click', clickHandler);
 
@@ -228,7 +237,7 @@ export default function WspolpracaPage() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#czym-sie-zajmuje" className="group rounded-2xl border-2 border-neutral-300 px-5 py-3 sm:px-8 sm:py-4 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
+              <a href="#section-what-i-do" className="group rounded-2xl border-2 border-neutral-300 px-5 py-3 sm:px-8 sm:py-4 font-semibold text-neutral-900 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
                 <span className="flex items-center justify-center gap-2">Dowiedz się więcej</span>
               </a>
             </div>
@@ -566,7 +575,7 @@ export default function WspolpracaPage() {
               <h3 className="text-xl font-bold text-white mb-6">Kontakt</h3>
               <div className="space-y-3">
                 <a className="block text-base hover:text-accent transition-colors duration-300" href="mailto:kontakt@magiclife.pl">kontakt@magiclife.pl</a>
-                <a className="block text-base hover:text-accent transition-colors duration-300" href="https://wa.me/48602200511">WhatsApp</a>
+                <a className="block text-base hover:text-accent transition-colors duration-300" href="https://wa.me/48602200511" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </div>
           </div>
