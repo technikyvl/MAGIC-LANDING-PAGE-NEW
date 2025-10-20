@@ -19,24 +19,34 @@ document.addEventListener('DOMContentLoaded', function() {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Smooth scroll for anchor links
+  // Smooth scroll for anchor links with sticky header offset
   const handleSmoothScroll = (e) => {
-    const target = e.target.closest('a[href^="#"]');
-    if (!target) return;
-    
-    const href = target.getAttribute('href');
-    if (href === '#') return;
-    
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    // Cross-page anchors → allow navigation
+    if (href.startsWith('/#')) {
       e.preventDefault();
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      window.location.href = href;
+      return;
+    }
+
+    // Same-page anchors with offset
+    if (href.startsWith('#') && href !== '#') {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        e.preventDefault();
+        const headerHeight = 80; // sticky header height approximation
+        const elementTop = targetElement.getBoundingClientRect().top + window.scrollY;
+        const scrollTop = Math.max(elementTop - headerHeight, 0);
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+      }
     }
   };
-  
+
   document.addEventListener('click', handleSmoothScroll);
 
   // Active navigation link tracking

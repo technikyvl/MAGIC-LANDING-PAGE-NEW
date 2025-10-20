@@ -31,6 +31,8 @@ html {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-feature-settings: normal;
   font-variation-settings: normal;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* sticky header offset for hash navigation */
 }
 
 body {
