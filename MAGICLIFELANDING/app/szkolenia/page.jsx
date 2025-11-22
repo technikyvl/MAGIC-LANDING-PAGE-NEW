@@ -877,9 +877,9 @@ export default function TrainingPage() {
             {/* Legal */}
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-white mb-6">Informacje prawne</h3>
-              <div className="flex flex-col gap-3">
-                <a className="block text-base hover:text-accent transition-colors duration-300" href="/polityka-prywatnosci">Polityka prywatności</a>
-                <a className="block text-base hover:text-accent transition-colors duration-300" href="#">Regulamin</a>
+              <div className="flex flex-col gap-3 pl-0">
+                <a className="text-base hover:text-accent transition-colors duration-300" href="/polityka-prywatnosci">Polityka prywatności</a>
+                <a className="text-base hover:text-accent transition-colors duration-300" href="#">Regulamin</a>
               </div>
             </div>
           </div>
