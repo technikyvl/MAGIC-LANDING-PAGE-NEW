@@ -7,56 +7,11 @@ import { useEffect } from "react";
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SPACING = "py-32 sm:py-40 lg:py-48";
 
-// Komponent formularza kontaktowego MailerLite
+// Komponent formularza kontaktowego PHP
 function ContactForm() {
   return (
     <div className="mailerlite-form-container">
       <style>{`
-        @import url("https://assets.mlcdn.com/fonts.css?version=1757316");
-        
-        /* LOADER */
-        .ml-form-embedSubmitLoad {
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-        }
-
-        .g-recaptcha {
-          transform: scale(1);
-          -webkit-transform: scale(1);
-          transform-origin: 0 0;
-          -webkit-transform-origin: 0 0;
-          height: ;
-        }
-
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
-        }
-
-        .ml-form-embedSubmitLoad:after {
-          content: " ";
-          display: block;
-          width: 11px;
-          height: 11px;
-          margin: 1px;
-          border-radius: 50%;
-          border: 4px solid #fff;
-          border-color: #ffffff #ffffff #ffffff transparent;
-          animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-        }
-        
-        @keyframes ml-form-embedSubmitLoad {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        
         #mlb2-30643098.ml-form-embedContainer {
           box-sizing: border-box;
           display: table;
@@ -244,10 +199,6 @@ function ContactForm() {
           background-color: #ff5e43 !important;
         }
         
-        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
-          display: none;
-        }
-        
         .ml-error input, .ml-error textarea, .ml-error select {
           border-color: red!important;
         }
@@ -273,18 +224,16 @@ function ContactForm() {
               <div className="ml-form-embedContent" style={{marginBottom: '0px'}}>
               </div>
 
-              <form className="ml-block-form" action="https://assets.mailerlite.com/jsonp/1675220/forms/165003153655203047/subscribe" data-code="" method="post" target="_blank">
+              <form className="ml-block-form contact-form" action="send-mail.php" method="POST">
                 <div className="ml-form-formContent">
                   <div className="ml-form-fieldRow">
                     <div className="ml-field-group ml-field-last_name">
                       <input 
-                        aria-label="last_name" 
                         type="text" 
                         className="form-control" 
-                        data-inputmask="" 
-                        name="fields[last_name]" 
+                        name="name" 
                         placeholder="Imię" 
-                        autoComplete="family-name"
+                        required
                       />
                     </div>
                   </div>
@@ -292,14 +241,11 @@ function ContactForm() {
                   <div className="ml-form-fieldRow">
                     <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                       <input 
-                        aria-label="email" 
-                        aria-required="true" 
                         type="email" 
                         className="form-control" 
-                        data-inputmask="" 
-                        name="fields[email]" 
+                        name="email" 
                         placeholder="Email" 
-                        autoComplete="email"
+                        required
                       />
                     </div>
                   </div>
@@ -308,55 +254,22 @@ function ContactForm() {
                     <div className="ml-field-group ml-field-name">
                       <textarea 
                         className="form-control" 
-                        name="fields[name]" 
-                        aria-label="name" 
-                        maxLength="255" 
+                        name="message" 
                         placeholder="Wiadomość"
+                        required
                       ></textarea>
                     </div>
                   </div>
                 </div>
 
-                <input type="hidden" name="ml-submit" value="1" />
-
                 <div className="ml-form-embedSubmit">
                   <button type="submit" className="primary">Prześlij wiadomość</button>
-                  <button disabled={true} style={{display: 'none'}} type="button" className="loading">
-                    <div className="ml-form-embedSubmitLoad"></div>
-                    <span className="sr-only">Loading...</span>
-                  </button>
                 </div>
-
-                <input type="hidden" name="anticsrf" value="true" />
               </form>
-            </div>
-
-            <div className="ml-form-successBody row-success" style={{display: 'none'}}>
-              <div className="ml-form-successContent">
-                <h4>Przesłano wiadomość.</h4>
-                <p>Wkrótce się odezwę!</p>
-              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          function ml_webform_success_30643098() {
-            var $ = ml_jQuery || jQuery;
-            $('.ml-subscribe-form-30643098 .row-success').show();
-            $('.ml-subscribe-form-30643098 .row-form').hide();
-          }
-        `
-      }} />
-      
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          fetch("https://assets.mailerlite.com/jsonp/1675220/forms/165003153655203047/takel")
-        `
-      }} />
     </div>
   );
 }
