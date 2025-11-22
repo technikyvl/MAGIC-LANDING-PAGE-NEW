@@ -1075,7 +1075,7 @@ export default function Page() {
               <div className="slow-reveal bg-white rounded-2xl border border-neutral-200 p-8 shadow-[0_8px_30px_rgba(0,0,0,.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,.1)] transition-all duration-300">
                 <h4 className="text-xl font-semibold text-neutral-900 mb-3">Sesja + rozmowa (75–90 minut)</h4>
                 <p className="text-neutral-600 mb-6">Połączenie rozmowy ukierunkowanej na Twoje cele i intensywnej pracy transformacyjnej.</p>
-                <div className="text-3xl font-bold text-accent">650 zł</div>
+                <div className="text-3xl font-bold text-accent">750 zł</div>
               </div>
             </div>
           </div>
