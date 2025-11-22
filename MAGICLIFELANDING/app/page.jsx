@@ -1268,7 +1268,7 @@ export default function Page() {
             {/* Navigation */}
             <nav className="space-y-4">
               <h3 className="text-xl font-bold text-white mb-6">Nawigacja</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 pl-0">
                 <a href="#why" className="text-base hover:text-accent transition-colors duration-300">Dlaczego</a>
                 <a href="#audience" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
