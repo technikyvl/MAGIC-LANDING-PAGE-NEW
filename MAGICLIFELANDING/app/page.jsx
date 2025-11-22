@@ -1266,9 +1266,9 @@ export default function Page() {
             </div>
             
             {/* Navigation */}
-            <nav className="space-y-4">
+            <nav className="space-y-4 -ml-4 sm:-ml-6 lg:-ml-8">
               <h3 className="text-xl font-bold text-white mb-6">Nawigacja</h3>
-              <div className="grid grid-cols-2 gap-4 pl-0">
+              <div className="grid grid-cols-2 gap-4">
                 <a href="#why" className="text-base hover:text-accent transition-colors duration-300">Dlaczego</a>
                 <a href="#audience" className="text-base hover:text-accent transition-colors duration-300">Dla kogo</a>
                 <a href="#process" className="text-base hover:text-accent transition-colors duration-300">Proces</a>
@@ -1282,9 +1282,9 @@ export default function Page() {
             </nav>
             
             {/* Legal */}
-            <div className="space-y-4">
+            <div className="space-y-4 -ml-4 sm:-ml-6 lg:-ml-8">
               <h3 className="text-xl font-bold text-white mb-6">Informacje prawne</h3>
-              <div className="flex flex-col gap-3 pl-0">
+              <div className="flex flex-col gap-3">
                 <a className="text-base hover:text-accent transition-colors duration-300" href="/polityka-prywatnosci">Polityka prywatności</a>
                 <a className="text-base hover:text-accent transition-colors duration-300" href="#">Regulamin</a>
               </div>
