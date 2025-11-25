@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect } from "react";
+import React from "react";
 // import Image from "next/image"; // Removed for static export
 
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
@@ -9,6 +10,110 @@ const SPACING = "py-32 sm:py-40 lg:py-48";
 
 // Komponent formularza kontaktowego PHP
 function ContactForm() {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [errors, setErrors] = React.useState({});
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState(null);
+
+  // Walidacja po stronie klienta
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Walidacja imienia
+    if (!formData.name.trim()) {
+      newErrors.name = 'Imię jest wymagane';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Imię musi mieć co najmniej 2 znaki';
+    } else if (!/^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s-]+$/.test(formData.name.trim())) {
+      newErrors.name = 'Imię może zawierać tylko litery';
+    }
+
+    // Walidacja emaila
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email jest wymagany';
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email.trim())) {
+        newErrors.email = 'Podaj poprawny adres email';
+      }
+    }
+
+    // Walidacja numeru telefonu
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Numer telefonu jest wymagany';
+    } else {
+      // Usuń wszystkie znaki niebędące cyframi
+      const phoneDigits = formData.phone.replace(/\D/g, '');
+      if (phoneDigits.length < 9 || phoneDigits.length > 15) {
+        newErrors.phone = 'Numer telefonu musi zawierać od 9 do 15 cyfr';
+      } else if (!/^[0-9+\s()-]+$/.test(formData.phone)) {
+        newErrors.phone = 'Numer telefonu zawiera nieprawidłowe znaki';
+      }
+    }
+
+    // Walidacja wiadomości
+    if (!formData.message.trim()) {
+      newErrors.message = 'Wiadomość jest wymagana';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Wiadomość musi mieć co najmniej 10 znaków';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Usuń błąd dla tego pola gdy użytkownik zaczyna pisać
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name.trim());
+      formDataToSend.append('email', formData.email.trim());
+      formDataToSend.append('phone', formData.phone.trim());
+      formDataToSend.append('message', formData.message.trim());
+
+      const response = await fetch('/send-mail.php', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      const result = await response.text();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Błąd wysyłania formularza:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="mailerlite-form-container">
       <style>{`
@@ -224,17 +329,20 @@ function ContactForm() {
               <div className="ml-form-embedContent" style={{marginBottom: '0px'}}>
               </div>
 
-              <form className="ml-block-form contact-form" action="send-mail.php" method="POST">
+              <form className="ml-block-form contact-form" onSubmit={handleSubmit} noValidate>
                 <div className="ml-form-formContent">
                   <div className="ml-form-fieldRow">
                     <div className="ml-field-group ml-field-last_name">
                       <input 
                         type="text" 
-                        className="form-control" 
+                        className={`form-control ${errors.name ? 'ml-error' : ''}`}
                         name="name" 
-                        placeholder="Imię" 
+                        placeholder="Imię *" 
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                       />
+                      {errors.name && <div className="ml-error-message" style={{color: '#ff0000', fontSize: '12px', marginTop: '4px'}}>{errors.name}</div>}
                     </div>
                   </div>
                   
@@ -242,28 +350,63 @@ function ContactForm() {
                     <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                       <input 
                         type="email" 
-                        className="form-control" 
+                        className={`form-control ${errors.email ? 'ml-error' : ''}`}
                         name="email" 
-                        placeholder="Email" 
+                        placeholder="Email *" 
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                       />
+                      {errors.email && <div className="ml-error-message" style={{color: '#ff0000', fontSize: '12px', marginTop: '4px'}}>{errors.email}</div>}
+                    </div>
+                  </div>
+
+                  <div className="ml-form-fieldRow">
+                    <div className="ml-field-group ml-field-phone">
+                      <input 
+                        type="tel" 
+                        className={`form-control ${errors.phone ? 'ml-error' : ''}`}
+                        name="phone" 
+                        placeholder="Numer telefonu *" 
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                      {errors.phone && <div className="ml-error-message" style={{color: '#ff0000', fontSize: '12px', marginTop: '4px'}}>{errors.phone}</div>}
                     </div>
                   </div>
                   
                   <div className="ml-form-fieldRow ml-last-item">
                     <div className="ml-field-group ml-field-name">
                       <textarea 
-                        className="form-control" 
+                        className={`form-control ${errors.message ? 'ml-error' : ''}`}
                         name="message" 
-                        placeholder="Wiadomość"
+                        placeholder="Wiadomość *"
+                        value={formData.message}
+                        onChange={handleChange}
                         required
                       ></textarea>
+                      {errors.message && <div className="ml-error-message" style={{color: '#ff0000', fontSize: '12px', marginTop: '4px'}}>{errors.message}</div>}
                     </div>
                   </div>
                 </div>
 
+                {submitStatus === 'success' && (
+                  <div style={{color: '#22c55e', fontSize: '14px', marginBottom: '16px', padding: '12px', backgroundColor: '#dcfce7', borderRadius: '8px', border: '1px solid #86efac'}}>
+                    Dziękuję! Wiadomość została wysłana. Skontaktuję się niebawem.
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div style={{color: '#ef4444', fontSize: '14px', marginBottom: '16px', padding: '12px', backgroundColor: '#fee2e2', borderRadius: '8px', border: '1px solid #fca5a5'}}>
+                    Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub skontaktuj się bezpośrednio.
+                  </div>
+                )}
+
                 <div className="ml-form-embedSubmit">
-                  <button type="submit" className="primary">Prześlij wiadomość</button>
+                  <button type="submit" className="primary" disabled={isSubmitting}>
+                    {isSubmitting ? 'Wysyłanie...' : 'Prześlij wiadomość'}
+                  </button>
                 </div>
               </form>
             </div>
@@ -1254,4 +1397,6 @@ export default function Page() {
       }} />
     </>
   );
+}
+
 }
