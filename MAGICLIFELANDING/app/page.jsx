@@ -234,7 +234,20 @@ function ContactForm() {
           margin: 0;
         }
         
-        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-phone {
+          display: block !important;
+          width: 100% !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-phone input {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input,
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input[type="tel"],
+        #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-field-phone input {
           background-color: #ffffff !important;
           color: #333333 !important;
           border-color: #cccccc;
@@ -253,6 +266,7 @@ function ContactForm() {
           width: 100% !important;
           box-sizing: border-box !important;
           max-width: 100% !important;
+          display: block !important;
         }
         
         #mlb2-30643098.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea {
@@ -1397,6 +1411,4 @@ export default function Page() {
       }} />
     </>
   );
-}
-
 }
