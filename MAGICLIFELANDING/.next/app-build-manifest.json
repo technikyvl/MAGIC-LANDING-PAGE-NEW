@@ -1,0 +1,63 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/app/_not-found/page-14c5d27e566398f0.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/css/7cca8e2c5137bd71.css",
+      "static/chunks/app/layout-8681ea6098cec343.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/app/page-659232ce4d526170.js"
+    ],
+    "/polityka-prywatnosci/page": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/231-9ff6ca3ff6979963.js",
+      "static/chunks/app/polityka-prywatnosci/page-3914485c4b3a8c0c.js"
+    ],
+    "/wspolpraca/page": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/app/wspolpraca/page-4f3df5c6224f5a10.js"
+    ],
+    "/wspolpraca/layout": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/app/wspolpraca/layout-c8241b3188c01b12.js"
+    ],
+    "/szkolenia/page": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/chunks/app/szkolenia/page-c1c08c6ac607fd84.js"
+    ],
+    "/szkolenia/layout": [
+      "static/chunks/webpack-a454b1c59982be8a.js",
+      "static/chunks/fd9d1056-6184565b3c21c232.js",
+      "static/chunks/23-92c15091a9488703.js",
+      "static/chunks/main-app-e1b7979a0cca8f97.js",
+      "static/css/5eaa90cbf2b4cfab.css",
+      "static/chunks/app/szkolenia/layout-e43dd02cc1433a7a.js"
+    ]
+  }
+}
