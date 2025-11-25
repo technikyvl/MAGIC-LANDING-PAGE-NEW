@@ -1,0 +1,24 @@
+# Static site config for magiclife.pl
+
+# Disable directory listing and MultiViews (no automatic ext guessing)
+Options -Indexes
+Options -MultiViews
+
+# Serve correct MIME types for static assets
+AddType text/css .css
+AddType application/javascript .js
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType font/woff2 .woff2
+AddType font/woff .woff
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # If the requested path is not a real file or directory
+  # and has no file extension, try adding .html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
